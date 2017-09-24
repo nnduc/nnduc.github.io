@@ -1,6 +1,6 @@
 # Site settings
 title: Duc Ninja
-baseurl: "/post"
+baseurl: ""
 url: "https://duc.ninja"
 
 # Build settings

@@ -3,10 +3,10 @@
   <channel>
     <title>Duc Ninja</title>
     <description></description>
-    <link>http://localhost:4000/post/</link>
-    <atom:link href="http://localhost:4000/post/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Sep 2017 00:19:41 +0700</pubDate>
-    <lastBuildDate>Mon, 25 Sep 2017 00:19:41 +0700</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 25 Sep 2017 00:22:18 +0700</pubDate>
+    <lastBuildDate>Mon, 25 Sep 2017 00:22:18 +0700</lastBuildDate>
     <generator>Jekyll v3.6.0</generator>
     
       <item>
@@ -35,8 +35,8 @@
 
 </description>
         <pubDate>Sun, 24 Sep 2017 19:02:34 +0700</pubDate>
-        <link>http://localhost:4000/post/2017/09/24/welcome/</link>
-        <guid isPermaLink="true">http://localhost:4000/post/2017/09/24/welcome/</guid>
+        <link>http://localhost:4000/2017/09/24/welcome/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/24/welcome/</guid>
         
         
       </item>
@@ -78,7 +78,7 @@
   &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;/post/images/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;table&gt;
     &lt;thead&gt;
@@ -118,8 +118,8 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a^2 + b^2 = c^2&lt;/script&gt;
 </description>
         <pubDate>Sun, 24 Sep 2017 07:00:00 +0700</pubDate>
-        <link>http://localhost:4000/post/2017/09/24/highlight-syntax/</link>
-        <guid isPermaLink="true">http://localhost:4000/post/2017/09/24/highlight-syntax/</guid>
+        <link>http://localhost:4000/2017/09/24/highlight-syntax/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/24/highlight-syntax/</guid>
         
         
       </item>
