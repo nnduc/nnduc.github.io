@@ -1,0 +1,17 @@
+# Site settings
+title: Duc Ninja
+baseurl: "/post"
+url: "https://duc.ninja"
+
+# Build settings
+kramdown:
+  input: GFM
+permalink: pretty
+
+# Third-party services
+# just leave blank to disable it
+google_analytics: UA-69523955-1
+disqus_shortname: nnduc
+
+# Utils
+mathjax: true
