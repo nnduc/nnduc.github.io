@@ -23,7 +23,7 @@ When clicking on a file in the Navigator, hold down **`⇧`** + **`⌥`**
 
 **`⌘`** + **`⌥`** + **`{`** : move up
 
-**`⌘`** + **`⌥**` + **`}`** : move down
+**`⌘`** + **`⌥`** + **`}`** : move down
 
 > If you have text selected, Xcode will move each line containing your selection; otherwise, it’ll move the line the cursor is in.
 
