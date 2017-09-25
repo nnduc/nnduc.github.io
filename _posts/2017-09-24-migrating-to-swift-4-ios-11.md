@@ -39,18 +39,18 @@ Xcode 9 and iOS 11 introduced safe area guides, with the idea of replacing top a
 
 Open a storyboard, select a view controller, and open up the file inspector. You’ll find a new check box: “Use Safe Area Layout Guides”. Check this and immediately you’ll notice a change in the document outline of your storyboard. All of your view controllers will lose their top and bottom layout guides and be replaced by safe area guides.
 
-![]({{site.baseurl}}/images/safeArea.png)
+![]({{site.baseurl}}/images/safearea.png)
 
 ### Large titles
 
 This is another optional update, but a good idea anyway. Apple is moving towards large titles for navigation bars and has made this available to developers. To give a view controller a large title, select the first navigation bar in the navigation stack, and select ‘Prefers Large Titles’ in the attributes inspector.
 
-![]({{site.baseurl}}/images/largeTitles.png)
+![]({{site.baseurl}}/images/largetitles.png)
 
 
 This automatically sets up large titles for the whole navigation stack, though Apple suggests in many cases the large titles are more appropriate for just the initial view controller. Turn off large titles in a view controller down the line in the navigation stack, by selecting its navigation item and instead of ‘Automatic’, select ‘Never’.
 
-![]({{site.baseurl}}/images/largeTitlesNever.png)
+![]({{site.baseurl}}/images/largetitlesnever.png)
 
 
 ### Marketing App icon
