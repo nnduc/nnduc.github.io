@@ -21,9 +21,9 @@ When clicking on a file in the Navigator, hold down **`⇧`** + **`⌥`**
 
 ### 2. Moving a full line or many lines of code up or down
 
-`⌘` + `⌥` + `{`: move up
+**`⌘`** + **`⌥`** + **`{`** : move up
 
-`⌘` + `⌥` + `}`: move down
+**`⌘`** + **`⌥**` + **`}`** : move down
 
 > If you have text selected, Xcode will move each line containing your selection; otherwise, it’ll move the line the cursor is in.
 
@@ -42,6 +42,11 @@ open `xcrun simctl get_app_container booted <APP'S BUNDLE ID>` -a Finder
 
 The **Reveal in Project Navigator** command is a true timesaver for large, complex projects with lots of files and folders. The command shows or reveals the current file in the **Project Navigator** on the left. The default key binding is **⌘ + ⇧ + J**.
 
+### 5. Jump to Method
+
+When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing Control + 6 and typing the first few letters of the method’s name.
+
+![]({{site.baseurl}}/images/figure-jump-to-method.jpg)
 
 
 <br><br>
