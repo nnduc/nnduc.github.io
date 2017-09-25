@@ -8,9 +8,13 @@ date:   2017-09-25 07:02:34 +0700
 ## Tips to be more productive with Xcode
 
 `⌃`: Control
+
 `⌘`: Command
+
 `⌥`: Option
+
 `⇧`: Shift
+
 `⏎`: Return
 
 ### 1. Decide Where to Open a File
