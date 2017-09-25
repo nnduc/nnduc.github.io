@@ -44,7 +44,7 @@ The **Reveal in Project Navigator** command is a true timesaver for large, compl
 
 ### 5. Jump to Method
 
-When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing Control + 6 and typing the first few letters of the method’s name.
+When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing **⌃** + **6** and typing the first few letters of the method’s name.
 
 ![]({{site.baseurl}}/images/figure-jump-to-method.jpg)
 
