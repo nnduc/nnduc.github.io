@@ -27,8 +27,22 @@ When clicking on a file in the Navigator, hold down `⇧` + `⌥`
 
 > If you have text selected, Xcode will move each line containing your selection; otherwise, it’ll move the line the cursor is in.
 
+### 3. Quickly find app’s container folder
+You can get app’s container on the file system with a single command. You just need to know app’s bundle identifier and execute the command below:
+```bash
+xcrun simctl get_app_container booted <APP'S BUNDLE ID>
+```
+Or you can make it even faster by opening destination folder in Finder with the open command:
+```bash
+open `xcrun simctl get_app_container booted <APP'S BUNDLE ID>` -a Finder
+```
+
 <br><br>
 Source:
 - [git-tower][git-tower]
+- [detroitlabs][detroitlabs]
+
+
 
 [git-tower]: https://www.git-tower.com/blog/6-tips-for-xcode/
+[detroitlabs]: https://www.detroitlabs.com/blog/2017/04/13/17-xcode-tips-and-tricks-that-every-ios-developer-should-know/
