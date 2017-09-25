@@ -7,14 +7,30 @@ date:   2017-09-25 07:02:34 +0700
 
 ## Tips to be more productive with Xcode
 
+`⌃`: Control
+`⌘`: Command
+`⌥`: Option
+`⇧`: Shift
+`⏎`: Return
+
 ### 1. Decide Where to Open a File
 In Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or existing tab, or in a new window. Here's how you can decide about this:
 
-When clicking on a file in the Navigator, hold down `Shift` + `Option`
-When clicking on a symbol in an editor pane, hold down `Shift` + `Option` + `Command`
+When clicking on a file in the Navigator, hold down `⇧` + `⌥`
+
+When clicking on a symbol in an editor pane, hold down `⇧` + `⌥` + `⌘`
+
 A pop-over will appear and let you choose where exactly you want this file to be displayed:
 
 ![]({{site.baseurl}}/images/xcode-open-file.gif)
+
+### 2. Moving a full line or many lines of code up or down
+
+`⌘` + `⌥` + `{`: move up
+`⌘` + `⌥` + `}`: move down
+
+> If you have text selected, Xcode will move each line containing your selection; otherwise, it’ll move the line the cursor is in.
+
 
 Source:
 - [git-tower][git-tower]
