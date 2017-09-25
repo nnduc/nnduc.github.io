@@ -37,8 +37,16 @@ Or you can make it even faster by opening destination folder in Finder with the 
 open `xcrun simctl get_app_container booted <APP'S BUNDLE ID>` -a Finder
 ```
 
+
+### 4.  Reveal in Project Navigator
+
+The **Reveal in Project Navigator** command is a true timesaver for large, complex projects with lots of files and folders. The command shows or reveals the current file in the **Project Navigator** on the left. The default key binding is **⌘ + ⇧ + J**.
+
+
+
 <br><br>
 Source:
+
 - [git-tower][git-tower]
 - [detroitlabs][detroitlabs]
 
