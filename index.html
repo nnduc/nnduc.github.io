@@ -3,17 +3,17 @@ layout: default
 ---
 <div class="home">
 	<section>
-		<h2 class="smallcap">about</h2>
-		<p>Hi, I'm Duc</p>
+		<!-- <h2 class="smallcap">about</h2> -->
+		<p>Hi, I'm Duc.</p>
 		<p>I am an iOS developer, passion in Swift and mobile app developement, having 3+ years of intensive experience in native iOS iWatch/iPad/iPhone app development and iOS Application Programming with eye-catching and user-friendly UI Design.</p>
 		<p>You can reach me <a href="https://nnduc.me">here</a>.</p>
 	</section>
 	<section>
 		<h2 class="smallcap">posts</h2>
 		<ul class="post-list">
-			{% for post in site.posts limit:5 %}
+			{% for post in site.posts limit:10 %}
 			<li>
-				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}&emsp;&emsp;</time>
 				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 			</li>
 			{% endfor %}

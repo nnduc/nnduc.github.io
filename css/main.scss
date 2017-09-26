@@ -5,7 +5,10 @@
 
 
 // Our variables
-$base-font-family: 'Comfortaa', cursive;
+// $base-font-family: 'Comfortaa', cursive;
+$base-site-font-family: 'Comfortaa', cursive;
+$base-font-family: 'Open Sans', sans-serif;
+$base-header-font-family: 'Dosis', sans-serif;
 $code-font-family: 'Source Code Pro', monospace;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -45,13 +48,10 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-		url(https://fonts.googleapis.com/css?family=Comfortaa),
+		url(https://fonts.googleapis.com/css?family=Dosis|Open+Sans|Comfortaa|Source+Code+Pro),
         "base",
         "layout",
         "syntax-highlighting"
 ;
 
-@import
-    url(https://fonts.googleapis.com/css?family=Source+Code+Pro),
-    "syntax-highlighting"
-;
+

@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
-  <body>
-    <header class="site-header">
-      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    </header>
-    <div class="page-content">
-      {{ content }}
+{% include head.html %}
+
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  </header>
+  <div class="page-content">
+    {{ content }}
+  </div>
+  <br><br>
+  <div class="bottom">
+    <div class="bottom-content">
+      <span>.ninja {</span>
+      <br>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: black;</span>
+      <br>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;visibility&nbsp;: hidden;</span>
+      <br>
+      <span>}</span>
     </div>
-    {% include ga.html %}
-    {% include mathjax.html %}
-  </body>
+  </div>
+  {% include ga.html %} {% include mathjax.html %}
+</body>
+
 </html>
