@@ -19,7 +19,7 @@ MacBook Pro – 2010 or later.<br>
 MacBook Air – 2010 or later.<br>
 
 
-[Download macOS High Sierra Final Version][appstore]
+Link: [Download macOS High Sierra Final Version][appstore]
 
 
 ### Create macOS High Sierra USB Installer Drive for Clean Install
