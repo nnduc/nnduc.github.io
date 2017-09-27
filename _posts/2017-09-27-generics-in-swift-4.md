@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Generics in Swift 4"
+title:  "Generics in Swift 4 [en]"
 date:   2017-09-27 15:11:34 +0700
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "macOS High Sierra Final Version for Your Mac"
+title:  "macOS High Sierra Final Version for Your Mac [en]"
 date:   2017-09-26 12:53:34 +0700
 ---
 

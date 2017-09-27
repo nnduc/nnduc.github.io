@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Swift encoding and decoding"
+title:  "Swift encoding and decoding [en]"
 date:   2017-09-24 19:02:34 +0700
 ---
 
