@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Annotating Swift with MARKs, TODO's and FIXME's [en]"
+title:  "Annotating Swift with MARKs, TODO's and FIXME's"
 date:   2017-09-25 23:02:34 +0700
 ---
 

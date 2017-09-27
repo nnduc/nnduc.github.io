@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Migrating to Swift 4 [en]
+title:  Migrating to Swift 4
 date:   2017-09-24  00:00:00
 ---
 
