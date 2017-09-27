@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Generics in Swift 4"
-date:   2017-09-26 12:53:34 +0700
+date:   2017-09-27 15:11:34 +0700
 ---
 
 ![]({{site.baseurl}}/images/swift-generics.png)
