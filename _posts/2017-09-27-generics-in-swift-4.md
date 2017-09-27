@@ -37,13 +37,12 @@ buy function adds the product to the inventory and it takes money out of company
 In this protocol, Product being in actual type doesn’t sound right. Fitting every real product into Product type is not possible. Each product has different functionalities, properties and so on. Using an actual type in these kinds of functions is a really bad idea. Let’s turn back to The Council. All in the world, whatever each company does, it requires having to buy and sell capability. So, The Council has to find a generic solution for these two functions and make them work for every company. They can improve these functions using Generics:
 
 ```swift
-
-```
-
 protocol Company {
   func buy<T>(product: T, with money: Money)
   func sell<T>(product: T.Type, for money: Money) -> T?
 }
+```
+
 So, we replaced our actual type Product with placeholder type T. The type parameter <T> defines these functions as generics. Placeholder types are replaced with actual types during compile time. So, the actual type will be determined whenever buy and sell functions used. This provides flexibility to use same functions for every product. For example, we’ll sell Penne Arrabiata in our Swift Restaurant. We can directly call sell function like following:
 
 ```swift
