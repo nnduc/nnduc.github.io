@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Convert UTC Timezone To Local/Device Current Timezone and Vice-Versa Swift 4"
+title:  "Convert Between UTC and Device Timezone in Swift 4"
 date:   2017-10-22 20:16:34 +0700
 ---
 
