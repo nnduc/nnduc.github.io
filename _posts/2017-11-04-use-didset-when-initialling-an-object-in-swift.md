@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Use didSet when init object in Swift 4"
+title:  "Use didSet during initialling an object in Swift 4"
 date:   2017-11-04 14:00:00 +0700
 ---
 
@@ -23,7 +23,8 @@ class VideoPlayerController: UIViewController {
 
     init(state initialState: State) {
         super.init(nibName: nil, bundle: nil)
-        // By deferring the state assignment, our property observer is invoked, so we don't need to call updateVideoView() manually.
+        // By deferring the state assignment, our property observer is 
+        // invoked, so we don't need to call updateVideoView() manually.
         defer { state = initialState }
     }
 }
