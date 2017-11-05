@@ -10,7 +10,7 @@ In [object-oriented programming languages](https://en.wikipedia.org/wiki/Object-
 
 ### TL;DR
 
-In Swift 4 we have **5 access levels** like Swift 3, including `open`, `public`, `fileprivate` and `private`, but has some differents.
+In Swift 4 we have **5 access levels** like Swift 3, including `open`, `public`,  `internal`, `fileprivate` and `private`, but has some differents.
 
 ### Open 
 You can access `open` classes and class members from **any source file** in the defining module or **any module that imports that module**. You can **subclass** an `open` class or **override** an `open` class member both within their defining module and **any module** that imports that module.
