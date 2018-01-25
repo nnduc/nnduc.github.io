@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Shortcut to run a test case or run whole test case"
+date:   2018-01-25 21:43:00 +0700
+---
+
+
+
+TIL that `⌃⌥⌘U` shortcut does different things depending on the current cursor location:
+
+- inside a test method: runs this single test method
+- inside an `XCTestCase` subclass but outside of any method: runs all tests in the class
+- Run last test case before: `⌃⌥⌘G`
+
+![]({{site.baseurl}}/images/run-test-case.jpg)
+
+Source: @arekholko
