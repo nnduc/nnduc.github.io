@@ -1,7 +1,6 @@
-# duc_ninja
+https://duc.ninja
 
-my personal blog
+```console
+bundle exec jekyll serve
+```
 
-### License
-
-MIT

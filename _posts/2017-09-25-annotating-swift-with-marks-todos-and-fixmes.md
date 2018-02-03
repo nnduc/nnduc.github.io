@@ -2,11 +2,16 @@
 layout: post
 title:  "Annotating Swift with MARKs, TODO's and FIXME's"
 date:   2017-09-25 23:02:34 +0700
+key: 20170925
+tags:
+  - xcode
+  - tips
+lang: en
 ---
 
 When **Swift** debuted, we said goodbye to using `#pragma` pre-processor definitions to organize our code. Don't worry, **Xcode** still has our backs. We can use a few different "special" comments in our code and **Xcode** will pick up on them and display them in its **jump bar**:
 
-![]({{site.baseurl}}/images/annotating-swift-with-marks-todos-and-fixmes.png)
+![](/assets/images/annotating-swift-with-marks-todos-and-fixmes.png)
 
 The extra **dash** character in the name of our **MARK** gets us those *sweet* separators in the source navigator dropdown. 
 

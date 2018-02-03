@@ -2,6 +2,12 @@
 layout: post
 title:  "Dependency Injection examples with Swift 4"
 date:   2017-11-05 21:16:00 +0700
+key: 20171105
+tags:
+  - ios
+  - swift
+  - tips
+lang: en
 ---
 
 
@@ -12,7 +18,7 @@ In [software engineering](https://en.wikipedia.org/wiki/Software_engineering), *
 
 ### TL;DR.
 
-![]({{site.baseurl}}/images/di.png)
+![](/assets/images/di.png)
 
 ### Initializer injection
 

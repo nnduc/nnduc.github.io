@@ -2,6 +2,11 @@
 layout: post
 title:  "Tips to be more productive with Xcode"
 date:   2017-09-25 07:02:34 +0700
+key: 20170925
+tags:
+  - xcode
+  - tips
+lang: en
 ---
 
 <br>`⌃`: Control
@@ -17,7 +22,7 @@ When clicking on a file in the Navigator, hold down **`⇧`** + **`⌥`**
 <br>When clicking on a symbol in an editor pane, hold down **`⇧`** + **`⌥`** + **`⌘`**
 <br>A pop-over will appear and let you choose where exactly you want this file to be displayed:
 
-![]({{site.baseurl}}/images/xcode-open-file.gif)
+![](/assets/images/xcode-open-file.gif)
 
 ### 2. Moving a full line or many lines of code up or down
 
@@ -46,7 +51,7 @@ The **Reveal in Project Navigator** command is a true timesaver for large, compl
 
 When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing **⌃** + **6** and typing the first few letters of the method’s name.
 
-![]({{site.baseurl}}/images/figure-jump-to-method.jpg)
+![](/assets/images/figure-jump-to-method.jpg)
 
 
 <br><br>

@@ -2,6 +2,11 @@
 layout: post
 title:  "Customizing the file Header comment and text macros"
 date:   2017-11-04 23:15:00 +0700
+key: 20171104
+tags:
+  - xcode
+  - tips
+lang: en
 ---
 
 ## Text macros
@@ -15,7 +20,7 @@ Text macros are symbols that are expanded in-place to the specified text. They a
 Project user data -> Project shared data -> Workspace user data -> Workspace shared data -> User Xcode data
 ```
 
-![](https://oleb.net/media/xcode-file-header-comment.png)
+<!-- ![](/assets/images/xcode-file-header-comment.png) -->
 
 ### For a single project and user:
   `<ProjectName>.xcodeproj/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist`

@@ -2,6 +2,11 @@
 layout: post
 title:  "@objc Warnings Upgrading To Swift 4"
 date:   2017-11-04 21:15:00 +0700
+key: 20171104
+tags:
+  - swift
+  - tips
+lang: en
 ---
 
 
@@ -22,25 +27,25 @@ This makes the rules simpler to understand but means you have some work to do wh
 
 When you open a Swift 3 project in Xcode 9 it greets you with a build warning - “Conversion to Swift 4 is available”:
 
-![]({{site.baseurl}}/images/2017-10-26-001.png)
+![](/assets/images/2017-10-26-001.png)
 
 It is annoying to have a build warning but you are not forced to upgrade to Swift 4. Xcode 9 supports both Swift 3.2 and Swift 4 through a build setting so you can migrate one target at a time.
 
-![]({{site.baseurl}}/images/2017-10-27-001.png)
+![](/assets/images/2017-10-27-001.png)
 Assuming you want to upgrade to Swift 4, clicking the build warning starts the Xcode migrator so you can choose which targets to upgrade. You have two choices for the migration:
-![]({{site.baseurl}}/images/2017-10-26-002.png)
+![](/assets/images/2017-10-26-002.png)
 
 - Minimize Inference: This is the recommended approach. The migrator will only add `@objc` to your code in the obvious places such as methods that are the target for a `#selector`. This should give you a smaller binary but you have some extra manual work to do to finish the migration (see below).
 - Match Swift 3 Behavior: This approach adds `@objc` to your code anywhere the Swift 3 compiler would have inferred it. It is a safe choice but by sprinkling `@objc` throughout your code you will not see the smaller binary size.
 
 If you take the recommended approach Xcode will remind you that you have some extra work to do. This is also the only time you get a link to the [migration guide](https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/deve838b19a1). You can also find this guide in the Xcode help if you look under the “Work in Xcode” section:
-![]({{site.baseurl}}/images/2017-10-26-003.png)
+![](/assets/images/2017-10-26-003.png)
 
 Once Xcode has done its best it leaves you with this worrying warning message:
-![]({{site.baseurl}}/images/2017-10-26-004.png)
+![](/assets/images/2017-10-26-004.png)
 
 If you check the build settings you will see that the Swift 3 rules for `@objc`inference are still in effect:
-![]({{site.baseurl}}/images/2017-10-28-001.png)
+![](/assets/images/2017-10-28-001.png)
 
 This is helpful as you will get build time and run time warnings any time your code is missing an `@objc` that the Swift 3 rules would have inferred. So now is a good time to run your tests and check the logs.
 
@@ -84,7 +89,7 @@ self.model.someFlag = YES;
 ```
 
 In Swift 4 mode this is no longer the case and you should see build and run time warnings prompting you to add `@objc`:
-![]({{site.baseurl}}/images/2017-10-28-002.png)
+![](/assets/images/2017-10-28-002.png)
 
 I can fix the warnings by adding `@objc` to both the property and method declaration:
 
@@ -145,7 +150,7 @@ You can also use `@nonobjc` to override a default `@objc`. For example in an `@o
 ### Completing The Migration
 
 Once you are sure you have fixed everything you should disable the Swift 3 `@objc` inference rules in the build settings for each target:
-![]({{site.baseurl}}/images/2017-10-29-001.png)
+![](/assets/images/2017-10-29-001.png)
 
 
 With the setting switched to `Default` the warning should go away and you can get back to work.

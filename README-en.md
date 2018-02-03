@@ -1,0 +1,1 @@
+https://duc.ninja

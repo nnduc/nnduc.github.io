@@ -2,12 +2,17 @@
 layout: post
 title:  Migrating to Swift 4
 date:   2017-09-24  00:00:00
+key: 20170924
+tags:
+  - swift
+  - tips
+lang: en
 ---
 
 
 In the past, migrating your code was a big deal when a new version of Swift was introduced – when Swift 3 came around, it seemed like every line of code had a syntax change. This time around, however, life should be a lot easier on us – in fact maybe you’ll even see this nice message during your migration:
 
-![]({{site.baseurl}}/images/screenshot-2017-09-12-12-26-38.png)
+![](/assets/images/screenshot-2017-09-12-12-26-38.png)
 
 Here’s what Chris Lattner said about it on the Accidental Tech Podcast:
 
@@ -19,7 +24,7 @@ That said, as you update to Xcode 9, Swift 4 and iOS 11 you might find you need 
 
 During migration, you’ll be asked if you want to minimize @objc inference (the new Swift 4 way of doing things) or handle @objc inference the Swift 3 way:
 
-![]({{site.baseurl}}/images/screenshot-2017-09-12-15-30-46.png)
+![](/assets/images/screenshot-2017-09-12-15-30-46.png)
 
 What’s all this about?
 
@@ -29,7 +34,7 @@ For some reason, however, despite migrating your code to manage this new state o
 
 This isn’t a big problem, other than increasing your app’s binary size (about 6-8% according to the swift-evolution proposal) and load time. But – if you want your app to work just like a new Swift 4 app would, change the ‘Swift 3 @objc inference’ setting in each target’s Build Settings to ‘Default’ (or ‘Off’).
 
-![]({{site.baseurl}}/images/screenshot-2017-09-12-15-38-47.png)
+![](/assets/images/screenshot-2017-09-12-15-38-47.png)
 
 If you check out the Xcode migration guide, @objc inference is basically all it talks about. Most other Swift changes have been add-ons and non-breaking. There are however a couple of interface issues worth mentioning.
 
@@ -39,18 +44,18 @@ Xcode 9 and iOS 11 introduced safe area guides, with the idea of replacing top a
 
 Open a storyboard, select a view controller, and open up the file inspector. You’ll find a new check box: “Use Safe Area Layout Guides”. Check this and immediately you’ll notice a change in the document outline of your storyboard. All of your view controllers will lose their top and bottom layout guides and be replaced by safe area guides.
 
-![]({{site.baseurl}}/images/safearea.png)
+![](/assets/images/safearea.png)
 
 ### Large titles
 
 This is another optional update, but a good idea anyway. Apple is moving towards large titles for navigation bars and has made this available to developers. To give a view controller a large title, select the first navigation bar in the navigation stack, and select ‘Prefers Large Titles’ in the attributes inspector.
 
-![]({{site.baseurl}}/images/largetitles.png)
+![](/assets/images/largetitles.png)
 
 
 This automatically sets up large titles for the whole navigation stack, though Apple suggests in many cases the large titles are more appropriate for just the initial view controller. Turn off large titles in a view controller down the line in the navigation stack, by selecting its navigation item and instead of ‘Automatic’, select ‘Never’.
 
-![]({{site.baseurl}}/images/largetitlesnever.png)
+![](/assets/images/largetitlesnever.png)
 
 
 ### Marketing App icon
@@ -89,7 +94,7 @@ Now, let's have a glance at the basic styles: [link](http://github.com/syaning/v
 
 > Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-![]({{site.baseurl}}/images/image.png)
+![](/assets/images/image.png)
 
 <table>
     <thead>

@@ -2,6 +2,11 @@
 layout: post
 title:  "Injecting forEach into chained method calls"
 date:   2017-11-04 20:00:00 +0700
+key: 20171104
+tags:
+  - swift
+  - tips
+lang: en
 ---
 
 

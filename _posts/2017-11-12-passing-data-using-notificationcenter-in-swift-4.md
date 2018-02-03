@@ -2,6 +2,12 @@
 layout: post
 title:  "Passing Data Using NotificationCenter in Swift 4"
 date:   2017-11-12 22:15:00 +0700
+key: 20171112
+tags:
+  - ios
+  - swift
+  - tips
+lang: en
 ---
 
 

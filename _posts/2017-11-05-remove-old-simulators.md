@@ -2,6 +2,11 @@
 layout: post
 title:  "Remove old Simulators"
 date:   2017-11-05 11:10:00 +0700
+key: 20171105
+tags:
+  - xcode
+  - tips
+lang: en
 ---
 
 

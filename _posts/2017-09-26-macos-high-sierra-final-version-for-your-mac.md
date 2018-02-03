@@ -2,9 +2,14 @@
 layout: post
 title:  "macOS High Sierra Final Version for Your Mac"
 date:   2017-09-26 12:53:34 +0700
+key: 20170926
+tags:
+  - macOS
+  - tips
+lang: en
 ---
 
-![]({{site.baseurl}}/images/macos-high-sierra.png)
+![](/assets/images/macos-high-sierra.png)
 
 
 #### Is Your Mac Compatible with High Sierra?
@@ -50,7 +55,7 @@ All set? Let’s begin.
 ```
 sudo /Applications/Install\ macOS\ 10.13.app/Contents/Resources/createinstallmedia –volume /Volumes/Untitled –applicationpath /Applications/Install\ macOS\ 10.13.app
 ```
-![]({{site.baseurl}}/images/disk-utility-erase-usb-step.png)
+![](/assets/images/disk-utility-erase-usb-step.png)
 
 You’ll be required to enter your Mac’s login password, so please do so when prompted for it.
 
@@ -80,7 +85,7 @@ With the USB installer disk plugged into your Mac and everything backed up, foll
 
 Install macOS High Sierra Over the Air.
 Just as a safety precaution, it’s best to copy all your important files to either iCloud Drive or onto an external storage medium. Also make sure that you have at least 10GB of free space on your Mac. You can check how much space you have by clicking on the Apple logo icon in the menu bar, then click on About this Mac, then click on the Storage tab. You should see something similar to the screenshot below.
-![]({{site.baseurl}}/images/mac-storage-space.png)
+![](/assets/images/mac-storage-space.png)
 
 1. Connect to a WiFi network and then launch the Mac App Store.
 2. Let the Mac App Store refresh properly and then click on the Updates tab at the top.

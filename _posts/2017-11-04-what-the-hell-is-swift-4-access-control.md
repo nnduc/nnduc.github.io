@@ -2,6 +2,11 @@
 layout: post
 title:  "What the hell is Swift 4 Access Control?"
 date:   2017-11-04 21:45:00 +0700
+key: 20171104
+tags:
+  - ios
+  - swift
+lang: en
 ---
 
 In [object-oriented programming languages](https://en.wikipedia.org/wiki/Object-oriented_programming), *access control* is a part of the apparatus of achieving [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)), one of four fundamentals of object-oriented programming. The goal is to establish a clear separation between interface (visible and accessible parts of the class) and implementation (internal representation and helper methods). - [Wikipedia](https://en.wikipedia.org/wiki/Access_control#In_object-oriented_programming)

@@ -2,6 +2,11 @@
 layout: post
 title:  "Quick open Xcode project location in Terminal/iTerm"
 date:   2017-11-04 21:15:00 +0700
+key: 20171104
+tags:
+  - xcode
+  - tips
+lang: en
 ---
 
 

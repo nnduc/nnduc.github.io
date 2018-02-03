@@ -2,9 +2,14 @@
 layout: post
 title:  "Generics in Swift 4"
 date:   2017-09-27 15:11:34 +0700
+key: 20170927
+tags:
+  - swift
+  - tips
+lang: en
 ---
 
-![]({{site.baseurl}}/images/swift-generics.png)
+![](/assets/images/swift-generics.png)
 
 As one of the most powerful features in Swift, Generics can be tricky. A lot of people have trouble understanding and using them, especially application developers. Generics are most suitable for libraries, frameworks, and SDKs. In this post, I’ll try something different than other tutorials. We’ll open a restaurant and get a permission from SwiftyCity City Council. For the sake of integrity, I’ll try to keep things under four subjects.
 

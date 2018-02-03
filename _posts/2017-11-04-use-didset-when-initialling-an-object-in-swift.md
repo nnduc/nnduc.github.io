@@ -2,6 +2,11 @@
 layout: post
 title:  "Use didSet during initialling an object in Swift 4"
 date:   2017-11-04 14:00:00 +0700
+key: 201
+tags:
+  - swift
+  - tips
+lang: en
 ---
 
 
