@@ -7,8 +7,8 @@ layout: blog-default
     <h1>{{ __return }}</h1>
     <div class="m-article-content" itemprop="articleBody">{{ content }}</div>
     {%- if page.comment != false -%}
-      <section>{%- include utils/comment-disqus.html -%}</section>
-      <section>{%- include utils/comment-gitalk.html -%}</section>
+    <section>{%- include utils/comment-disqus.html -%}</section>
+    <section>{%- include utils/comment-gitalk.html -%}</section>
     {%- endif -%}
-  </article>
+</article>
 </div>
