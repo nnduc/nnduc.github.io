@@ -2,16 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://duc.ninja/2018/08/17/2018/class-only-protocol/</loc>
+    <loc>https://duc.ninja/2017/09/24/2017/swift-encoding-and-decoding/</loc>
     
-    <lastmod>2018-10-14T09:50:51.766Z</lastmod>
+    <lastmod>2018-10-14T10:05:30.552Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/04/2017/where-is-idetemplatemacros.plist-file/</loc>
+    
+    <lastmod>2018-10-14T09:58:59.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/25/2017/annotating-swift-with-marks-todos-and-fixmes/</loc>
+    
+    <lastmod>2018-10-14T09:58:57.753Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/04/2017/chained-foreach/</loc>
+    
+    <lastmod>2018-10-14T09:58:56.215Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/10/22/2017/convert-utc-local-swift4/</loc>
+    
+    <lastmod>2018-10-14T09:58:54.585Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/05/2017/dependency-injection-swift-4/</loc>
+    
+    <lastmod>2018-10-14T09:58:52.987Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/05/2017/easy-xib-and-storyboard-localization/</loc>
+    
+    <lastmod>2018-10-14T09:58:51.170Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/27/2017/generics-in-swift-4/</loc>
+    
+    <lastmod>2018-10-14T09:58:49.559Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/26/2017/macos-high-sierra-final-version-for-your-mac/</loc>
+    
+    <lastmod>2018-10-14T09:58:47.755Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/10/01/2017/measuring-swift-compile-times-in-xcode-9/</loc>
+    
+    <lastmod>2018-10-14T09:58:45.912Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/24/2017/migrating-to-swift-4-ios-11/</loc>
+    
+    <lastmod>2018-10-14T09:58:44.172Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/25/2017/multiple-accounts-and-ssh-keys/</loc>
+    
+    <lastmod>2018-10-14T09:58:42.339Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/04/2017/objc-warnings-upgrading-to-swift-4/</loc>
+    
+    <lastmod>2018-10-14T09:58:40.533Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/12/2017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    
+    <lastmod>2018-10-14T09:58:38.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/05/2017/remove-old-simulators/</loc>
+    
+    <lastmod>2018-10-14T09:58:35.558Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/07/2017/save-custom-object-into-userdefaults/</loc>
+    
+    <lastmod>2018-10-14T09:58:33.724Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/25/2017/tips-to-be-more-productive-with-xcode/</loc>
+    
+    <lastmod>2018-10-14T09:58:29.986Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/04/2017/use-didset-when-initialling-an-object-in-swift/</loc>
+    
+    <lastmod>2018-10-14T09:58:28.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/04/2017/what-the-hell-is-swift-4-access-control/</loc>
+    
+    <lastmod>2018-10-14T09:58:25.999Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/01/25/2018/po-vs-e/</loc>
+    
+    <lastmod>2018-10-14T09:58:07.980Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/03/04/2018/interface-builder-tips-and-tricks/</loc>
+    
+    <lastmod>2018-10-14T09:58:06.888Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/02/04/2018/open-terminal-from-xcode/</loc>
+    
+    <lastmod>2018-10-14T09:58:06.147Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/01/25/2018/run-test-case/</loc>
+    
+    <lastmod>2018-10-14T09:58:05.040Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2018/10/14/hello-world/</loc>
     
-    <lastmod>2018-10-14T09:30:30.485Z</lastmod>
+    <lastmod>2018-10-14T09:57:07.370Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/08/17/2018/class-only-protocol/</loc>
+    
+    <lastmod>2018-10-14T09:50:51.766Z</lastmod>
     
   </url>
   

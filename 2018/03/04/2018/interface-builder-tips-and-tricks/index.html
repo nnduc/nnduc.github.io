@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> More Interface Builder Tips And Tricks · Duc Ninja</title><meta name="description" content="More Interface Builder Tips And Tricks - Duc Ninja"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://duc.ninja/atom.xml" title="Duc Ninja"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://twitter.com/duccuimia" target="_blank" class="nav-list-link">TWITTER</a></li><li class="nav-list-item"><a href="https://github.com/ducito" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">More Interface Builder Tips And Tricks</h1><div class="post-info">Mar 4, 2018</div><div class="post-content"><p>My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.</p>
+<ul>
+<li>To easily select an object when it is behind a stack of other items hold down the Ctrl (⌃) + Shift (⇧) keys and then click over the object. Select the item you want from the popup menu showing the full view hierarchy at the point where you clicked.</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips001.png" alt=""></p>
+<ul>
+<li>Click on a view in the canvas to select it and then hold down the Option (⌥) key. Move the mouse pointer over other views in the scene to see the distances between the views:</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips002.png" alt=""></p>
+<ul>
+<li><p>To quickly copy an object in the canvas, hold down the Option (⌥) key and then click on and drag the object.</p>
+</li>
+<li><p>When adjusting the position of a view in the canvas the arrow keys move the view by one point at a time. Hold down the Shift (⇧) key to jump by 5 points at a time.</p>
+</li>
+<li><p>When creating constraints in the canvas or document outline use the Shift (⇧) key to select multiple constraints:</p>
+</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips003.png" alt=""></p>
+<p>Use the Option (⌥) key for alternate constraints. Useful when you want the margins instead of the safe area or a 1:1 aspect ratio:</p>
+<p><img src="/assets/images/ib-tips/ib-tips004.png" alt=""></p>
+<ul>
+<li>There are some useful options for the canvas in the Xcode Editor menu.</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips005.png" alt=""></p>
+<p>I like to turn on either Show Layout Rectangles or Show Bounds Rectangles to see the layout guides or bounds of views.</p>
+<p>If you are fighting with constraint priorities try turning on Show Intrinsic Size Constraints Contributing To Ambiguity. It makes it easier to see which priorities you need to change to fix the problem:</p>
+<p><img src="/assets/images/ib-tips/ib-tips006.png" alt=""></p>
+<ul>
+<li>Don’t let your Storyboards get too large. Interface Builder slows down and if you are collaborating with other developers it gets harder to avoid conflicts. Use Editor &gt; Refactor To Storyboard to break it into smaller scenes with storyboard references. See Refactoring with Storyboard References.</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips007.png" alt=""></p>
+<ul>
+<li><p>Don’t trust Interface Builder to Reset to Suggested Constraints. It will rarely do what you want.</p>
+</li>
+<li><p>Use command-equal (⌘=) to quickly resize a label, button, image, etc. to fit the content size. For example, this label is too small and high for the text:</p>
+</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips008.png" alt=""></p>
+<p>After using ⌘= to size to fit contents:</p>
+<p><img src="/assets/images/ib-tips/ib-tips009.png" alt=""></p>
+<ul>
+<li>Don’t forget you can preview your layout on different devices and orientations in Interface Builder with the assistant editor. This is much faster than launching the simulator or running on a device. Use the + in the bottom left corner of the assistant editor to add devices.</li>
+</ul>
+<p><img src="/assets/images/ib-tips/ib-tips010.png" alt=""></p>
+<p>You can add multiple assistant editors with the + in the top right corner of the assistant editor. I like to use this to preview layouts with different localizations. Change the localization with the menu in the bottom right corner.</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2018/08/17/2018/class-only-protocol/" class="prev">PREV</a><a href="/2018/02/04/2018/open-terminal-from-xcode/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="https://duc.ninja">Duc Ninja</a> , powered by <a href="https://twitter.com/duccuimia/" target="_blank">@duccuimia</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
