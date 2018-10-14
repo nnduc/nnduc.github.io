@@ -5,9 +5,9 @@
   <subtitle>I&#39;m an developer and a ninja also.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://duc.ninja/"/>
+  <link href="https://duc.ninja/"/>
   <updated>2018-10-14T08:14:01.178Z</updated>
-  <id>http://duc.ninja/</id>
+  <id>https://duc.ninja/</id>
   
   <author>
     <name>Duc Ninja</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://duc.ninja/2018/10/14/hello-world/"/>
-    <id>http://duc.ninja/2018/10/14/hello-world/</id>
+    <link href="https://duc.ninja/2018/10/14/hello-world/"/>
+    <id>https://duc.ninja/2018/10/14/hello-world/</id>
     <published>2018-10-14T08:14:01.178Z</published>
     <updated>2018-10-14T08:14:01.178Z</updated>
     
