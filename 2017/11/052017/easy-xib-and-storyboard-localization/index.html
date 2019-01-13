@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2"/>
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
+<meta name="keywords" content="xcode,tips">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Easy XIB and Storyboard Localization">
+<meta property="og:url" content="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/index.html">
+<meta property="og:site_name" content="Duc Ninja">
+<meta property="og:description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*oFXeXtJ2LM8uB7prmtAZmw.jpeg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*9hTd6a-GI-p5IJiTtcwfqw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AaeTIl9OwM9jR6VKwq6XOQ.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AJMl0WFOOGvPRPWPTTKndQ.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*lTVg9pCO35OzgY1oObi8Wg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*ZDtR1ogbCU3zmUBmCZQ3YA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*YlzFrh9t24GWIFWcDgvQPQ.png">
+<meta property="og:updated_time" content="2018-12-08T02:19:42.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Easy XIB and Storyboard Localization">
+<meta name="twitter:description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*oFXeXtJ2LM8uB7prmtAZmw.jpeg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
+
+
+
+
+  <link rel="canonical" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Easy XIB and Storyboard Localization | Duc Ninja</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duc Ninja</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">I'm an developer and a ninja also.</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/ducito" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Easy XIB and Storyboard Localization
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-11-05 22:30:00" itemprop="dateCreated datePublished" datetime="2017-11-05T22:30:00+07:00">2017-11-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-08 09:19:42" itemprop="dateModified" datetime="2018-12-08T09:19:42+07:00">2018-12-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://cdn-images-1.medium.com/max/1600/1*oFXeXtJ2LM8uB7prmtAZmw.jpeg" alt="img">Photo by <a href="https://unsplash.com/photos/jUSu0686zDM" target="_blank" rel="noopener">freestocks.org</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+<p>Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.<br><a id="more"></a><br>But for iOS graphic interfaces made with Interface Builder, it becomes a bit tricky to accomplish those goals.</p>
+<h3 id="Storyboard-localization-what-the-heck"><a href="#Storyboard-localization-what-the-heck" class="headerlink" title="Storyboard localization: what the heck!"></a>Storyboard localization: what the heck!</h3><p>Say we have a Storyboard with an interface like this:</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*9hTd6a-GI-p5IJiTtcwfqw.png" alt="img"></p>
+<p>There are three controls suitable to be localized: the “Title” label, the “Information” label and the “Buy” button. We want to localize the UI in English and Spanish.</p>
+<p>The classic strategy is to have two <code>Main.storyboard</code> files, one in a <code>en.lproj</code>folder and the other in a <code>es.lproj</code> folder. That sounds simple but it leads to a huge problem of maintenance as some change in the UI requires changing all the Storyboards. Imagine an app localized in more than two languages.</p>
+<p>The second option is to tick “English — Localizable Strings” in the localization pane in the File inspector of the Storyboard; it creates a <code>strings</code> file called <code>Main.strings</code> located in the folder <code>en.lproj</code>. This file looks like this:</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AaeTIl9OwM9jR6VKwq6XOQ.png" alt="img"></p>
+<p>It has the usual syntax of a <code>strings</code> file, but the first thing you may notice is how the controls are identified. We have names like <code>Axl-vE-Aj2</code> for the “Title” label, or <code>cY0-hb-qiL</code> for the “Buy” button.</p>
+<p>Well, it is a bit confusing, but we can move on and localize the UI to Spanish. We create the new Spanish Localization in the Configuration pane of the project and automatically Xcode creates a new <code>Main.strings</code> file inside the <code>es.lproj</code> folder. Let’s open that file and translate the texts to Spanish:</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AJMl0WFOOGvPRPWPTTKndQ.png" alt="img"></p>
+<p>It sounds pretty straightforward, but this workflow has a bunch of problems:</p>
+<ul>
+<li>If you change something in IB, the <code>strings</code> files are not updated. You have to use <em>ibtool</em> or <em>AppleGlot</em> to get it done. More about this <a href="https://ayeohyes.wordpress.com/2015/07/24/localizing-storyboards-and-xibs/" target="_blank" rel="noopener">here</a>.</li>
+<li>The names of the controls are not in a human readable manner, not even if we have filled the “Label” property of the control (Identity Inspector &gt; Document).</li>
+<li>There is no possibility to reuse localizations from other <code>.strings</code> files, or at least I did not find the way to refer to them.<br>For example, given the usual <code>Localizable.strings</code> file, to make a reference with something like <code>cY0-hb-qiL.normalTitle = &quot;${to_buy}&quot;</code>.</li>
+<li>We have localizations dispersed in more than one file: one for the localizations in code (<code>Localizable.strings</code>) and another to localize IB files (<code>Main.strings</code>).</li>
+<li>Probably, we’ll have translations repeated in both files if we need to use it in code and IB.</li>
+</ul>
+<p>So I give a thought to this, and after a couple of searches, I arrived to a <a href="https://stackoverflow.com/a/21443515/191059" target="_blank" rel="noopener">Stack Overflow answer</a> that pointed to a perfect solution to this: to use the <strong>User Defined Runtime Attributes </strong>that we can find at the Identity Inspector.</p>
+<p>Let’s see how to achieve it.</p>
+<hr>
+<h3 id="Step-1-Localizable-protocols"><a href="#Step-1-Localizable-protocols" class="headerlink" title="Step 1. Localizable protocols"></a>Step 1. Localizable protocols</h3><p>The first step is to create a couple of very simple protocols.</p>
+<p><code>Localizable</code>, that we will use to get a localized string from another string used as the key:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol Localizable &#123;</span><br><span class="line">    var localized: String &#123; get &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension String: Localizable &#123;</span><br><span class="line">    var localized: String &#123;</span><br><span class="line">        return NSLocalizedString(self, comment: &quot;&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And <code>XIBLocalizable</code>, that we will use to localize controls from an IB file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol XIBLocalizable &#123;</span><br><span class="line">    var xibLocKey: String? &#123; get set &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we have to implement this interface in those controls suitable to be localized:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extension UILabel: XIBLocalizable &#123;</span><br><span class="line">    @IBInspectable var xibLocKey: String? &#123;</span><br><span class="line">        get &#123; return nil &#125;</span><br><span class="line">        set(key) &#123;</span><br><span class="line">            text = key?.localized</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extension UIButton: XIBLocalizable &#123;</span><br><span class="line">    @IBInspectable var xibLocKey: String? &#123;</span><br><span class="line">        get &#123; return nil &#125;</span><br><span class="line">        set(key) &#123;</span><br><span class="line">            setTitle(key?.localized, for: .normal)</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>: <code>get</code> is irrelevant in this case, we are not going to need the name of the key used in the <code>Localizable.strings</code> file anywhere.</p>
+<p><strong>NOTE 2</strong>: in order to make this run on Swift 4 you have to add <code>@IBInspectable</code>to the <code>xibLocKey</code> implementation, else it will not work:</p>
+<blockquote>
+<p>Failed to set (xibLocKey) user defined inspected property on (UIButton): [<uibutton 0x7fb24a50dbc0=""> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key xibLocKey.</uibutton></p>
+</blockquote>
+<h3 id="Step-2-Set-the-localization-key-in-IB"><a href="#Step-2-Set-the-localization-key-in-IB" class="headerlink" title="Step 2. Set the localization key in IB"></a>Step 2. Set the localization key in IB</h3><p>The second step is to set, for each control, its associated localization key. We have two <code>Localizable.strings</code> files.</p>
+<p><code>en.lproj</code> file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“title” = “Title”;</span><br><span class="line">“info” = “Information”;</span><br><span class="line">“to_buy” = “Buy”;</span><br></pre></td></tr></table></figure>
+<p><code>es.lproj</code> file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;title&quot; = &quot;Título&quot;;</span><br><span class="line">&quot;info&quot; = &quot;Información&quot;;</span><br><span class="line">&quot;to_buy&quot; = &quot;Comprar&quot;;</span><br></pre></td></tr></table></figure>
+<p>Now it is time to set these keys in IB. To do that we have to:</p>
+<ol>
+<li>Select the control to be localized, for example the “Title” label.</li>
+<li>Go to the Identity Inspector and add a new value to the <em>User Defined Runtime Attributes</em>. Fill it with <code>Key Path = xibLocKey</code> , <code>Type = String</code> and <code>Value = title</code> . It may look like this:</li>
+</ol>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*lTVg9pCO35OzgY1oObi8Wg.png" alt="img"></p>
+<p>As our properties are <code>@IBInspectable</code> you can also fill the <code>xibLocKey</code> in the <em>Attributes Inspector:</em></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*ZDtR1ogbCU3zmUBmCZQ3YA.png" alt="img"></p>
+<p>That’s all! Repeat these steps with every control you want to localize and run the app to test it.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*YlzFrh9t24GWIFWcDgvQPQ.png" alt="img">Left: iPhone 6 in Spanish; Right: iPhone SE in English</p>
+<hr>
+<p>This is a very clever and simple solution, and it avoids two important flaws we will encounter in other solutions:</p>
+<ol>
+<li>It is a great way to get rid of complicated workflows involving external tools.</li>
+<li>It also encourages <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank" rel="noopener">DRY principle</a> to use localizations in code and Interface Builder without having the same translation in two different files.</li>
+</ol>
+<p>You can find a example project in my <a href="https://github.com/emenegro/xib-localization" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>Source: Mario Negro</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/xcode/" rel="tag"># xcode</a>
+          
+            <a href="/tags/tips/" rel="tag"># tips</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/052017/dependency-injection-swift-4/" rel="next" title="Dependency Injection examples with Swift 4">
+                <i class="fa fa-chevron-left"></i> Dependency Injection examples with Swift 4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/072017/save-custom-object-into-userdefaults/" rel="prev" title="Save custom objects into UserDefaults(Swift 4)">
+                Save custom objects into UserDefaults(Swift 4) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Duc Ninja</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Storyboard-localization-what-the-heck"><span class="nav-number">1.</span> <span class="nav-text">Storyboard localization: what the heck!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Localizable-protocols"><span class="nav-number">2.</span> <span class="nav-text">Step 1. Localizable protocols</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Set-the-localization-key-in-IB"><span class="nav-number">3.</span> <span class="nav-text">Step 2. Set the localization key in IB</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duc Ninja</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script src="/js/src/js.cookie.js?v=6.7.0"></script>
+  <script src="/js/src/scroll-cookie.js?v=6.7.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

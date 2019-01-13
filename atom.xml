@@ -18,8 +18,8 @@
   
   <entry>
     <title>Swift 4 - Class only protocol</title>
-    <link href="https://duc.ninja/2018/08/17/2018/class-only-protocol/"/>
-    <id>https://duc.ninja/2018/08/17/2018/class-only-protocol/</id>
+    <link href="https://duc.ninja/2018/08/172018/class-only-protocol/"/>
+    <id>https://duc.ninja/2018/08/172018/class-only-protocol/</id>
     <published>2018-08-17T01:13:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>More Interface Builder Tips And Tricks</title>
-    <link href="https://duc.ninja/2018/03/04/2018/interface-builder-tips-and-tricks/"/>
-    <id>https://duc.ninja/2018/03/04/2018/interface-builder-tips-and-tricks/</id>
+    <link href="https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/"/>
+    <id>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</id>
     <published>2018-03-04T15:56:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -55,8 +55,8 @@
   
   <entry>
     <title>Open Terminal from Xcode</title>
-    <link href="https://duc.ninja/2018/02/04/2018/open-terminal-from-xcode/"/>
-    <id>https://duc.ninja/2018/02/04/2018/open-terminal-from-xcode/</id>
+    <link href="https://duc.ninja/2018/02/042018/open-terminal-from-xcode/"/>
+    <id>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</id>
     <published>2018-02-04T06:20:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -69,9 +69,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>Shortcut to run a test case or run whole test case</title>
-    <link href="https://duc.ninja/2018/01/25/2018/run-test-case/"/>
-    <id>https://duc.ninja/2018/01/25/2018/run-test-case/</id>
+    <link href="https://duc.ninja/2018/01/252018/run-test-case/"/>
+    <id>https://duc.ninja/2018/01/252018/run-test-case/</id>
     <published>2018-01-25T14:43:00.000Z</published>
     <updated>2018-12-08T02:19:42.205Z</updated>
     
@@ -97,9 +97,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -109,8 +109,8 @@
   
   <entry>
     <title>LLDB: po vs e</title>
-    <link href="https://duc.ninja/2018/01/25/2018/po-vs-e/"/>
-    <id>https://duc.ninja/2018/01/25/2018/po-vs-e/</id>
+    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
+    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
     <published>2018-01-25T14:43:00.000Z</published>
     <updated>2018-12-08T02:19:42.205Z</updated>
     
@@ -123,9 +123,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -135,8 +135,8 @@
   
   <entry>
     <title>Passing Data Using NotificationCenter in Swift 4</title>
-    <link href="https://duc.ninja/2017/11/12/2017/passing-data-using-notificationcenter-in-swift-4/"/>
-    <id>https://duc.ninja/2017/11/12/2017/passing-data-using-notificationcenter-in-swift-4/</id>
+    <link href="https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/"/>
+    <id>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</id>
     <published>2017-11-12T15:15:00.000Z</published>
     <updated>2018-12-08T02:19:42.203Z</updated>
     
@@ -150,9 +150,9 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -160,8 +160,8 @@
   
   <entry>
     <title>Save custom objects into UserDefaults(Swift 4)</title>
-    <link href="https://duc.ninja/2017/11/07/2017/save-custom-object-into-userdefaults/"/>
-    <id>https://duc.ninja/2017/11/07/2017/save-custom-object-into-userdefaults/</id>
+    <link href="https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/"/>
+    <id>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</id>
     <published>2017-11-07T14:47:00.000Z</published>
     <updated>2018-12-08T02:19:42.203Z</updated>
     
@@ -174,9 +174,9 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -184,8 +184,8 @@
   
   <entry>
     <title>Easy XIB and Storyboard Localization</title>
-    <link href="https://duc.ninja/2017/11/05/2017/easy-xib-and-storyboard-localization/"/>
-    <id>https://duc.ninja/2017/11/05/2017/easy-xib-and-storyboard-localization/</id>
+    <link href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
+    <id>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</id>
     <published>2017-11-05T15:30:00.000Z</published>
     <updated>2018-12-08T02:19:42.201Z</updated>
     
@@ -199,16 +199,16 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
   <entry>
     <title>Dependency Injection examples with Swift 4</title>
-    <link href="https://duc.ninja/2017/11/05/2017/dependency-injection-swift-4/"/>
-    <id>https://duc.ninja/2017/11/05/2017/dependency-injection-swift-4/</id>
+    <link href="https://duc.ninja/2017/11/052017/dependency-injection-swift-4/"/>
+    <id>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</id>
     <published>2017-11-05T14:16:00.000Z</published>
     <updated>2018-12-08T02:19:42.201Z</updated>
     
@@ -221,9 +221,9 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -233,8 +233,8 @@
   
   <entry>
     <title>Remove old Simulators</title>
-    <link href="https://duc.ninja/2017/11/05/2017/remove-old-simulators/"/>
-    <id>https://duc.ninja/2017/11/05/2017/remove-old-simulators/</id>
+    <link href="https://duc.ninja/2017/11/052017/remove-old-simulators/"/>
+    <id>https://duc.ninja/2017/11/052017/remove-old-simulators/</id>
     <published>2017-11-05T04:10:00.000Z</published>
     <updated>2018-12-08T02:19:42.203Z</updated>
     
@@ -248,9 +248,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
@@ -258,8 +258,8 @@
   
   <entry>
     <title>Customizing the file Header comment and text macros</title>
-    <link href="https://duc.ninja/2017/11/04/2017/where-is-idetemplatemacros.plist-file/"/>
-    <id>https://duc.ninja/2017/11/04/2017/where-is-idetemplatemacros.plist-file/</id>
+    <link href="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/"/>
+    <id>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</id>
     <published>2017-11-04T16:15:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -272,16 +272,16 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
   <entry>
     <title>What the hell is Swift 4 Access Control?</title>
-    <link href="https://duc.ninja/2017/11/04/2017/what-the-hell-is-swift-4-access-control/"/>
-    <id>https://duc.ninja/2017/11/04/2017/what-the-hell-is-swift-4-access-control/</id>
+    <link href="https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/"/>
+    <id>https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/</id>
     <published>2017-11-04T14:45:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -302,8 +302,8 @@
   
   <entry>
     <title>@objc Warnings Upgrading To Swift 4</title>
-    <link href="https://duc.ninja/2017/11/04/2017/objc-warnings-upgrading-to-swift-4/"/>
-    <id>https://duc.ninja/2017/11/04/2017/objc-warnings-upgrading-to-swift-4/</id>
+    <link href="https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/"/>
+    <id>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</id>
     <published>2017-11-04T14:15:00.000Z</published>
     <updated>2018-12-08T02:19:42.202Z</updated>
     
@@ -316,16 +316,16 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>Injecting forEach into chained method calls</title>
-    <link href="https://duc.ninja/2017/11/04/2017/chained-foreach/"/>
-    <id>https://duc.ninja/2017/11/04/2017/chained-foreach/</id>
+    <link href="https://duc.ninja/2017/11/042017/chained-foreach/"/>
+    <id>https://duc.ninja/2017/11/042017/chained-foreach/</id>
     <published>2017-11-04T13:00:00.000Z</published>
     <updated>2018-12-08T02:19:42.200Z</updated>
     
@@ -338,16 +338,16 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>Use didSet during initialling an object in Swift 4</title>
-    <link href="https://duc.ninja/2017/11/04/2017/use-didset-when-initialling-an-object-in-swift/"/>
-    <id>https://duc.ninja/2017/11/04/2017/use-didset-when-initialling-an-object-in-swift/</id>
+    <link href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/"/>
+    <id>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</id>
     <published>2017-11-04T07:00:00.000Z</published>
     <updated>2018-12-08T02:19:42.204Z</updated>
     
@@ -360,16 +360,16 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>Convert Between UTC and Device Timezone in Swift 4</title>
-    <link href="https://duc.ninja/2017/10/22/2017/convert-utc-local-swift4/"/>
-    <id>https://duc.ninja/2017/10/22/2017/convert-utc-local-swift4/</id>
+    <link href="https://duc.ninja/2017/10/222017/convert-utc-local-swift4/"/>
+    <id>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</id>
     <published>2017-10-22T13:16:34.000Z</published>
     <updated>2018-12-08T02:19:42.201Z</updated>
     
@@ -383,16 +383,16 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>Measuring Swift compile times in Xcode 9</title>
-    <link href="https://duc.ninja/2017/10/01/2017/measuring-swift-compile-times-in-xcode-9/"/>
-    <id>https://duc.ninja/2017/10/01/2017/measuring-swift-compile-times-in-xcode-9/</id>
+    <link href="https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/"/>
+    <id>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</id>
     <published>2017-10-01T07:36:34.000Z</published>
     <updated>2018-12-08T02:19:42.202Z</updated>
     
@@ -405,16 +405,16 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
   <entry>
     <title>Generics in Swift 4</title>
-    <link href="https://duc.ninja/2017/09/27/2017/generics-in-swift-4/"/>
-    <id>https://duc.ninja/2017/09/27/2017/generics-in-swift-4/</id>
+    <link href="https://duc.ninja/2017/09/272017/generics-in-swift-4/"/>
+    <id>https://duc.ninja/2017/09/272017/generics-in-swift-4/</id>
     <published>2017-09-27T08:11:34.000Z</published>
     <updated>2018-12-08T02:19:42.201Z</updated>
     
@@ -428,16 +428,16 @@
     </summary>
     
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>macOS High Sierra Final Version for Your Mac</title>
-    <link href="https://duc.ninja/2017/09/26/2017/macos-high-sierra-final-version-for-your-mac/"/>
-    <id>https://duc.ninja/2017/09/26/2017/macos-high-sierra-final-version-for-your-mac/</id>
+    <link href="https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/"/>
+    <id>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</id>
     <published>2017-09-26T05:53:34.000Z</published>
     <updated>2018-12-08T02:19:42.201Z</updated>
     
@@ -459,8 +459,8 @@
   
   <entry>
     <title>Annotating Swift with MARKs, TODO&#39;s and FIXME&#39;s</title>
-    <link href="https://duc.ninja/2017/09/25/2017/annotating-swift-with-marks-todos-and-fixmes/"/>
-    <id>https://duc.ninja/2017/09/25/2017/annotating-swift-with-marks-todos-and-fixmes/</id>
+    <link href="https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/"/>
+    <id>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</id>
     <published>2017-09-25T16:02:34.000Z</published>
     <updated>2018-12-08T02:19:42.200Z</updated>
     
@@ -474,9 +474,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
