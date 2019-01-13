@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
+    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
     
     <lastmod>2018-12-08T02:19:42.204Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
+    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
     
     <lastmod>2018-12-08T02:19:42.204Z</lastmod>
     
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
     
     <lastmod>2018-12-08T02:19:42.202Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
+    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
     
     <lastmod>2018-12-08T02:19:42.202Z</lastmod>
     
@@ -121,6 +121,13 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
+    
+    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
     
     <lastmod>2018-12-08T02:19:42.201Z</lastmod>
@@ -135,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
+    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
     
     <lastmod>2018-12-08T02:19:42.201Z</lastmod>
     
@@ -149,21 +156,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
-    
-    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
+    <loc>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</loc>
     
     <lastmod>2018-12-08T02:19:42.200Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</loc>
+    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
     
     <lastmod>2018-12-08T02:19:42.200Z</lastmod>
     
