@@ -93,6 +93,36 @@
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LLDB: Po vs E</title>
+    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
+    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
+    <published>2018-01-25T14:43:00.000Z</published>
+    <updated>2018-12-08T02:19:42.205Z</updated>
+    
+    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br><br><a id="more"></a><br><img src="/assets/images/po-vs-e.jpg" alt=""></p><p>Source: @caro</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
+    
   </entry>
   
   <entry>
@@ -121,33 +151,9 @@
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
-      <category term="testing" scheme="https://duc.ninja/tags/testing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LLDB: Po vs E</title>
-    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
-    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
-    <published>2018-01-25T14:43:00.000Z</published>
-    <updated>2018-12-08T02:19:42.205Z</updated>
-    
-    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br><br><a id="more"></a><br><img src="/assets/images/po-vs-e.jpg" alt=""></p><p>Source: @caro</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
-      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
+      <category term="testing" scheme="https://duc.ninja/tags/testing/"/>
     
   </entry>
   
@@ -174,8 +180,6 @@
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
   </entry>
   
   <entry>
@@ -199,8 +203,6 @@
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
   </entry>
   
@@ -249,8 +251,6 @@
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
-      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
   </entry>
@@ -277,6 +277,8 @@
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
   </entry>
   
@@ -318,9 +320,9 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
   </entry>
   
