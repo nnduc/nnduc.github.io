@@ -15,11 +15,11 @@
 
 
 <html class="theme-next muse use-motion" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -29,20 +29,14 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2"/>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2">
 
 
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
-
-
-
-
-
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -56,9 +50,15 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
 
-<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
@@ -107,7 +107,7 @@
 
 
   <meta name="description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
-<meta name="keywords" content="tips,xcode">
+<meta name="keywords" content="xcode,tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Easy XIB and Storyboard Localization">
 <meta property="og:url" content="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/index.html">
@@ -129,12 +129,12 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml">
 
 
 
 
-  <link rel="canonical" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
+  <link rel="canonical" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/">
 
 
 
@@ -209,7 +209,7 @@
     </div>
     
       
-        <p class="site-subtitle">I'm an developer and a ninja as well.</p>
+        <p class="site-subtitle">I'm a software engineer and a ninja as well.</p>
       
     
     
@@ -244,7 +244,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -261,7 +261,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
         
@@ -278,7 +278,7 @@
 
     
 
-    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>My info</a>
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>My info</a>
 
   </li>
 
@@ -332,16 +332,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duc Ninja"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
+      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="name" content="Duc Ninja">
     </span>
 
     
@@ -449,23 +449,23 @@
 <hr>
 <h3 id="Step-1-Localizable-protocols"><a href="#Step-1-Localizable-protocols" class="headerlink" title="Step 1. Localizable protocols"></a>Step 1. Localizable protocols</h3><p>The first step is to create a couple of very simple protocols.</p>
 <p><code>Localizable</code>, that we will use to get a localized string from another string used as the key:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol Localizable &#123;</span><br><span class="line">    var localized: String &#123; get &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension String: Localizable &#123;</span><br><span class="line">    var localized: String &#123;</span><br><span class="line">        return NSLocalizedString(self, comment: &quot;&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Localizable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> localized: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="built_in">String</span>: Localizable &#123;</span><br><span class="line">    <span class="built_in">var</span> localized: <span class="built_in">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> NSLocalizedString(<span class="built_in">self</span>, comment: <span class="string">""</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>And <code>XIBLocalizable</code>, that we will use to localize controls from an IB file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol XIBLocalizable &#123;</span><br><span class="line">    var xibLocKey: String? &#123; get set &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">XIBLocalizable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xibLocKey: <span class="type">String</span>? &#123; <span class="keyword">get</span> <span class="keyword">set</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Now we have to implement this interface in those controls suitable to be localized:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extension UILabel: XIBLocalizable &#123;</span><br><span class="line">    @IBInspectable var xibLocKey: String? &#123;</span><br><span class="line">        get &#123; return nil &#125;</span><br><span class="line">        set(key) &#123;</span><br><span class="line">            text = key?.localized</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">extension UIButton: XIBLocalizable &#123;</span><br><span class="line">    @IBInspectable var xibLocKey: String? &#123;</span><br><span class="line">        get &#123; return nil &#125;</span><br><span class="line">        set(key) &#123;</span><br><span class="line">            setTitle(key?.localized, for: .normal)</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UILabel</span>: <span class="title">XIBLocalizable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@IBInspectable</span> <span class="keyword">var</span> xibLocKey: <span class="type">String</span>? &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">set</span>(key) &#123;</span><br><span class="line">            text = key?.localized</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIButton</span>: <span class="title">XIBLocalizable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@IBInspectable</span> <span class="keyword">var</span> xibLocKey: <span class="type">String</span>? &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        <span class="keyword">set</span>(key) &#123;</span><br><span class="line">            setTitle(key?.localized, <span class="keyword">for</span>: .normal)</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>NOTE</strong>: <code>get</code> is irrelevant in this case, we are not going to need the name of the key used in the <code>Localizable.strings</code> file anywhere.</p>
 <p><strong>NOTE 2</strong>: in order to make this run on Swift 4 you have to add <code>@IBInspectable</code>to the <code>xibLocKey</code> implementation, else it will not work:</p>
 <blockquote>
-<p>Failed to set (xibLocKey) user defined inspected property on (UIButton): [<uibutton 0x7fb24a50dbc0=""> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key xibLocKey.</uibutton></p>
+<p>Failed to set (xibLocKey) user defined inspected property on (UIButton): [<uibutton 0x7fb24a50dbc0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key xibLocKey.</uibutton></p>
 </blockquote>
 <h3 id="Step-2-Set-the-localization-key-in-IB"><a href="#Step-2-Set-the-localization-key-in-IB" class="headerlink" title="Step 2. Set the localization key in IB"></a>Step 2. Set the localization key in IB</h3><p>The second step is to set, for each control, its associated localization key. We have two <code>Localizable.strings</code> files.</p>
 <p><code>en.lproj</code> file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“title” = “Title”;</span><br><span class="line">“info” = “Information”;</span><br><span class="line">“to_buy” = “Buy”;</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“title” = “Title”<span class="comment">;</span></span><br><span class="line">“info” = “Information”<span class="comment">;</span></span><br><span class="line">“to_buy” = “Buy”<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p><code>es.lproj</code> file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;title&quot; = &quot;Título&quot;;</span><br><span class="line">&quot;info&quot; = &quot;Información&quot;;</span><br><span class="line">&quot;to_buy&quot; = &quot;Comprar&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"title"</span> = <span class="string">"Título"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"info"</span> = <span class="string">"Información"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"to_buy"</span> = <span class="string">"Comprar"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>Now it is time to set these keys in IB. To do that we have to:</p>
 <ol>
 <li>Select the control to be localized, for example the “Title” label.</li>
@@ -511,9 +511,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tips/" rel="tag"># tips</a>
-          
             <a href="/tags/xcode/" rel="tag"># xcode</a>
+          
+            <a href="/tags/tips/" rel="tag"># tips</a>
           
         </div>
       
@@ -526,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/052017/dependency-injection-swift-4/" rel="next" title="Dependency Injection examples with Swift 4">
-                <i class="fa fa-chevron-left"></i> Dependency Injection examples with Swift 4
+              <a href="/2017/11/052017/dependency-injection-swift-4/" rel="next" title="Dependency Injection Examples With Swift 4">
+                <i class="fa fa-chevron-left"></i> Dependency Injection Examples With Swift 4
               </a>
             
           </div>
@@ -536,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/072017/save-custom-object-into-userdefaults/" rel="prev" title="Save custom objects into UserDefaults(Swift 4)">
-                Save custom objects into UserDefaults(Swift 4) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/072017/save-custom-object-into-userdefaults/" rel="prev" title="Save Custom Objects Into UserDefaults(Swift 4)">
+                Save Custom Objects Into UserDefaults(Swift 4) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -597,9 +597,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/assets/images/logo/icon-310x310.png"
-                alt="Duc Ninja"/>
+              <img class="site-author-image" itemprop="image" src="/assets/images/logo/icon-310x310.png" alt="Duc Ninja">
             
               <p class="site-author-name" itemprop="name">Duc Ninja</p>
               <p class="site-description motion-element" itemprop="description"></p>
