@@ -107,7 +107,7 @@
 
 
   <meta name="description" content="Passing data from one view controller to another view controller using Notification Center is an easy way when compared to delegate protocols. Here we need add observer or listeners for getting new da">
-<meta name="keywords" content="swift,tips,ios">
+<meta name="keywords" content="tips,ios,swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Passing Data Using NotificationCenter in Swift 4">
 <meta property="og:url" content="https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/index.html">
@@ -419,15 +419,15 @@
       
         <p>Passing data from one view controller to another view controller using Notification Center is an easy way when compared to <code>delegate protocols</code>.</p>
 <p>Here we need add <code>observer</code> or <code>listeners</code> for getting new data to load. First we need to send data using post notification method.<br><a id="more"></a></p>
-<h2 id="Sending-Data-Post-Notification"><a href="#Sending-Data-Post-Notification" class="headerlink" title="Sending Data - Post Notification:"></a>Sending Data - Post Notification:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let dataToSend = [&quot;name&quot; : &quot;John&quot;, &quot;age&quot; : 25] as [String : Any]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter.default.post(name: NSNotification.Name(rawValue: &quot;newDataToLoad&quot;), object: dataToSend)</span><br></pre></td></tr></table></figure>
+<h2 id="Sending-Data-Post-Notification"><a href="#Sending-Data-Post-Notification" class="headerlink" title="Sending Data - Post Notification:"></a>Sending Data - Post Notification:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataToSend = [<span class="string">"name"</span> : <span class="string">"John"</span>, <span class="string">"age"</span> : <span class="number">25</span>] <span class="keyword">as</span> [<span class="built_in">String</span> : Any]</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter<span class="selector-class">.default</span><span class="selector-class">.post</span>(name: NSNotification.Name(rawValue: <span class="string">"newDataToLoad"</span>), <span class="selector-tag">object</span>: dataToSend)</span><br></pre></td></tr></table></figure>
 <p>Before sending data we need to listen for the above notification using  <code>NSNotification.Name</code></p>
 <h2 id="Data-Receiving-Add-observer"><a href="#Data-Receiving-Add-observer" class="headerlink" title="Data Receiving - Add observer:"></a>Data Receiving - Add observer:</h2><p>Add the following code for <code>listening</code> to new data:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter.default.addObserver(self, selector: #selector(notificationRecevied(notification:)), name: NSNotification.Name(rawValue: &quot;newDataToLoad&quot;), object: nil)</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">NotificationCenter</span><span class="selector-class">.default</span><span class="selector-class">.addObserver</span>(self, <span class="attribute">selector</span>: #selector(notificationRecevied(<span class="attribute">notification</span>:)), <span class="attribute">name</span>: NSNotification.Name(<span class="attribute">rawValue</span>: <span class="string">"newDataToLoad"</span>), <span class="attribute">object</span>: nil)</span><br></pre></td></tr></table></figure>
 <p>Add the following method to retrieve data:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@objc func notificationRecevied(notification: Notification) &#123;</span><br><span class="line">    let data = notification.object</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">notificationRecevied</span><span class="params">(notification: Notification)</span></span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data = notification.object</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Remove-Observer"><a href="#Remove-Observer" class="headerlink" title="Remove Observer:"></a>Remove Observer:</h2><p>Don’t forgot to remove observer on<code>viewWillDisappear()</code>as follow:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: &quot;newDataToLoad&quot;), object: nil)</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter<span class="selector-class">.default</span><span class="selector-class">.removeObserver</span>(self, name: NSNotification.Name(rawValue: <span class="string">"newDataToLoad"</span>), <span class="selector-tag">object</span>: nil)</span><br></pre></td></tr></table></figure>
 <p>Source: iosrevisited</p>
 
       
@@ -456,11 +456,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/swift/" rel="tag"># swift</a>
-          
             <a href="/tags/tips/" rel="tag"># tips</a>
           
             <a href="/tags/ios/" rel="tag"># ios</a>
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
           
         </div>
       
@@ -473,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/072017/save-custom-object-into-userdefaults/" rel="next" title="Save custom objects into UserDefaults(Swift 4)">
-                <i class="fa fa-chevron-left"></i> Save custom objects into UserDefaults(Swift 4)
+              <a href="/2017/11/072017/save-custom-object-into-userdefaults/" rel="next" title="Save Custom Objects Into UserDefaults(Swift 4)">
+                <i class="fa fa-chevron-left"></i> Save Custom Objects Into UserDefaults(Swift 4)
               </a>
             
           </div>
@@ -483,8 +483,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/252018/po-vs-e/" rel="prev" title="LLDB: po vs e">
-                LLDB: po vs e <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/252018/po-vs-e/" rel="prev" title="LLDB: Po vs E">
+                LLDB: Po vs E <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,7 +559,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

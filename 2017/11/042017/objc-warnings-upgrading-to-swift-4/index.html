@@ -107,9 +107,9 @@
 
 
   <meta name="description" content="Open a Swift 3 project in Xcode 9 and it will warn you that you can upgrade to Swift 4. If you accept the invite you end up with another warning that Swift 4 mode deprecates the Swift 3 @objc inferenc">
-<meta name="keywords" content="swift,tips">
+<meta name="keywords" content="tips,swift">
 <meta property="og:type" content="article">
-<meta property="og:title" content="@objc Warnings Upgrading To Swift 4">
+<meta property="og:title" content="@Objc Warnings Upgrading to Swift 4">
 <meta property="og:url" content="https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/index.html">
 <meta property="og:site_name" content="Duc Ninja">
 <meta property="og:description" content="Open a Swift 3 project in Xcode 9 and it will warn you that you can upgrade to Swift 4. If you accept the invite you end up with another warning that Swift 4 mode deprecates the Swift 3 @objc inferenc">
@@ -124,7 +124,7 @@
 <meta property="og:image" content="https://duc.ninja/assets/images/2017-10-29-001.png">
 <meta property="og:updated_time" content="2018-12-08T02:19:42.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="@objc Warnings Upgrading To Swift 4">
+<meta name="twitter:title" content="@Objc Warnings Upgrading to Swift 4">
 <meta name="twitter:description" content="Open a Swift 3 project in Xcode 9 and it will warn you that you can upgrade to Swift 4. If you accept the invite you end up with another warning that Swift 4 mode deprecates the Swift 3 @objc inferenc">
 <meta name="twitter:image" content="https://duc.ninja/assets/images/2017-10-26-001.png">
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>@objc Warnings Upgrading To Swift 4 | Duc Ninja</title>
+  <title>@Objc Warnings Upgrading to Swift 4 | Duc Ninja</title>
   
 
 
@@ -350,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">@objc Warnings Upgrading To Swift 4
+          <h1 class="post-title" itemprop="name headline">@Objc Warnings Upgrading to Swift 4
 
               
             
@@ -444,23 +444,23 @@
 <p>If you check the build settings you will see that the Swift 3 rules for <code>@objc</code>inference are still in effect:<br><img src="/assets/images/2017-10-28-001.png" alt=""></p>
 <p>This is helpful as you will get build time and run time warnings any time your code is missing an <code>@objc</code> that the Swift 3 rules would have inferred. So now is a good time to run your tests and check the logs.</p>
 <h3 id="Manual-Fixing-objc-Inference"><a href="#Manual-Fixing-objc-Inference" class="headerlink" title="Manual Fixing @objc Inference"></a>Manual Fixing @objc Inference</h3><p>If you are working with a pure Swift project the migrator seems to do a pretty good job of adding <code>@objc</code> where you need it. For example, when you use a method with a <code>#selector</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button.addTarget(self, action: #selector(doAction(sender:)),</span><br><span class="line">                          for: .touchUpInside)</span><br></pre></td></tr></table></figure>
+<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button.addTarget(self, action: <span class="function"><span class="keyword">#</span><span class="title">selector</span><span class="params">(<span class="variable">doAction</span>(<span class="variable">sender</span>:)</span></span>),</span><br><span class="line">                          for: .touchUpInside)</span><br></pre></td></tr></table></figure>
 <p>Since it is <code>UIKit</code> code that calls the <code>doAction</code> method it must be accessible to the Objective-C runtime. Luckily the migrator adds the <code>@objc</code> for you:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@objc func doAction(sender: UIButton) &#123;</span><br><span class="line">    // Do action here</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">doAction</span><span class="params">(sender: UIButton)</span></span> &#123;</span><br><span class="line">    <span class="comment">// Do action here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>If you are working with a mixed Swift and Objective-C project you are likely to have more work to do. For example, suppose I had this Swift class:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class MyModel: NSObject &#123;</span><br><span class="line">  var someFlag = false</span><br><span class="line">  func doSomething() &#123;</span><br><span class="line">    print(&quot;doing something&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModel</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> someFlag = <span class="literal">false</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"doing something"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Under the old Swift 3 rules properties and methods of <code>NSObject</code> subclasses were accessibile from Objective-C (unless they were private).</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.model.someFlag = YES;</span><br><span class="line">[self.model doSomething];</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="keyword">model</span>.someFlag = <span class="keyword">YES</span>;</span><br><span class="line">[self.<span class="keyword">model</span> doSomething];</span><br></pre></td></tr></table></figure>
 <p>In Swift 4 mode this is no longer the case and you should see build and run time warnings prompting you to add <code>@objc</code>:<br><img src="/assets/images/2017-10-28-002.png" alt=""></p>
 <p>I can fix the warnings by adding <code>@objc</code> to both the property and method declaration:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class MyModel: NSObject &#123;</span><br><span class="line">  @objc var someFlag = false</span><br><span class="line">  @objc func doSomething() &#123;</span><br><span class="line">    print(&quot;doing something&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">public</span> <span class="selector-tag">class</span> <span class="selector-tag">MyModel</span>: <span class="selector-tag">NSObject</span> &#123;</span><br><span class="line">  <span class="variable">@objc</span> var someFlag = false</span><br><span class="line">  <span class="variable">@objc</span> func doSomething() &#123;</span><br><span class="line">    <span class="selector-tag">print</span>(<span class="string">"doing something"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>If you are sure that you want to expose all properties and methods of a class to the Objective-C runtime you can use the <code>@objcMembers</code> annotation:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@objcMembers</span><br><span class="line">public class MyModel: NSObject &#123;</span><br><span class="line">  var someFlag = false         // @objc</span><br><span class="line">  func doSomething() &#123;         // @objc</span><br><span class="line">    print(&quot;doing something&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@objc</span>Members</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModel</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> someFlag = <span class="literal">false</span>         <span class="comment">// @objc</span></span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">()</span></span> &#123;         <span class="comment">// @objc</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"doing something"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Using <code>@objcMembers</code> also applies <code>@objc</code> by default to any extensions of the class. It can be convenient to collect methods that should be accessibile from Objective-C in an <code>@objc</code> extension. So another way to write the above would be:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class MyModel: NSObject &#123;</span><br><span class="line">  @objc var someFlag = false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@objc extension MyModel &#123;</span><br><span class="line">  func doSomething() &#123;</span><br><span class="line">    print(&quot;doing something&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModel</span>: <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">  <span class="meta">@objc</span> <span class="keyword">var</span> someFlag = <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@objc</span> <span class="class"><span class="keyword">extension</span> <span class="title">MyModel</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"doing something"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Note: I cannot move <code>someFlag</code> to the extension as they cannot contain stored properties.</p>
 <p>You can also use <code>@nonobjc</code> to override a default <code>@objc</code>. For example in an <code>@objc</code> extension:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@objc extension MyModel &#123;</span><br><span class="line">  func doSomething() &#123;</span><br><span class="line">    print(&quot;doing something&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">  @nonobjc func doNothing() &#123; // Not accessibile from objc</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@objc</span> <span class="class"><span class="keyword">extension</span> <span class="title">MyModel</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">doSomething</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"doing something"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">@nonobjc</span> <span class="function"><span class="keyword">func</span> <span class="title">doNothing</span><span class="params">()</span></span> &#123; <span class="comment">// Not accessibile from objc</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Completing-The-Migration"><a href="#Completing-The-Migration" class="headerlink" title="Completing The Migration"></a>Completing The Migration</h3><p>Once you are sure you have fixed everything you should disable the Swift 3 <code>@objc</code> inference rules in the build settings for each target:<br><img src="/assets/images/2017-10-29-001.png" alt=""></p>
 <p>With the setting switched to <code>Default</code> the warning should go away and you can get back to work.</p>
 <p>Source: <a href="https://useyourloaf.com" target="_blank" rel="noopener">useyourloaf</a></p>
@@ -491,9 +491,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/swift/" rel="tag"># swift</a>
-          
             <a href="/tags/tips/" rel="tag"># tips</a>
+          
+            <a href="/tags/swift/" rel="tag"># swift</a>
           
         </div>
       
@@ -506,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/042017/chained-foreach/" rel="next" title="Injecting forEach into chained method calls">
-                <i class="fa fa-chevron-left"></i> Injecting forEach into chained method calls
+              <a href="/2017/11/042017/chained-foreach/" rel="next" title="Injecting forEach Into Chained Method Calls">
+                <i class="fa fa-chevron-left"></i> Injecting forEach Into Chained Method Calls
               </a>
             
           </div>
@@ -516,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/042017/what-the-hell-is-swift-4-access-control/" rel="prev" title="What the hell is Swift 4 Access Control?">
-                What the hell is Swift 4 Access Control? <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/042017/what-the-hell-is-swift-4-access-control/" rel="prev" title="What the Hell Is Swift 4 Access Control?">
+                What the Hell Is Swift 4 Access Control? <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -592,7 +592,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
