@@ -87,9 +87,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
@@ -115,9 +115,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -141,9 +141,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
@@ -168,6 +168,8 @@
     </summary>
     
     
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
@@ -191,6 +193,8 @@
     
     </summary>
     
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
@@ -217,9 +221,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
   </entry>
   
@@ -238,6 +242,8 @@
     
     </summary>
     
+    
+      <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
@@ -266,9 +272,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
@@ -290,9 +296,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
   </entry>
   
@@ -334,9 +340,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
@@ -356,9 +362,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
@@ -378,9 +384,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
@@ -401,9 +407,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
@@ -423,9 +429,9 @@
     </summary>
     
     
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
   </entry>
   
@@ -446,9 +452,9 @@
     </summary>
     
     
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
   </entry>
   
@@ -472,6 +478,29 @@
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="macOS" scheme="https://duc.ninja/tags/macOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Annotating Swift with MARKs, TODO&#39;s and FIXME&#39;s</title>
+    <link href="https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/"/>
+    <id>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</id>
+    <published>2017-09-25T16:02:34.000Z</published>
+    <updated>2018-12-08T02:19:42.200Z</updated>
+    
+    <content type="html"><![CDATA[<p>When <strong>Swift</strong> debuted, we said goodbye to using <code>#pragma</code> pre-processor definitions to organize our code. Don’t worry, <strong>Xcode</strong> still has our backs. We can use a few different “special” comments in our code and <strong>Xcode</strong> will pick up on them and display them in its <strong>jump bar</strong>:</p><p><img src="/assets/images/annotating-swift-with-marks-todos-and-fixmes.png" alt=""><br><a id="more"></a><br>The extra <strong>dash</strong> character in the name of our <strong>MARK</strong> gets us those <em>sweet</em> separators in the source navigator dropdown.</p><p><strong>Xcode</strong> also supports a similar bit of functionality for <strong>TODO</strong> and <strong>FIXME</strong> comments. They’ll show up in <strong>bold</strong> in the same dropdown.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">func launch() &#123;</span><br><span class="line">  // TODO: launch here</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func land() &#123;</span><br><span class="line">  // FIXME: shouldn&apos;t crash</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>As a bonus, we can use a little regex magic to get Xcode to generate build warnings for <strong>TODO</strong> and <strong>FIXMEs</strong>. We’ll just add a new <strong>Run Script</strong> build phase to our project that contains:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KEYWORDS=&quot;TODO|FIXME|\?\?\?:|\!\!\!:&quot;</span><br><span class="line">find &quot;$&#123;SRCROOT&#125;&quot; \( -name &quot;*.swift&quot; \) -print0 | \</span><br><span class="line">xargs -0 egrep --with-filename --line-number --only-matching &quot;($KEYWORDS).*\$&quot; | \</span><br><span class="line">perl -p -e &quot;s/($KEYWORDS)/ warning: \$1/&quot;</span><br></pre></td></tr></table></figure><p>Source: <a href="http://jeffreysambells.com/2013/01/31/generate-xcode-warnings-from-todo-comments" target="_blank" rel="noopener">jeffreysambells</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;When &lt;strong&gt;Swift&lt;/strong&gt; debuted, we said goodbye to using &lt;code&gt;#pragma&lt;/code&gt; pre-processor definitions to organize our code. Don’t worry, &lt;strong&gt;Xcode&lt;/strong&gt; still has our backs. We can use a few different “special” comments in our code and &lt;strong&gt;Xcode&lt;/strong&gt; will pick up on them and display them in its &lt;strong&gt;jump bar&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/annotating-swift-with-marks-todos-and-fixmes.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
     
   </entry>
   
