@@ -109,7 +109,7 @@
   <meta name="description" content="We usually use the class keyword to define a class only protocol in the normal way.123protocol DetailViewControllerDelegate: class &amp;#123;  func didFinishTask(sender: DetailViewController)&amp;#125;">
 <meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift 4 - Class only protocol">
+<meta property="og:title" content="Swift 4 - Class Only Protocol">
 <meta property="og:url" content="https://duc.ninja/2018/08/172018/class-only-protocol/index.html">
 <meta property="og:site_name" content="Duc Ninja">
 <meta property="og:description" content="We usually use the class keyword to define a class only protocol in the normal way.123protocol DetailViewControllerDelegate: class &amp;#123;  func didFinishTask(sender: DetailViewController)&amp;#125;">
@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://duc.ninja/assets/images/swift4.png">
 <meta property="og:updated_time" content="2018-12-08T02:19:42.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift 4 - Class only protocol">
+<meta name="twitter:title" content="Swift 4 - Class Only Protocol">
 <meta name="twitter:description" content="We usually use the class keyword to define a class only protocol in the normal way.123protocol DetailViewControllerDelegate: class &amp;#123;  func didFinishTask(sender: DetailViewController)&amp;#125;">
 <meta name="twitter:image" content="https://duc.ninja/assets/images/swift4.png">
 
@@ -140,7 +140,7 @@
   };
 </script>
 
-  <title>Swift 4 - Class only protocol | Duc Ninja</title>
+  <title>Swift 4 - Class Only Protocol | Duc Ninja</title>
   
 
 
@@ -345,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Swift 4 - Class only protocol
+          <h1 class="post-title" itemprop="name headline">Swift 4 - Class Only Protocol
 
               
             
@@ -422,14 +422,14 @@
 
       
         <p><img src="/assets/images/swift4.png" alt=""></p>
-<p>We usually use the <code>class</code> keyword to define a <code>class only protocol</code> in the normal way.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol DetailViewControllerDelegate: class &#123;</span><br><span class="line">  func didFinishTask(sender: DetailViewController)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>We usually use the <code>class</code> keyword to define a <code>class only protocol</code> in the normal way.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">DetailViewControllerDelegate</span>: <span class="title">class</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">didFinishTask</span><span class="params">(sender: DetailViewController)</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>Since Swift 4, we have an other way to define it. Introduced in <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0156-subclass-existentials.md" target="_blank" rel="noopener">0156-subclass-existentials</a></p>
 <blockquote>
 <p>This proposal merges the concepts of class and AnyObject, which now have the same meaning: they represent an existential for classes.</p>
 </blockquote>
 <p>So, it much clearer with the new way:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protocol DetailViewControllerDelegate: AnyObject &#123;</span><br><span class="line">  func didFinishTask(sender: DetailViewController)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">DetailViewControllerDelegate</span>: <span class="title">AnyObject</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">didFinishTask</span><span class="params">(sender: DetailViewController)</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Happy coding!</p>
 
       
@@ -465,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/042018/interface-builder-tips-and-tricks/" rel="next" title="More Interface Builder Tips And Tricks">
-                <i class="fa fa-chevron-left"></i> More Interface Builder Tips And Tricks
+              <a href="/2018/03/042018/interface-builder-tips-and-tricks/" rel="next" title="More Interface Builder Tips and Tricks">
+                <i class="fa fa-chevron-left"></i> More Interface Builder Tips and Tricks
               </a>
             
           </div>
@@ -474,6 +474,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/242019/swift-5-empty-string/" rel="prev" title="Empty Strings in Swift 5">
+                Empty Strings in Swift 5 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -538,7 +542,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

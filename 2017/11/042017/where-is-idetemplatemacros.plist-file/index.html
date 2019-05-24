@@ -109,7 +109,7 @@
   <meta name="description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
 <meta name="keywords" content="tips,xcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Customizing the file Header comment and text macros">
+<meta property="og:title" content="Customizing the File Header Comment and Text Macros">
 <meta property="og:url" content="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/index.html">
 <meta property="og:site_name" content="Duc Ninja">
 <meta property="og:description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0">
 <meta property="og:updated_time" content="2018-12-08T02:19:42.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Customizing the file Header comment and text macros">
+<meta name="twitter:title" content="Customizing the File Header Comment and Text Macros">
 <meta name="twitter:description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
 <meta name="twitter:image" content="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0">
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Customizing the file Header comment and text macros | Duc Ninja</title>
+  <title>Customizing the File Header Comment and Text Macros | Duc Ninja</title>
   
 
 
@@ -343,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Customizing the file Header comment and text macros
+          <h1 class="post-title" itemprop="name headline">Customizing the File Header Comment and Text Macros
 
               
             
@@ -422,7 +422,7 @@
         <h2 id="Text-macros"><a href="#Text-macros" class="headerlink" title="Text macros"></a>Text macros</h2><p>Text macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You can customize existing macros and add your own macros in a project, for all users of a project, or for all of Xcode. Customizing a macro requires two things:<br><a id="more"></a></p>
 <ul>
 <li><em>A plist named IDETemplateMacros.plist at an appropriate location.</em></li>
-<li><em>An entry in IDETemplateMacros.plist for the text macro.</em><br>-<br>Xcode looks for the value of a text macro in the following locations and uses the first matching macro:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Project user data -&gt; Project shared data -&gt; Workspace user data -&gt; Workspace shared data -&gt; User Xcode data</span><br></pre></td></tr></table></figure>
+<li><em>An entry in IDETemplateMacros.plist for the text macro.</em><br>-<br>Xcode looks for the value of a text macro in the following locations and uses the first matching macro:<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Project<span class="built_in"> user </span>data -&gt; Project shared data -&gt; Workspace<span class="built_in"> user </span>data -&gt; Workspace shared data -&gt;<span class="built_in"> User </span>Xcode data</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <!-- ![](/assets/images/xcode-file-header-comment.png) -->
@@ -431,7 +431,7 @@
 <h3 id="For-all-projects-in-a-workspace-for-a-single-user"><a href="#For-all-projects-in-a-workspace-for-a-single-user" class="headerlink" title="For all projects in a workspace for a single user:"></a>For all projects in a workspace for a single user:</h3><p>  <code>&lt;WorkspaceName&gt;.xcworkspace/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</code></p>
 <h3 id="For-all-projects-in-a-workspace-for-all-team-members"><a href="#For-all-projects-in-a-workspace-for-all-team-members" class="headerlink" title="For all projects in a workspace for all team members:"></a>For all projects in a workspace for all team members:</h3><p>  <code>&lt;WorkspaceName&gt;.xcworkspace/xcshareddata/IDETemplateMacros.plist</code></p>
 <h3 id="For-everything-you-work-on-regardless-of-project"><a href="#For-everything-you-work-on-regardless-of-project" class="headerlink" title="For everything you work on, regardless of project:"></a>For everything you work on, regardless of project:</h3><p>  <code>~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist</code></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//  ___FILENAME___</span><br><span class="line">//  ___PACKAGENAME___</span><br><span class="line">//</span><br><span class="line">//  Created by ___FULLUSERNAME___ on ___DATE___.</span><br><span class="line">//  ___COPYRIGHT___</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  ___FILENAME___</span></span><br><span class="line"><span class="comment">//  ___PACKAGENAME___</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></span><br><span class="line"><span class="comment">//  ___COPYRIGHT___</span></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0" alt="Text macros reference"></p>
 <p>Source: Ole Begemann</p>
 
@@ -476,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/042017/what-the-hell-is-swift-4-access-control/" rel="next" title="What the hell is Swift 4 Access Control?">
-                <i class="fa fa-chevron-left"></i> What the hell is Swift 4 Access Control?
+              <a href="/2017/11/042017/what-the-hell-is-swift-4-access-control/" rel="next" title="What the Hell Is Swift 4 Access Control?">
+                <i class="fa fa-chevron-left"></i> What the Hell Is Swift 4 Access Control?
               </a>
             
           </div>
@@ -486,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/052017/remove-old-simulators/" rel="prev" title="Remove old Simulators">
-                Remove old Simulators <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/052017/remove-old-simulators/" rel="prev" title="Remove Old Simulators">
+                Remove Old Simulators <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,7 +562,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
