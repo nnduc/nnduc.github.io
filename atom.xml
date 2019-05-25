@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Duc Ninja</title>
   
-  <subtitle>I&#39;m an developer and a ninja as well.</subtitle>
+  <subtitle>I&#39;m an iOS engineer and a ninja as well.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://duc.ninja/"/>
-  <updated>2019-05-24T01:10:09.251Z</updated>
+  <updated>2019-05-25T01:33:10.497Z</updated>
   <id>https://duc.ninja/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Inclusive Enums With OptionSet</title>
+    <link href="https://duc.ninja/2019/05/252019/may-25-optionset/"/>
+    <id>https://duc.ninja/2019/05/252019/may-25-optionset/</id>
+    <published>2019-05-25T01:30:00.000Z</published>
+    <updated>2019-05-25T01:33:10.497Z</updated>
+    
+    <content type="html"><![CDATA[<p>Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what about the case when you need an inclusive state. Today we will talk about OptionSet protocol and how we can achieve inclusive states with it.</p><h3 id="Exclusive-Enums"><a href="#Exclusive-Enums" class="headerlink" title="Exclusive Enums"></a>Exclusive Enums</h3><p>Assume that we have some HistoryFetcher class, which can fetch data from a cache or make a network request or both of them. Let’s start with describing very simple source enum.</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">FetchSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> memory</span><br><span class="line">    <span class="keyword">case</span> disk</span><br><span class="line">    <span class="keyword">case</span> remote</span><br><span class="line">    <span class="keyword">case</span> cache</span><br><span class="line">    <span class="keyword">case</span> all</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><p>Now we can work on our history fetch method which will take a source as a parameter and make request accordingly to the source.</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistoryFetcher</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fetch</span><span class="params">(from source: FetchSource = .all, handler: @escaping Handler&lt;History&gt;)</span></span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> source &#123;</span><br><span class="line">        <span class="keyword">case</span> .memory:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .disk:</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .remote:</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .cache:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .all:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>There are possible downsides of this approach.</p><p>As soon as we increase the count of the sources, we have to add a separated case for that and add it to “all” case handling.<br>We can’t easily create some unions of sources, like memory and remote, or disk and remote, etc. We need a lot of additional logic here to make it possible.</p><h4 id="OptionSet-for-the-rescue"><a href="#OptionSet-for-the-rescue" class="headerlink" title="OptionSet for the rescue"></a>OptionSet for the rescue</h4><p>OptionSet is a protocol which represents bitset types, where individual bits represent members of a set. Adopting this protocol in your custom types lets you perform set-related operations such as membership tests, unions, and intersections on those types.</p><p>OptionSet protocol is very straightforward. All we need is rawValue property which should be a type conforming FixedWidthInteger. So basically in most cases, we can use Int type. Next, we have to create unique options using the unique power of two for every case. Here we can use bit shifting operators. Let’s refactor our FetchSource enum to use OptionSet.</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FetchSource</span>: <span class="title">OptionSet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rawValue: <span class="type">Int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> memory = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> disk = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> remote = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> cache: <span class="type">FetchSource</span> = [.memory, .disk]</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> all: <span class="type">FetchSource</span> = [.cache, .remote]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>As you see above, we can create multiple union members, which contains other members. It brings real power while handling this OptionSets. Here is the refactored version of our HistoryFetcher class.</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistoryFetcher</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fetch</span><span class="params">(from source: FetchSource = .all, handler: @escaping Handler&lt;History&gt;)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.memory) &#123;</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.disk) &#123;</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.remote) &#123;</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>New implementation of HistoryFetcher class is pretty simple. We handle every unique case of FetchSource which is also covering all possible unions of our OptionSet.</p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Today we learn how to use OptionSet protocol and how it can be useful as Enum replacement with some extra features. We will continue to cover small and powerful types from the Swift Foundation in future posts.</p><p>Happy coding!<br>[Source: mecid]</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what about the case when you need an inclusive state. Today we will talk about OptionSet protocol and how we can achieve inclusive states with it.&lt;/p&gt;
+&lt;h3 id=&quot;Exclusive-Enums&quot;&gt;&lt;a href=&quot;#Exclusive-Enums&quot; class=&quot;headerlink&quot; title=&quot;Exclusive Enums&quot;&gt;&lt;/a&gt;Exclusive Enums&lt;/h3&gt;&lt;p&gt;Assume that we have some HistoryFetcher class, which can fetch data from a cache or make a network request or both of them. Let’s start with describing very simple source enum.&lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;FetchSource&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; memory&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; disk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; remote&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; cache&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Empty Strings in Swift 5</title>
@@ -96,6 +116,32 @@
   </entry>
   
   <entry>
+    <title>LLDB: Po vs E</title>
+    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
+    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
+    <published>2018-01-25T14:43:00.000Z</published>
+    <updated>2018-12-08T02:19:42.205Z</updated>
+    
+    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br><br><a id="more"></a><br><img src="/assets/images/po-vs-e.jpg" alt=""></p><p>Source: @caro</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Shortcut to Run a Test Case or Run Whole Test Case</title>
     <link href="https://duc.ninja/2018/01/252018/run-test-case/"/>
     <id>https://duc.ninja/2018/01/252018/run-test-case/</id>
@@ -122,32 +168,6 @@
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="testing" scheme="https://duc.ninja/tags/testing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LLDB: Po vs E</title>
-    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
-    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
-    <published>2018-01-25T14:43:00.000Z</published>
-    <updated>2018-12-08T02:19:42.205Z</updated>
-    
-    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br><br><a id="more"></a><br><img src="/assets/images/po-vs-e.jpg" alt=""></p><p>Source: @caro</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
-      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
     
   </entry>
   
@@ -449,29 +469,6 @@
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>macOS High Sierra Final Version for Your Mac</title>
-    <link href="https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/"/>
-    <id>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</id>
-    <published>2017-09-26T05:53:34.000Z</published>
-    <updated>2018-12-08T02:19:42.201Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/assets/images/macos-high-sierra.png" alt=""></p><h4 id="Is-Your-Mac-Compatible-with-High-Sierra"><a href="#Is-Your-Mac-Compatible-with-High-Sierra" class="headerlink" title="Is Your Mac Compatible with High Sierra?"></a>Is Your Mac Compatible with High Sierra?</h4><p>This is vital information. But if your Mac can run macOS Sierra then it will be able to run macOS High Sierra just fine. But just in case, here is the list of compatible Mac computers with macOS High Sierra.<br><a id="more"></a><br><br><br>iMac – 2009 or later.<br><br>MacBook – 2009 or later.<br><br>Mac Pro – 2010 or later.<br><br>Mac mini – 2010 or later.<br><br>MacBook Pro – 2010 or later.<br><br>MacBook Air – 2010 or later.<br></p><p>Link: <a href="https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?mt=12" target="_blank" rel="noopener">Download macOS High Sierra Final Version</a></p><h3 id="Create-macOS-High-Sierra-USB-Installer-Drive-for-Clean-Install"><a href="#Create-macOS-High-Sierra-USB-Installer-Drive-for-Clean-Install" class="headerlink" title="Create macOS High Sierra USB Installer Drive for Clean Install"></a>Create macOS High Sierra USB Installer Drive for Clean Install</h3><h4 id="Format-USB-Drive-Which-You’re-Going-to-Use-as-Installer-Source"><a href="#Format-USB-Drive-Which-You’re-Going-to-Use-as-Installer-Source" class="headerlink" title="Format USB Drive Which You’re Going to Use as Installer Source."></a>Format USB Drive Which You’re Going to Use as Installer Source.</h4><p>  This is an extremely crucial step. Get yourself an 8GB (or more) USB flash drive. Once you do, plug it in your Mac and follow the steps exactly as they’re outlined below. Please do not make changes that are not outlined in the guide.</p><ol><li><p>Plug in your USB drive to your Mac and then launch Disk Utility. You can launch it by opening Spotlight Search, then do a quick search for Disk Utility.</p></li><li><p>Once Disk Utility is in view, select your USB drive from the available choices on the left then click on the Erase button at the top.</p></li><li><p>Without changing anything at all, click on the Erase button. Refer to the screenshot below to make sure you haven’t made any change even by mistake.</p></li></ol><h4 id="Once-the-USB-is-done-erasing-move-on-to-the-next-step"><a href="#Once-the-USB-is-done-erasing-move-on-to-the-next-step" class="headerlink" title="Once the USB is done erasing, move on to the next step."></a>Once the USB is done erasing, move on to the next step.</h4><p>Create macOS High Sierra USB Installer.<br>This is the final step in the USB installer making guide. Also, this is the step which you have to get absolutely right otherwise all efforts will go to waste. It’s best to read through the guide several times before ultimately punching in the command itself.</p><p>All set? Let’s begin.</p><ol><li><p>Plug in the formatted USB drive to your Mac. If it’s already plugged in then move on to the next step.</p></li><li><p>Launch Terminal. Open up Spotlight Search and do a quick search of Terminal and hit the Return key on the keyboard.</p></li><li><p>Now, with the USB plugged in, type in the following command exactly as it is. There’s no chance of error at all. Also, see those single, long dashes? They’re actually double dashes. The website font is making them appear like that. Refer to the screenshot right under the command and you’ll see immediately what I’m taking about here.</p></li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ <span class="number">10.13</span>.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia –volume /</span>Volumes<span class="regexp">/Untitled –applicationpath /</span>Applications<span class="regexp">/Install\ macOS\ 10.13.app</span></span><br></pre></td></tr></table></figure><p><img src="/assets/images/disk-utility-erase-usb-step.png" alt=""></p><p>You’ll be required to enter your Mac’s login password, so please do so when prompted for it.</p><p>The entire process, if followed correctly, will take no more than a few minutes. If you have a USB 3.0 drive, then you’ll boost through the process like a champ.</p><p>Now you can move on to the next big step – clean installing macOS High Sierra. Check out our guide below for more details.</p><h3 id="How-to-Clean-Install-macOS-High-Sierra-–-Tutorial"><a href="#How-to-Clean-Install-macOS-High-Sierra-–-Tutorial" class="headerlink" title="How to Clean Install macOS High Sierra – Tutorial"></a>How to Clean Install macOS High Sierra – Tutorial</h3><p>Create a macOS High Sierra USB Installer. Once you are done, return to this tutorial for further details.</p><p>With the USB installer disk plugged into your Mac and everything backed up, follow the steps outlined below.</p><ol><li><p>Power down your Mac and boot it back up with the Option key pressed down.</p></li><li><p>You’ll see a couple of drive options on the display. Select the macOS High Sierra USB installer and hit the Return key on the keyboard.</p></li><li><p>Now open Disk Utility, select your Mac HDD or SSD from the left hand side pane and then click on Erase. Click on the Erase button to confirm with the format process.</p></li><li><p>Close the Disk Utility window as soon as the format and erase process is complete.</p></li><li><p>On the main installation screen, just select the install macOS 10.13 High Sierra installation option, select the drive you formatted as source of installation and follow on-screen instructions for completion.</p></li></ol><h3 id="How-to-Update-to-macOS-High-Sierra-Without-Losing-Files-amp-Settings"><a href="#How-to-Update-to-macOS-High-Sierra-Without-Losing-Files-amp-Settings" class="headerlink" title="How to Update to macOS High Sierra Without Losing Files &amp; Settings"></a>How to Update to macOS High Sierra Without Losing Files &amp; Settings</h3><p>Install macOS High Sierra Over the Air.<br>Just as a safety precaution, it’s best to copy all your important files to either iCloud Drive or onto an external storage medium. Also make sure that you have at least 10GB of free space on your Mac. You can check how much space you have by clicking on the Apple logo icon in the menu bar, then click on About this Mac, then click on the Storage tab. You should see something similar to the screenshot below.<br><img src="/assets/images/mac-storage-space.png" alt=""></p><ol><li>Connect to a WiFi network and then launch the Mac App Store.</li><li>Let the Mac App Store refresh properly and then click on the Updates tab at the top.</li><li><p>In a few seconds the new High Sierra update will show up. When it does, you’ll see an Update button right next to it. Click on it.</p></li><li><p>At this point, the download will commence. But once it’s complete, just follow the on-screen prompts for installation.</p></li></ol><p>Your Mac will become completely unusable during the installation time period so make sure you save all your work ahead of proceedings. But as soon as the installation is complete, you’ll be prompted to enter your Apple ID password then you can start using your Mac immediately.</p><p>The over the air route is great and all, but occasionally users might run into performance related issues down the line. Therefore it’s recommended you go for the clean install method, provided you have the time and patience. But if everything is working out just fine for you then you’re golden.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/assets/images/macos-high-sierra.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;Is-Your-Mac-Compatible-with-High-Sierra&quot;&gt;&lt;a href=&quot;#Is-Your-Mac-Compatible-with-High-Sierra&quot; class=&quot;headerlink&quot; title=&quot;Is Your Mac Compatible with High Sierra?&quot;&gt;&lt;/a&gt;Is Your Mac Compatible with High Sierra?&lt;/h4&gt;&lt;p&gt;This is vital information. But if your Mac can run macOS Sierra then it will be able to run macOS High Sierra just fine. But just in case, here is the list of compatible Mac computers with macOS High Sierra.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
-      <category term="macOS" scheme="https://duc.ninja/tags/macOS/"/>
     
   </entry>
   

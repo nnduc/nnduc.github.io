@@ -106,22 +106,21 @@
 
 
 
-  <meta name="description" content="⌃: Control⌘: Command⌥: Option⇧: Shift⏎: Return 1. Decide Where to Open a FileIn Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or e">
-<meta name="keywords" content="xcode,tips">
+  <meta name="description" content="Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tips to Be More Productive With Xcode">
-<meta property="og:url" content="https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/index.html">
+<meta property="og:title" content="Inclusive Enums With OptionSet">
+<meta property="og:url" content="https://duc.ninja/2019/05/252019/may-25-optionset/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="⌃: Control⌘: Command⌥: Option⇧: Shift⏎: Return 1. Decide Where to Open a FileIn Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or e">
+<meta property="og:description" content="Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://duc.ninja/assets/images/xcode-open-file.gif">
-<meta property="og:image" content="https://duc.ninja/assets/images/figure-jump-to-method.jpg">
-<meta property="og:updated_time" content="2018-12-08T02:19:42.203Z">
+<meta property="og:updated_time" content="2019-05-25T01:33:10.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tips to Be More Productive With Xcode">
-<meta name="twitter:description" content="⌃: Control⌘: Command⌥: Option⇧: Shift⏎: Return 1. Decide Where to Open a FileIn Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or e">
-<meta name="twitter:image" content="https://duc.ninja/assets/images/xcode-open-file.gif">
+<meta name="twitter:title" content="Inclusive Enums With OptionSet">
+<meta name="twitter:description" content="Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
@@ -129,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/"/>
+  <link rel="canonical" href="https://duc.ninja/2019/05/252019/may-25-optionset/"/>
 
 
 
@@ -139,7 +138,7 @@
   };
 </script>
 
-  <title>Tips to Be More Productive With Xcode | Duc Ninja</title>
+  <title>Inclusive Enums With OptionSet | Duc Ninja</title>
   
 
 
@@ -327,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/"/>
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/05/252019/may-25-optionset/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duc Ninja"/>
@@ -344,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Tips to Be More Productive With Xcode
+          <h1 class="post-title" itemprop="name headline">Inclusive Enums With OptionSet
 
               
             
@@ -370,24 +369,12 @@
                 
               
 
-              <time title="Created: 2017-09-25 07:02:34" itemprop="dateCreated datePublished" datetime="2017-09-25T07:02:34+07:00">2017-09-25</time>
+              <time title="Created: 2019-05-25 08:30:00 / Modified: 08:33:10" itemprop="dateCreated datePublished" datetime="2019-05-25T08:30:00+07:00">2019-05-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-08 09:19:42" itemprop="dateModified" datetime="2018-12-08T09:19:42+07:00">2018-12-08</time>
               
             
           </span>
@@ -420,25 +407,22 @@
       
 
       
-        <p><br><code>⌃</code>: Control<br><br><code>⌘</code>: Command<br><br><code>⌥</code>: Option<br><br><code>⇧</code>: Shift<br><br><code>⏎</code>: Return</p>
-<h3 id="1-Decide-Where-to-Open-a-File"><a href="#1-Decide-Where-to-Open-a-File" class="headerlink" title="1. Decide Where to Open a File"></a>1. Decide Where to Open a File</h3><p>In Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or existing tab, or in a new window. Here’s how you can decide about this:<br><a id="more"></a><br>When clicking on a file in the Navigator, hold down <strong><code>⇧</code></strong> + <strong><code>⌥</code></strong><br><br>When clicking on a symbol in an editor pane, hold down <strong><code>⇧</code></strong> + <strong><code>⌥</code></strong> + <strong><code>⌘</code></strong><br><br>A pop-over will appear and let you choose where exactly you want this file to be displayed:</p>
-<p><img src="/assets/images/xcode-open-file.gif" alt=""></p>
-<h3 id="2-Moving-a-full-line-or-many-lines-of-code-up-or-down"><a href="#2-Moving-a-full-line-or-many-lines-of-code-up-or-down" class="headerlink" title="2. Moving a full line or many lines of code up or down"></a>2. Moving a full line or many lines of code up or down</h3><p><strong><code>⌘</code></strong> + <strong><code>⌥</code></strong> + <strong><code>{</code></strong> : move up</p>
-<p><strong><code>⌘</code></strong> + <strong><code>⌥</code></strong> + <strong><code>}</code></strong> : move down</p>
-<blockquote>
-<p>If you have text selected, Xcode will move each line containing your selection; otherwise, it’ll move the line the cursor is in.</p>
-</blockquote>
-<h3 id="3-Quickly-find-app’s-container-folder"><a href="#3-Quickly-find-app’s-container-folder" class="headerlink" title="3. Quickly find app’s container folder"></a>3. Quickly find app’s container folder</h3><p>You can get app’s container on the file system with a single command. You just need to know app’s bundle identifier and execute the command below:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun simctl get_app_container booted &lt;APP<span class="string">'S BUNDLE ID&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>Or you can make it even faster by opening destination folder in Finder with the open command:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open `xcrun simctl get_app_container booted &lt;APP<span class="string">'S BUNDLE ID&gt;` -a Finder</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="4-Reveal-in-Project-Navigator"><a href="#4-Reveal-in-Project-Navigator" class="headerlink" title="4.  Reveal in Project Navigator"></a>4.  Reveal in Project Navigator</h3><p>The <strong>Reveal in Project Navigator</strong> command is a true timesaver for large, complex projects with lots of files and folders. The command shows or reveals the current file in the <strong>Project Navigator</strong> on the left. The default key binding is <strong>⌘ + ⇧ + J</strong>.</p>
-<h3 id="5-Jump-to-Method"><a href="#5-Jump-to-Method" class="headerlink" title="5. Jump to Method"></a>5. Jump to Method</h3><p>When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing <strong>⌃</strong> + <strong>6</strong> and typing the first few letters of the method’s name.</p>
-<p><img src="/assets/images/figure-jump-to-method.jpg" alt=""></p>
-<p><br><br><br>Source:</p>
-<ul>
-<li><a href="https://www.git-tower.com/blog/6-tips-for-xcode/" target="_blank" rel="noopener">git-tower</a></li>
-<li><a href="https://www.detroitlabs.com/blog/2017/04/13/17-xcode-tips-and-tricks-that-every-ios-developer-should-know/" target="_blank" rel="noopener">detroitlabs</a></li>
-<li><a href="https://cocoacasts.com/seven-xcode-tricks-every-developer-should-know/" target="_blank" rel="noopener">cocoacasts</a></li>
-</ul>
+        <p>Enums are one of the most powerful features of Swift language. It forms Value-Oriented Programming in conjunction with Structs. Enum is the best way to describe the exclusive state in Swift, but what about the case when you need an inclusive state. Today we will talk about OptionSet protocol and how we can achieve inclusive states with it.</p>
+<h3 id="Exclusive-Enums"><a href="#Exclusive-Enums" class="headerlink" title="Exclusive Enums"></a>Exclusive Enums</h3><p>Assume that we have some HistoryFetcher class, which can fetch data from a cache or make a network request or both of them. Let’s start with describing very simple source enum.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">FetchSource</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> memory</span><br><span class="line">    <span class="keyword">case</span> disk</span><br><span class="line">    <span class="keyword">case</span> remote</span><br><span class="line">    <span class="keyword">case</span> cache</span><br><span class="line">    <span class="keyword">case</span> all</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Now we can work on our history fetch method which will take a source as a parameter and make request accordingly to the source.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistoryFetcher</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fetch</span><span class="params">(from source: FetchSource = .all, handler: @escaping Handler&lt;History&gt;)</span></span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> source &#123;</span><br><span class="line">        <span class="keyword">case</span> .memory:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .disk:</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .remote:</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .cache:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        <span class="keyword">case</span> .all:</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>There are possible downsides of this approach.</p>
+<p>As soon as we increase the count of the sources, we have to add a separated case for that and add it to “all” case handling.<br>We can’t easily create some unions of sources, like memory and remote, or disk and remote, etc. We need a lot of additional logic here to make it possible.</p>
+<h4 id="OptionSet-for-the-rescue"><a href="#OptionSet-for-the-rescue" class="headerlink" title="OptionSet for the rescue"></a>OptionSet for the rescue</h4><p>OptionSet is a protocol which represents bitset types, where individual bits represent members of a set. Adopting this protocol in your custom types lets you perform set-related operations such as membership tests, unions, and intersections on those types.</p>
+<p>OptionSet protocol is very straightforward. All we need is rawValue property which should be a type conforming FixedWidthInteger. So basically in most cases, we can use Int type. Next, we have to create unique options using the unique power of two for every case. Here we can use bit shifting operators. Let’s refactor our FetchSource enum to use OptionSet.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FetchSource</span>: <span class="title">OptionSet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rawValue: <span class="type">Int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> memory = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> disk = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> remote = <span class="type">FetchSource</span>(rawValue: <span class="number">1</span> &lt;&lt; <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> cache: <span class="type">FetchSource</span> = [.memory, .disk]</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> all: <span class="type">FetchSource</span> = [.cache, .remote]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>As you see above, we can create multiple union members, which contains other members. It brings real power while handling this OptionSets. Here is the refactored version of our HistoryFetcher class.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HistoryFetcher</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fetch</span><span class="params">(from source: FetchSource = .all, handler: @escaping Handler&lt;History&gt;)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.memory) &#123;</span><br><span class="line">            fetchMemory(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.disk) &#123;</span><br><span class="line">            fetchDisk(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> source.<span class="built_in">contains</span>(.remote) &#123;</span><br><span class="line">            fetchRemote(handler: handler)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>New implementation of HistoryFetcher class is pretty simple. We handle every unique case of FetchSource which is also covering all possible unions of our OptionSet.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Today we learn how to use OptionSet protocol and how it can be useful as Enum replacement with some extra features. We will continue to cover small and powerful types from the Swift Foundation in future posts.</p>
+<p>Happy coding!<br>[Source: mecid]</p>
 
       
     </div>
@@ -464,14 +448,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/xcode/" rel="tag"># xcode</a>
-          
-            <a href="/tags/tips/" rel="tag"># tips</a>
-          
-        </div>
-      
 
       
       
@@ -481,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/242017/swift-encoding-and-decoding/" rel="next" title="Swift Encoding and Decoding">
-                <i class="fa fa-chevron-left"></i> Swift Encoding and Decoding
+              <a href="/2019/05/242019/swift-5-empty-string/" rel="next" title="Empty Strings in Swift 5">
+                <i class="fa fa-chevron-left"></i> Empty Strings in Swift 5
               </a>
             
           </div>
@@ -490,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/252017/multiple-accounts-and-ssh-keys/" rel="prev" title="Multiple Accounts and SSH Keys">
-                Multiple Accounts and SSH Keys <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -702,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Decide-Where-to-Open-a-File"><span class="nav-number">1.</span> <span class="nav-text">1. Decide Where to Open a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Moving-a-full-line-or-many-lines-of-code-up-or-down"><span class="nav-number">2.</span> <span class="nav-text">2. Moving a full line or many lines of code up or down</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Quickly-find-app’s-container-folder"><span class="nav-number">3.</span> <span class="nav-text">3. Quickly find app’s container folder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Reveal-in-Project-Navigator"><span class="nav-number">4.</span> <span class="nav-text">4.  Reveal in Project Navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Jump-to-Method"><span class="nav-number">5.</span> <span class="nav-text">5. Jump to Method</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exclusive-Enums"><span class="nav-number">1.</span> <span class="nav-text">Exclusive Enums</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OptionSet-for-the-rescue"><span class="nav-number">1.1.</span> <span class="nav-text">OptionSet for the rescue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
 
           </div>
