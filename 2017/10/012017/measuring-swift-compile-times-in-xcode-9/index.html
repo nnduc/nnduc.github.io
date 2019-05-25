@@ -15,11 +15,11 @@
 
 
 <html class="theme-next muse use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -29,20 +29,14 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2"/>
 
 
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
 
 
@@ -56,9 +50,15 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
@@ -115,7 +115,7 @@
 <meta property="og:description" content="Using -Xfrontend Swift compiler flagsThe Swift type-checker remains a performance bottleneck for compile times, though it has improvedtremendously over the past two years. You could even say the type-">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://duc.ninja/assets/images/xcode-front-end-flags.png">
-<meta property="og:updated_time" content="2018-12-08T02:19:42.000Z">
+<meta property="og:updated_time" content="2018-12-08T02:19:42.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Measuring Swift Compile Times in Xcode 9">
 <meta name="twitter:description" content="Using -Xfrontend Swift compiler flagsThe Swift type-checker remains a performance bottleneck for compile times, though it has improvedtremendously over the past two years. You could even say the type-">
@@ -123,12 +123,12 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
 
 
 
 
-  <link rel="canonical" href="https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/">
+  <link rel="canonical" href="https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/"/>
 
 
 
@@ -203,7 +203,7 @@
     </div>
     
       
-        <p class="site-subtitle">I'm a software engineer and a ninja as well.</p>
+        <p class="site-subtitle">I'm an developer and a ninja as well.</p>
       
     
     
@@ -238,7 +238,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
 
   </li>
         
@@ -255,7 +255,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
 
   </li>
         
@@ -272,7 +272,7 @@
 
     
 
-    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>My info</a>
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>My info</a>
 
   </li>
 
@@ -326,16 +326,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duc Ninja">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
+      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="name" content="Duc Ninja"/>
     </span>
 
     
@@ -419,9 +419,7 @@
       
 
       
-        <h2 id="Using-Xfrontend-Swift-compiler-flags"><a href="#Using-Xfrontend-Swift-compiler-flags" class="headerlink" title="Using -Xfrontend Swift compiler flags"></a>Using -Xfrontend Swift compiler flags</h2><p>The Swift type-checker remains <a href="https://www.cocoawithlove.com/blog/2016/07/12/type-checker-issues.html" target="_blank" rel="noopener">a performance bottleneck</a> for compile times, though it has <a href="https://github.com/apple/swift/search?utf8=%E2%9C%93&q=type+checker+improve&type=Commits" target="_blank" rel="noopener">improved</a><a href="https://github.com/apple/swift/search?utf8=%E2%9C%93&q=type+checker+performance&type=Commits" target="_blank" rel="noopener">tremendously</a> over the past two years. You could even say the type-checker has gone from being <a href="https://spin.atomicobject.com/2016/04/26/swift-long-compile-time/" target="_blank" rel="noopener">drunk</a> to <a href="https://github.com/apple/swift/commit/2cdd7d64e1e2add7bcfd5452d36e7f5fc6c86a03" target="_blank" rel="noopener">sober</a>.</p>
-<a id="more"></a>
-<p>To help users debug these issues, awhile back <a href="https://github.com/apple/swift/commit/18c75928639acf0ccf0e1fb6729eea75bc09cbd5" target="_blank" rel="noopener">Jordan Rose added</a> a frontend Swift compiler flag that would emit warnings in Xcode for functions that took too long to compile, or rather took too long to type-check. In Xcode 9, there’s a new, similar flag for checking expressions.</p>
+        <h2 id="Using-Xfrontend-Swift-compiler-flags"><a href="#Using-Xfrontend-Swift-compiler-flags" class="headerlink" title="Using -Xfrontend Swift compiler flags"></a>Using -Xfrontend Swift compiler flags</h2><p>The Swift type-checker remains <a href="https://www.cocoawithlove.com/blog/2016/07/12/type-checker-issues.html" target="_blank" rel="noopener">a performance bottleneck</a> for compile times, though it has <a href="https://github.com/apple/swift/search?utf8=%E2%9C%93&amp;q=type+checker+improve&amp;type=Commits" target="_blank" rel="noopener">improved</a><a href="https://github.com/apple/swift/search?utf8=%E2%9C%93&amp;q=type+checker+performance&amp;type=Commits" target="_blank" rel="noopener">tremendously</a> over the past two years. You could even say the type-checker has gone from being <a href="https://spin.atomicobject.com/2016/04/26/swift-long-compile-time/" target="_blank" rel="noopener">drunk</a> to <a href="https://github.com/apple/swift/commit/2cdd7d64e1e2add7bcfd5452d36e7f5fc6c86a03" target="_blank" rel="noopener">sober</a>.<br><a id="more"></a><br>To help users debug these issues, awhile back <a href="https://github.com/apple/swift/commit/18c75928639acf0ccf0e1fb6729eea75bc09cbd5" target="_blank" rel="noopener">Jordan Rose added</a> a frontend Swift compiler flag that would emit warnings in Xcode for functions that took too long to compile, or rather took too long to type-check. In Xcode 9, there’s a new, similar flag for checking expressions.</p>
 <h3 id="About-warn-long-function-bodies"><a href="#About-warn-long-function-bodies" class="headerlink" title="About -warn-long-function-bodies"></a>About <code>-warn-long-function-bodies</code></h3><p><a href="http://irace.me/swift-profiling" target="_blank" rel="noopener">Bryan Irace</a> and <a href="http://khanlou.com/2016/12/guarding-against-long-compiles/" target="_blank" rel="noopener">Soroush Khanlou</a> originally wrote about the <code>-warn-long-function-bodies</code> flag when it was first introduced. You could specify a threshold in milliseconds that would trigger a warning. For example: <code>-Xfrontend -warn-long-function-bodies=100</code> would trigger a warning in Xcode for any function that took longer than 100ms to type-check. This was always considered an experimental flag, as Jordan notes in his original <a href="https://github.com/apple/swift/commit/18c75928639acf0ccf0e1fb6729eea75bc09cbd5" target="_blank" rel="noopener">commit</a>: <em>As a frontend option, this is UNSUPPORTED and may be removed without notice at any future date.</em> As far as I can tell, this is still the case. However, this flag still works in Xcode 9 and I haven’t seen any discussion about removing it.</p>
 <h3 id="About-warn-long-expression-type-checking"><a href="#About-warn-long-expression-type-checking" class="headerlink" title="About -warn-long-expression-type-checking"></a>About <code>-warn-long-expression-type-checking</code></h3><p>In Xcode 9, there is a new, similar flag for type-checking expressions, not just functions. However, this time the flag made an appearance in the <em>official</em> Xcode 9 GM <a href="https://download.developer.apple.com/Developer_Tools/Xcode_9_GM_seed_build_9A235/Xcode_9_GM_seed_Release_Notes.pdf" target="_blank" rel="noopener">release notes</a>:</p>
 <blockquote>
@@ -432,7 +430,7 @@
 <p>This time, you can thank <a href="https://github.com/apple/swift/pull/10214" target="_blank" rel="noopener">Mark Lacey</a> for the flag. (<a href="https://github.com/apple/swift/pull/10215" target="_blank" rel="noopener">pull request for Swift 4</a>)</p>
 <h3 id="Using-these-flags-to-improve-compile-times"><a href="#Using-these-flags-to-improve-compile-times" class="headerlink" title="Using these flags to improve compile times"></a>Using these flags to improve compile times</h3><p>As mentioned, after you add these flags you will start getting warnings. Keep in mind that if the threshold is too low, for example 10ms, then you will get <strong>a ton</strong> of warnings that cannot be fixed. Experiment with these threshold values and adjust as needed. I suggest starting at <code>200</code> and tuning from there. If your code base is large, it might make more sense to use a higher value for your project (say <code>500</code>) and try to decrease it over time. Otherwise, you’ll be spending <strong>a lot</strong> of time trying to get all functions and expressions to compile in under 200ms. Also, I recommend setting these flags only for <code>DEBUG</code> build configurations.</p>
 <p>There are two common scenarios where Xcode will start emitting warnings with these flags: (1) very complex expressions or functions, and (2) expressions that omit explicit types and rely on <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Types.html" target="_blank" rel="noopener">type inference</a>. To silence the warnings — and thus improve compile times — try breaking up expressions into smaller steps with intermediate variables, and adding explicit types to variable declarations and closure parameters. The code may not look as elegant after these changes, but what’s more important to you and your team?</p>
-<p><img src="/assets/images/xcode-front-end-flags.png" alt></p>
+<p><img src="/assets/images/xcode-front-end-flags.png" alt=""></p>
 <h3 id="A-temporary-solution"><a href="#A-temporary-solution" class="headerlink" title="A temporary solution"></a>A temporary solution</h3><p>Using these flags is obviously a temporary (and kind of hacky) solution to improving compile times. It only treats the symptoms rather than the cause, but it is better than nothing. As I said before, the Swift team is well aware of the problems and they are working hard to address them. Every single Swift release is getting better and I’m sure Swift 5 will bring even more improvements.</p>
 <p>I’m hoping using these flags — and having to change your code to improve compilation times — will soon be a hack of the past. Eventually it will be, we just don’t know when.</p>
 <p>Source: [jessesquires.com][theswiftpost.co]</p>
@@ -549,7 +547,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/assets/images/logo/icon-310x310.png" alt="Duc Ninja">
+              <img class="site-author-image" itemprop="image"
+                src="/assets/images/logo/icon-310x310.png"
+                alt="Duc Ninja"/>
             
               <p class="site-author-name" itemprop="name">Duc Ninja</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -562,7 +562,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
