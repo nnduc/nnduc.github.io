@@ -205,7 +205,7 @@
     </div>
     
       
-        <p class="site-subtitle">I'm a iOS engineer and a ninja as well.</p>
+        <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
       
     
     
@@ -423,9 +423,9 @@
       
         <p>You are using third-party tools like CocoaPods, Cathage, SPM or just having some useful script files for your project. It’s fine!<br><a id="more"></a><br>But you often found yourself in need of opening a Terminal window at the project location. It hard to tell that feeling. 🤔 Don’t worry, here is what you need to do:</p>
 <h3 id="1-Create-a-sh-file"><a href="#1-Create-a-sh-file" class="headerlink" title="1.  Create a sh file"></a>1.  Create a sh file</h3><p>Create a new text file with your favourite text editor and put this inside:</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>! /bin/bash</span><br><span class="line">open -a Terminal "$SRCROOT"</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/bash</span></span><br><span class="line">open -a Terminal "$SRCROOT"</span><br></pre></td></tr></table></figure>
 <p>or</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line"></span><br><span class="line">if [ -n "$XcodeProjectPath" ]; then</span><br><span class="line">  open -a Terminal "$XcodeProjectPath"/..</span><br><span class="line">else</span><br><span class="line">  open -a Terminal "$XcodeWorkspacePath"/..</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line">if [ -n "$XcodeProjectPath" ]; then</span><br><span class="line">  open -a Terminal "$XcodeProjectPath"/..</span><br><span class="line">else</span><br><span class="line">  open -a Terminal "$XcodeWorkspacePath"/..</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>It opens either <code>.xcodeproj</code> or <code>.xcworkspace</code>.</p>
 <blockquote>
 <p>If you prefer iTerm, just change the Terminal keyword to iTerm in this script. I’m using <strong>iTerm</strong> too, so I created a bash file like this:</p>
