@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
+    
+    <lastmod>2019-05-25T01:33:10.497Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2019/05/242019/swift-5-empty-string/</loc>
     
     <lastmod>2019-05-24T01:10:09.251Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
+    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
     
     <lastmod>2018-12-08T02:19:42.205Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
+    <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
     
     <lastmod>2018-12-08T02:19:42.205Z</lastmod>
     
@@ -30,7 +37,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
+    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
+    
+    <lastmod>2018-12-08T02:19:42.204Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
     
     <lastmod>2018-12-08T02:19:42.204Z</lastmod>
     
@@ -51,28 +65,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
+    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
     
     <lastmod>2018-12-08T02:19:42.204Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
-    
-    <lastmod>2018-12-08T02:19:42.204Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
-    
-    <lastmod>2018-12-08T02:19:42.203Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
+    <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
     
     <lastmod>2018-12-08T02:19:42.203Z</lastmod>
     
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
+    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
     
     <lastmod>2018-12-08T02:19:42.203Z</lastmod>
     
@@ -100,7 +100,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    
+    <lastmod>2018-12-08T02:19:42.203Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
     
     <lastmod>2018-12-08T02:19:42.202Z</lastmod>
     
@@ -114,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
+    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
     
     <lastmod>2018-12-08T02:19:42.202Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
     
     <lastmod>2018-12-08T02:19:42.202Z</lastmod>
     
@@ -135,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
-    
-    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
-    
-    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
     
     <lastmod>2018-12-08T02:19:42.201Z</lastmod>
@@ -156,7 +149,21 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
+    
+    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
+    
+    <lastmod>2018-12-08T02:19:42.201Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
     
     <lastmod>2018-12-08T02:19:42.201Z</lastmod>
     
