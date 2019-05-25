@@ -15,11 +15,11 @@
 
 
 <html class="theme-next muse use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -29,20 +29,14 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2"/>
 
 
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
 
 
@@ -56,9 +50,15 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
@@ -114,19 +114,19 @@
 <meta property="og:site_name" content="Duc Ninja">
 <meta property="og:description" content="By default didSet of a property  don’t called during init, so we can use defer to fix that issue.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-08T02:19:42.000Z">
+<meta property="og:updated_time" content="2018-12-08T02:19:42.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use didSet During Initialling an Object in Swift 4">
 <meta name="twitter:description" content="By default didSet of a property  don’t called during init, so we can use defer to fix that issue.">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
 
 
 
 
-  <link rel="canonical" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/">
+  <link rel="canonical" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/"/>
 
 
 
@@ -201,7 +201,7 @@
     </div>
     
       
-        <p class="site-subtitle">I'm a software engineer and a ninja as well.</p>
+        <p class="site-subtitle">I'm an developer and a ninja as well.</p>
       
     
     
@@ -236,7 +236,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
 
   </li>
         
@@ -253,7 +253,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
 
   </li>
         
@@ -270,7 +270,7 @@
 
     
 
-    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>My info</a>
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>My info</a>
 
   </li>
 
@@ -324,16 +324,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duc Ninja">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
+      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="name" content="Duc Ninja"/>
     </span>
 
     
@@ -417,10 +417,7 @@
       
 
       
-        <p>By default <code>didSet</code> of a property  don’t called during init, so we can use <code>defer</code> to fix that issue.</p>
-<a id="more"></a>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoPlayerController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">State</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> idle</span><br><span class="line">        <span class="keyword">case</span> loading(<span class="type">URL</span>, <span class="type">Data</span>)</span><br><span class="line">        <span class="keyword">case</span> playing(<span class="type">Video</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> state = <span class="type">State</span>.idle &#123;</span><br><span class="line">        <span class="keyword">didSet</span> &#123; updateVideoView() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(state initialState: <span class="type">State</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(nibName: <span class="literal">nil</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">        <span class="comment">// By deferring the state assignment, our property observer is</span></span><br><span class="line">        <span class="comment">// invoked, so we don't need to call updateVideoView() manually.</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; state = initialState &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>By default <code>didSet</code> of a property  don’t called during init, so we can use <code>defer</code> to fix that issue.<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoPlayerController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">State</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> idle</span><br><span class="line">        <span class="keyword">case</span> loading(<span class="type">URL</span>, <span class="type">Data</span>)</span><br><span class="line">        <span class="keyword">case</span> playing(<span class="type">Video</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> state = <span class="type">State</span>.idle &#123;</span><br><span class="line">        <span class="keyword">didSet</span> &#123; updateVideoView() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(state initialState: <span class="type">State</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(nibName: <span class="literal">nil</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">        <span class="comment">// By deferring the state assignment, our property observer is</span></span><br><span class="line">        <span class="comment">// invoked, so we don't need to call updateVideoView() manually.</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; state = initialState &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -525,7 +522,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/assets/images/logo/icon-310x310.png" alt="Duc Ninja">
+              <img class="site-author-image" itemprop="image"
+                src="/assets/images/logo/icon-310x310.png"
+                alt="Duc Ninja"/>
             
               <p class="site-author-name" itemprop="name">Duc Ninja</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -538,7 +537,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
