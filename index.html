@@ -319,6 +319,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/262019/may-26-codable-enums-with-associated/" class="post-title-link" itemprop="url">Using Codable to Make Enums With Associated Values Even More Powerful</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-26 08:30:00 / Modified: 08:04:46" itemprop="dateCreated datePublished" datetime="2019-05-26T08:30:00+07:00">2019-05-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>One of Swift’s greatest features, and one of my favorites, are enums with associated values. The language itself uses them for its fundamentals, like <code>Optional&lt;T&gt;</code>, which either has a <code>.some(T)</code> or is <code>.none</code>. Another example is the new since Swift 5 <code>Result&lt;T, E&gt;</code>, which either contains a <code>.success(T)</code> or a <code>.failure(E)</code> case. In this post, we will go over cases (no pun intended) where an enum is more suitable than a struct or class, and also learn how one can make enums with associated values conform to Codable, achieving a better and safer usage of these data representations when they need to be encoded and decoded. You can scroll to the end of the post to get the final playground.</p>
+<p>Enums with associated values make sense when a type may hold only one value, instead of two or more optional values. A classic example for Result is a network operation, which might return either an error or an object. They never should be nil or not be nil simultaneously: when one is nil, the other should exist.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//in this case, the caller must check for nil for both values</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">issueRequest</span>&lt;T&gt;<span class="params">(<span class="number">_</span> request: URLRequest, completion: @escaping <span class="params">(T?, Error?)</span></span></span> -&gt; <span class="type">Void</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//here, however, it will be either .success or .failure</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">issueRequest</span>&lt;T&gt;<span class="params">(<span class="number">_</span> request: URLRequest, completion: @escaping <span class="params">(Result&lt;T, Error&gt;)</span></span></span> -&gt; <span class="type">Void</span>)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/262019/may-26-codable-enums-with-associated/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/05/252019/may-25-optionset/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1728,167 +1878,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Duc Ninja"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Duc Ninja"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/11/052017/easy-xib-and-storyboard-localization/" class="post-title-link" itemprop="url">Easy XIB and Storyboard Localization</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-11-05 22:30:00" itemprop="dateCreated datePublished" datetime="2017-11-05T22:30:00+07:00">2017-11-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-08 09:19:42" itemprop="dateModified" datetime="2018-12-08T09:19:42+07:00">2018-12-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://cdn-images-1.medium.com/max/1600/1*oFXeXtJ2LM8uB7prmtAZmw.jpeg" alt="img">Photo by <a href="https://unsplash.com/photos/jUSu0686zDM" target="_blank" rel="noopener">freestocks.org</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
-<p>Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/11/052017/easy-xib-and-storyboard-localization/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1940,7 +1929,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
