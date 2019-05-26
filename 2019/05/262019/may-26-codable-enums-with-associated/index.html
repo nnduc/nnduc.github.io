@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2"/>
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="One of Swift’s greatest features, and one of my favorites, are enums with associated values. The language itself uses them for its fundamentals, like Optional&amp;lt;T&amp;gt;, which either has a .some(T) or">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Codable to Make Enums With Associated Values Even More Powerful">
+<meta property="og:url" content="https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/index.html">
+<meta property="og:site_name" content="Duc Ninja">
+<meta property="og:description" content="One of Swift’s greatest features, and one of my favorites, are enums with associated values. The language itself uses them for its fundamentals, like Optional&amp;lt;T&amp;gt;, which either has a .some(T) or">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-26T01:04:46.539Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Using Codable to Make Enums With Associated Values Even More Powerful">
+<meta name="twitter:description" content="One of Swift’s greatest features, and one of my favorites, are enums with associated values. The language itself uses them for its fundamentals, like Optional&amp;lt;T&amp;gt;, which either has a .some(T) or">
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml"/>
+
+
+
+
+  <link rel="canonical" href="https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Using Codable to Make Enums With Associated Values Even More Powerful | Duc Ninja</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duc Ninja</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-my-info">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>My info</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Duc Ninja"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Using Codable to Make Enums With Associated Values Even More Powerful
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-26 08:30:00 / Modified: 08:04:46" itemprop="dateCreated datePublished" datetime="2019-05-26T08:30:00+07:00">2019-05-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>One of Swift’s greatest features, and one of my favorites, are enums with associated values. The language itself uses them for its fundamentals, like <code>Optional&lt;T&gt;</code>, which either has a <code>.some(T)</code> or is <code>.none</code>. Another example is the new since Swift 5 <code>Result&lt;T, E&gt;</code>, which either contains a <code>.success(T)</code> or a <code>.failure(E)</code> case. In this post, we will go over cases (no pun intended) where an enum is more suitable than a struct or class, and also learn how one can make enums with associated values conform to Codable, achieving a better and safer usage of these data representations when they need to be encoded and decoded. You can scroll to the end of the post to get the final playground.</p>
+<p>Enums with associated values make sense when a type may hold only one value, instead of two or more optional values. A classic example for Result is a network operation, which might return either an error or an object. They never should be nil or not be nil simultaneously: when one is nil, the other should exist.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//in this case, the caller must check for nil for both values</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">issueRequest</span>&lt;T&gt;<span class="params">(<span class="number">_</span> request: URLRequest, completion: @escaping <span class="params">(T?, Error?)</span></span></span> -&gt; <span class="type">Void</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//here, however, it will be either .success or .failure</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">issueRequest</span>&lt;T&gt;<span class="params">(<span class="number">_</span> request: URLRequest, completion: @escaping <span class="params">(Result&lt;T, Error&gt;)</span></span></span> -&gt; <span class="type">Void</span>)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Now, let’s think of a more concrete example. Let’s imagine we have an app which allows users to confirm presence in some event, and the response from the server might have one out of three possibilites:</p>
+<ul>
+<li>The user is confirmed in the event, and a list of users going is also returned</li>
+<li>The event is full and the user is at a specific position in the waitlist, and a list of users going is also returned</li>
+<li>The user cannot go to the event for some reason (it is too late or there is no waitlist, for example)<br>The server returns a JSON encoded response, so these are the possibilities:<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//1 - user is confirmed:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"confirmed"</span>,</span><br><span class="line">  <span class="attr">"confirmedUsers"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"abc"</span>, <span class="attr">"name"</span>: <span class="string">"Rachel"</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"def"</span>, <span class="attr">"name"</span>: <span class="string">"John"</span>&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//2 - user is in waitlist:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"waitlist"</span>,</span><br><span class="line">  <span class="attr">"position"</span>: <span class="number">12</span>,</span><br><span class="line">  <span class="attr">"confirmedUsers"</span>: [</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"abc"</span>, <span class="attr">"name"</span>: <span class="string">"Rachel"</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">"id"</span>: <span class="string">"def"</span>, <span class="attr">"name"</span>: <span class="string">"John"</span>&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//3 - user cannot go for a different reason</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"not allowed"</span>,</span><br><span class="line">  <span class="attr">"reason"</span>: <span class="string">"It is too late to confirm to this event."</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Now, in our client, we need to be able to represent this data and its possible values. If we would use a struct, it would probably look to something like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">EventConfirmationResponse</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> status: <span class="type">String</span></span><br><span class="line">  <span class="keyword">let</span> confirmedUsers: [<span class="type">User</span>]?</span><br><span class="line">  <span class="keyword">let</span> position: <span class="type">Int</span>?</span><br><span class="line">  <span class="keyword">let</span> reason: <span class="type">String</span>?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Can you imagine yourself checking for all the the possible states this struct might have?</p>
+<p>In addition to that, in this case a property being present is not enough to determine what is the status: confirmed is returned in both confirmed and waitlist states. Therefore, the status property must be checked in association with the optional values. And if the API get more possibilities, it gets even worse.</p>
+<h3 id="Enums-with-associated-values-❤️"><a href="#Enums-with-associated-values-❤️" class="headerlink" title="Enums with associated values ❤️"></a>Enums with associated values ❤️</h3><p>We can do better. It would be much safer and predictable to use the following enum:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">EventConfirmationResponse</span> </span>&#123;</span><br><span class="line">  <span class="keyword">case</span> confirmed([<span class="type">User</span>]) <span class="comment">//Contains an array of users going to the event</span></span><br><span class="line">  <span class="keyword">case</span> waitlist(<span class="type">Int</span>, [<span class="type">User</span>]) <span class="comment">//Contains the position in the waitlist and</span></span><br><span class="line">  <span class="keyword">case</span> notAllowed(<span class="type">String</span>) <span class="comment">//Contains the reason why the user is not allowed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Great! Now, whenever this response needs to be used for being displayed to the user, one can use a switch statement to check each case and extract the associated values:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> confirmationResponse &#123;</span><br><span class="line">  <span class="keyword">case</span> .confirmed(<span class="keyword">let</span> users):</span><br><span class="line">    <span class="keyword">let</span> confirmedEventVC = <span class="type">ConfirmedEventViewController</span>(event: event, confirmed: users)</span><br><span class="line">    present(confirmedEventVC, animated: <span class="literal">true</span>)</span><br><span class="line">  <span class="keyword">case</span> .waitlist(<span class="keyword">let</span> position, <span class="keyword">let</span> users):</span><br><span class="line">    <span class="keyword">let</span> eventWaitlistVC = <span class="type">EventWaitlistViewController</span>(event: event, position: position, confirmed: users)</span><br><span class="line">    present(eventWaitlistVC, animated: <span class="literal">true</span>)</span><br><span class="line">  <span class="keyword">case</span> .notAllowed(<span class="keyword">let</span> reason):</span><br><span class="line">    presentNotAllowedAlert(with: reason)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This looks much better. Now, we want to provide the EventConfirmationResponse enum to our HTTP client, so it can convert the JSON response directly into the enum: we want it to be Decodable, which has a great advantage: we hand over the different possibilites to the JSONDecoder, and if there is any field missing or incompatible with what we described above, the decoding fails. Failing early, in the decoding stage, is better than failing at a UI display stage. Also, it’s worth noting, if the server is also being written in Swift (e.g., with Vapor), we can make it conform to Encodable, and JSONEncoder will take care of converting it exactly into the expected response.</p>
+<p>Encodable &amp; Decodable is the exact definition of Codable. If we add it to our enum and try to compile, we will get the following error:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">EventConfirmationResponse</span>: <span class="title">Codable</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//type 'EventConfirmationResponse' does not conform to protocol 'Decodable'</span></span><br><span class="line"><span class="comment">//protocol requires initializer 'init(from:)' with type '(from: Decoder)'</span></span><br><span class="line"><span class="comment">//type 'EventConfirmationResponse' does not conform to protocol 'Codable'</span></span><br><span class="line"><span class="comment">//protocol requires function 'encode(to:)' with type '(Encoder) throws -&gt; ()'</span></span><br></pre></td></tr></table></figure>
+<p>The message is pretty clear. Because Swift doesn’t know how one wants the associated values to be encoded, and there is no defined standard, it doesn’t know what to do, and, consequently, asks the developer to implement them.</p>
+<h3 id="Implementing-the-Encodable-amp-Decodable-protocols"><a href="#Implementing-the-Encodable-amp-Decodable-protocols" class="headerlink" title="Implementing the Encodable &amp; Decodable protocols"></a>Implementing the Encodable &amp; Decodable protocols</h3><h4 id="Encodable"><a href="#Encodable" class="headerlink" title="Encodable"></a>Encodable</h4><p>As the errors stated, there are two methods that need to be implemented. Let’s first do the encoding part, thinking about the JSON declared above, and move to the decoding later on.</p>
+<p>The required method by <code>Encodabl</code>e is <code>encode(to encoder: Encoder)</code>. The parameter is a Encoder, which might be Foundation’s JSONEncoder, or a custom XMLEncoder, for example. In order to encode the data, the Encoder provides three types of encoding containers:</p>
+<ul>
+<li><code>KeyedEncodingContainer&lt;Key&gt;</code>: to be used when the encoding will have a key-value format, using a <code>CodingKey</code> enum to access the possible keys, as used when encoding a dictionary. Types that automatically conform to <code>Encodable</code> will have the <code>CodingKey</code> generated automatically as well.</li>
+<li><code>UnkeyedEncodingContainer</code>: to be used when encoding multiple, unkeyed values, as used when encoding an array, for example.</li>
+<li><code>SingleValueEncodingContainer</code>: to be used when a single primitive value, like a string.</li>
+</ul>
+<p>The documentation says: You must use only one kind of top-level encoding container. This means that when encoding a value, only one container must be used, and not more than one simultaneously. In our case, we will choose the keyed container, because we will encode our enum into a key-value JSON object.</p>
+<p>As mentioned in the explanation of the keyed container, we need to create a CodingKey-conforming type. We will create a case for each possible key in the JSON. Also, because there are only three acceptable statuses (confirmed, waitlist, and not allowed), we can use a simple enum to ensure the status value is one of them.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">declare</span> which <span class="keyword">keys</span> <span class="keyword">in</span> the <span class="keyword">JSON</span> we <span class="keyword">are</span> interested <span class="keyword">in</span></span><br><span class="line">enum CodingKeys: <span class="keyword">String</span>, CodingKey &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">status</span></span><br><span class="line">    <span class="keyword">case</span> confirmedUsers</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">position</span></span><br><span class="line">    <span class="keyword">case</span> reason</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//<span class="keyword">declare</span> the possible <span class="keyword">values</span> os the <span class="keyword">status</span> <span class="keyword">key</span></span><br><span class="line"><span class="keyword">private</span> enum EventConfirmationStatus: <span class="keyword">String</span>, Codable &#123;</span><br><span class="line">    <span class="keyword">case</span> confirmed</span><br><span class="line">    <span class="keyword">case</span> waitlist</span><br><span class="line">    <span class="keyword">case</span> notAllowed = <span class="string">"not allowed"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Notice that in both enums, where the raw value is a string, there is no need to actually declare it - the cases are compiled into the raw values (except the notAllowed case). Now it’s left to implement the encoding itself. We will need to do two things: (1) get the keyed container from the encoder, and (2) iterate over the event confirmation enum in order to encode each case, separately:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">EventConfirmationResponse</span>: <span class="title">Encodable</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">encode</span><span class="params">(to encoder: Encoder)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">      <span class="comment">//access the keyed container</span></span><br><span class="line">      <span class="keyword">var</span> container = encoder.container(keyedBy: <span class="type">CodingKeys</span>.<span class="keyword">self</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">//iterate over self and encode (1) the status and (2) the associated value(s)</span></span><br><span class="line">      <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">      <span class="keyword">case</span> .confirmed(<span class="keyword">let</span> users):</span><br><span class="line">          <span class="keyword">try</span> container.encode(<span class="type">EventConfirmationStatus</span>.confirmed, forKey: .status)</span><br><span class="line">          <span class="keyword">try</span> container.encode(users, forKey: .confirmedUsers)</span><br><span class="line">      <span class="keyword">case</span> .waitlist(<span class="keyword">let</span> position, <span class="keyword">let</span> users):</span><br><span class="line">          <span class="keyword">try</span> container.encode(<span class="type">EventConfirmationStatus</span>.waitlist, forKey: .status)</span><br><span class="line">          <span class="keyword">try</span> container.encode(users, forKey: .confirmedUsers)</span><br><span class="line">          <span class="keyword">try</span> container.encode(position, forKey: .position)</span><br><span class="line">      <span class="keyword">case</span> .notAllowed(<span class="keyword">let</span> reason):</span><br><span class="line">          <span class="keyword">try</span> container.encode(<span class="type">EventConfirmationStatus</span>.notAllowed, forKey: .status)</span><br><span class="line">          <span class="keyword">try</span> container.encode(reason, forKey: .reason)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>We can now use JSONEncoder().encode(confirmation) and get a JSON representation of our enum.</p>
+<h4 id="Decodable"><a href="#Decodable" class="headerlink" title="Decodable"></a>Decodable</h4><p>To finally conform do Codable, there’s left the Decodable protocol. To achieve it, we need to initialize our enum given a Decoder with init(from decoder: Decoder).</p>
+<p>Similar Encoder, Decoder also has the three analogue containers. As all 3 states have a status key and we need it to define which state will be initialized, we will look for it first by trying to decode a String for the .status coding key. Then, we iterate on the status value, and look for the other values for the relevant keys:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">EventConfirmationResponse</span>: <span class="title">Decodable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>(from decoder: <span class="type">Decoder</span>) <span class="keyword">throws</span> &#123;</span><br><span class="line">        <span class="comment">//access the keyed container</span></span><br><span class="line">        <span class="keyword">let</span> container = <span class="keyword">try</span> decoder.container(keyedBy: <span class="type">CodingKeys</span>.<span class="keyword">self</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">//decode the value for the status key into the EventConfirmationStatus enum</span></span><br><span class="line">        <span class="keyword">let</span> status = <span class="keyword">try</span> container.decode(<span class="type">EventConfirmationStatus</span>.<span class="keyword">self</span>, forKey: .status)</span><br><span class="line"></span><br><span class="line">        <span class="comment">//iterate over the received status, and try to decode the other relevant values</span></span><br><span class="line">        <span class="keyword">switch</span> status &#123;</span><br><span class="line">        <span class="keyword">case</span> .confirmed:</span><br><span class="line">            <span class="keyword">let</span> users = <span class="keyword">try</span> container.decode([<span class="type">User</span>].<span class="keyword">self</span>, forKey: .confirmedUsers)</span><br><span class="line">            <span class="keyword">self</span> = .confirmed(users)</span><br><span class="line">        <span class="keyword">case</span> .waitlist:</span><br><span class="line">            <span class="keyword">let</span> users = <span class="keyword">try</span> container.decode([<span class="type">User</span>].<span class="keyword">self</span>, forKey: .confirmedUsers)</span><br><span class="line">            <span class="keyword">let</span> position = <span class="keyword">try</span> container.decode(<span class="type">Int</span>.<span class="keyword">self</span>, forKey: .position)</span><br><span class="line">            <span class="keyword">self</span> = .waitlist(position, users)</span><br><span class="line">        <span class="keyword">case</span> .notAllowed:</span><br><span class="line">            <span class="keyword">let</span> reason = <span class="keyword">try</span> container.decode(<span class="type">String</span>.<span class="keyword">self</span>, forKey: .reason)</span><br><span class="line">            <span class="keyword">self</span> = .notAllowed(reason)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Done! Our enum is now ready to be encoded and decoded. If you want to test and see all the code in a single place, I’ve prepared a playground which you can <a href="https://files.natanrolnik.me/blog-downloads/CodableEnumsWithAssociatedValues.playground.zip" target="_blank" rel="noopener">download here</a>.</p>
+<p>Happy coding!<br>[Source: Natan Rolnik]</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/252019/may-25-optionset/" rel="next" title="Inclusive Enums With OptionSet">
+                <i class="fa fa-chevron-left"></i> Inclusive Enums With OptionSet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/assets/images/logo/icon-310x310.png"
+                alt="Duc Ninja"/>
+            
+              <p class="site-author-name" itemprop="name">Duc Ninja</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enums-with-associated-values-❤️"><span class="nav-number">1.</span> <span class="nav-text">Enums with associated values ❤️</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-the-Encodable-amp-Decodable-protocols"><span class="nav-number">2.</span> <span class="nav-text">Implementing the Encodable &amp; Decodable protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Encodable"><span class="nav-number">2.1.</span> <span class="nav-text">Encodable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Decodable"><span class="nav-number">2.2.</span> <span class="nav-text">Decodable</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duc Ninja</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
