@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
+    
+    <lastmod>2019-09-28T02:53:12.644Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
     
     <lastmod>2019-09-28T02:53:12.644Z</lastmod>
@@ -17,13 +24,6 @@
   
   <url>
     <loc>https://duc.ninja/2019/05/242019/swift-5-empty-string/</loc>
-    
-    <lastmod>2019-09-28T02:53:12.644Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
     
     <lastmod>2019-09-28T02:53:12.644Z</lastmod>
     
@@ -51,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
-    
-    <lastmod>2019-09-28T02:53:12.643Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
     
     <lastmod>2019-09-28T02:53:12.643Z</lastmod>
@@ -66,6 +59,13 @@
   
   <url>
     <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
+    
+    <lastmod>2019-09-28T02:53:12.643Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
     
     <lastmod>2019-09-28T02:53:12.643Z</lastmod>
     
@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
+    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
     
     <lastmod>2019-09-28T02:53:12.642Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
+    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
     
     <lastmod>2019-09-28T02:53:12.642Z</lastmod>
     
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
     
     <lastmod>2019-09-28T02:53:12.641Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
     
     <lastmod>2019-09-28T02:53:12.641Z</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
     
     <lastmod>2019-09-28T02:53:12.639Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
+    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
     
     <lastmod>2019-09-28T02:53:12.639Z</lastmod>
     

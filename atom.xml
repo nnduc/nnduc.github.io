@@ -155,32 +155,6 @@
   </entry>
   
   <entry>
-    <title>LLDB: Po vs E</title>
-    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
-    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
-    <published>2018-01-25T14:43:00.000Z</published>
-    <updated>2019-09-28T02:53:12.643Z</updated>
-    
-    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br></p><a id="more"></a><p><img src="/assets/images/po-vs-e.jpg" alt></p><p>Source: @caro</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
-    
-      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
-    
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
-      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Shortcut to Run a Test Case or Run Whole Test Case</title>
     <link href="https://duc.ninja/2018/01/252018/run-test-case/"/>
     <id>https://duc.ninja/2018/01/252018/run-test-case/</id>
@@ -207,6 +181,32 @@
       <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
       <category term="testing" scheme="https://duc.ninja/tags/testing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LLDB: Po vs E</title>
+    <link href="https://duc.ninja/2018/01/252018/po-vs-e/"/>
+    <id>https://duc.ninja/2018/01/252018/po-vs-e/</id>
+    <published>2018-01-25T14:43:00.000Z</published>
+    <updated>2019-09-28T02:53:12.643Z</updated>
+    
+    <content type="html"><![CDATA[<p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br></p><a id="more"></a><p><img src="/assets/images/po-vs-e.jpg" alt></p><p>Source: @caro</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
+    
+      <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
     
   </entry>
   
