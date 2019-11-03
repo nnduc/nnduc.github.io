@@ -56,30 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.">
+  <meta name="description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
 <meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="More Interface Builder Tips and Tricks">
-<meta property="og:url" content="https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/index.html">
+<meta property="og:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta property="og:url" content="https://duc.ninja/2019/11/022019/nov-2-swift-5-1-Using-self-to-refer-to-enclosing-types/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.">
+<meta property="og:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips001.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips002.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips003.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips004.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips005.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips006.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips007.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips008.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips009.png">
-<meta property="og:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips010.png">
-<meta property="og:updated_time" content="2019-11-03T14:30:01.510Z">
+<meta property="og:updated_time" content="2019-11-03T14:30:01.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="More Interface Builder Tips and Tricks">
-<meta name="twitter:description" content="My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.">
-<meta name="twitter:image" content="https://duc.ninja/assets/images/ib-tips/ib-tips001.png">
-  <link rel="canonical" href="https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/">
+<meta name="twitter:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta name="twitter:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
+  <link rel="canonical" href="https://duc.ninja/2019/11/022019/nov-2-swift-5-1-Using-self-to-refer-to-enclosing-types/">
 
 
 <script id="page-configurations">
@@ -93,7 +82,7 @@
   };
 </script>
 
-  <title>More Interface Builder Tips and Tricks | Duc Ninja</title>
+  <title>Swift 5.1 Using Self to Refer to Enclosing Types | Duc Ninja</title>
   
 
 
@@ -213,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/022019/nov-2-swift-5-1-Using-self-to-refer-to-enclosing-types/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duc Ninja">
@@ -227,7 +216,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            More Interface Builder Tips and Tricks
+            Swift 5.1 Using Self to Refer to Enclosing Types
             
 
           
@@ -244,7 +233,7 @@
                 
               
 
-              <time title="Created: 2018-03-04 22:56:00" itemprop="dateCreated datePublished" datetime="2018-03-04T22:56:00+07:00">2018-03-04</time>
+              <time title="Created: 2019-11-02 13:15:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:15:00+07:00">2019-11-02</time>
             </span>
           
             
@@ -271,52 +260,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.</p>
+        <p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
 <a id="more"></a>
-<ul>
-<li>To easily select an object when it is behind a stack of other items hold down the Ctrl (⌃) + Shift (⇧) keys and then click over the object. Select the item you want from the popup menu showing the full view hierarchy at the point where you clicked.</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips001.png" alt></p>
-<ul>
-<li>Click on a view in the canvas to select it and then hold down the Option (⌥) key. Move the mouse pointer over other views in the scene to see the distances between the views:</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips002.png" alt></p>
-<ul>
-<li><p>To quickly copy an object in the canvas, hold down the Option (⌥) key and then click on and drag the object.</p>
-</li>
-<li><p>When adjusting the position of a view in the canvas the arrow keys move the view by one point at a time. Hold down the Shift (⇧) key to jump by 5 points at a time.</p>
-</li>
-<li><p>When creating constraints in the canvas or document outline use the Shift (⇧) key to select multiple constraints:</p>
-</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips003.png" alt></p>
-<p>Use the Option (⌥) key for alternate constraints. Useful when you want the margins instead of the safe area or a 1:1 aspect ratio:</p>
-<p><img src="/assets/images/ib-tips/ib-tips004.png" alt></p>
-<ul>
-<li>There are some useful options for the canvas in the Xcode Editor menu.</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips005.png" alt></p>
-<p>I like to turn on either Show Layout Rectangles or Show Bounds Rectangles to see the layout guides or bounds of views.</p>
-<p>If you are fighting with constraint priorities try turning on Show Intrinsic Size Constraints Contributing To Ambiguity. It makes it easier to see which priorities you need to change to fix the problem:</p>
-<p><img src="/assets/images/ib-tips/ib-tips006.png" alt></p>
-<ul>
-<li>Don’t let your Storyboards get too large. Interface Builder slows down and if you are collaborating with other developers it gets harder to avoid conflicts. Use Editor &gt; Refactor To Storyboard to break it into smaller scenes with storyboard references. See Refactoring with Storyboard References.</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips007.png" alt></p>
-<ul>
-<li><p>Don’t trust Interface Builder to Reset to Suggested Constraints. It will rarely do what you want.</p>
-</li>
-<li><p>Use command-equal (⌘=) to quickly resize a label, button, image, etc. to fit the content size. For example, this label is too small and high for the text:</p>
-</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips008.png" alt></p>
-<p>After using ⌘= to size to fit contents:</p>
-<p><img src="/assets/images/ib-tips/ib-tips009.png" alt></p>
-<ul>
-<li>Don’t forget you can preview your layout on different devices and orientations in Interface Builder with the assistant editor. This is much faster than launching the simulator or running on a device. Use the + in the bottom left corner of the assistant editor to add devices.</li>
-</ul>
-<p><img src="/assets/images/ib-tips/ib-tips010.png" alt></p>
-<p>You can add multiple assistant editors with the + in the top right corner of the assistant editor. I like to use this to preview layouts with different localizations. Change the localization with the menu in the bottom right corner.</p>
+
+<p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Numeric</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">incremented</span><span class="params">(by value: <span class="keyword">Self</span> = <span class="number">1</span>)</span></span> -&gt; <span class="type">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span> + value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>While that’s still possible, the scope of <code>Self</code> has now been extended to also include concrete types — like enums, structs and classes — enabling us to use <code>Self</code> as a sort of alias referring to a method or property’s <em>enclosing</em> type, like this:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    static <span class="selector-tag">var</span> capitalize: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.capitalized</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static <span class="selector-tag">var</span> removeLetters: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.filter</span> &#123; !$<span class="number">0</span><span class="selector-class">.isLetter</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The fact that we can now use <code>Self</code> above, rather than the full <code>TextTransform</code> type name, is of course purely <em>syntactic sugar</em> — but it can help make our code a bit more compact, especially when dealing with long type names. We can even use <code>Self</code> inline within a method or property as well, further making the above code even more compact:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> capitalize: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>capitalized &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> removeLetters: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>filter &#123; !$<span class="number">0.</span>isLetter &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Besides referring to an enclosing type itself, we can now also use <code>Self</code> to access static members within an instance method or property — which is quite useful in situations when we want to reuse the same value across all instances of a type, such as the <code>cellReuseIdentifier</code> in this example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListViewController</span>: <span class="title">UITableViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> cellReuseIdentifier = <span class="string">"list-cell"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        tableView.register(</span><br><span class="line">            <span class="type">ListTableViewCell</span>.<span class="keyword">self</span>,</span><br><span class="line">            forCellReuseIdentifier: <span class="type">Self</span>.cellReuseIdentifier</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Again, we could’ve simply typed out <code>ListViewController</code> above when accessing our static property, but using <code>Self</code> does arguably improve the readability of our code — and will also enable us to rename our view controller without having to update the way we access its static members. <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md" target="_blank" rel="noopener">https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md</a>)</p>
+<p>Happy coding!</p>
 
     </div>
 
@@ -333,8 +293,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/02/042018/open-terminal-from-xcode/" rel="next" title="Open Terminal From Xcode">
-                  <i class="fa fa-chevron-left"></i> Open Terminal From Xcode
+                <a href="/2019/10/122019/swift-5-1-implicit-return/" rel="next" title="Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer">
+                  <i class="fa fa-chevron-left"></i> Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer
                 </a>
               
             </div>
@@ -342,10 +302,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2018/08/172018/class-only-protocol/" rel="prev" title="Swift 4 - Class Only Protocol">
-                  Swift 4 - Class Only Protocol <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>

@@ -65,7 +65,7 @@
 <meta property="og:description" content="When Swift debuted, we said goodbye to using #pragma pre-processor definitions to organize our code. Don’t worry, Xcode still has our backs. We can use a few different “special” comments in our code a">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://duc.ninja/assets/images/annotating-swift-with-marks-todos-and-fixmes.png">
-<meta property="og:updated_time" content="2019-11-02T05:56:37.687Z">
+<meta property="og:updated_time" content="2019-11-03T14:30:01.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Annotating Swift With MARKs, TODO&#39;s and FIXME&#39;s">
 <meta name="twitter:description" content="When Swift debuted, we said goodbye to using #pragma pre-processor definitions to organize our code. Don’t worry, Xcode still has our backs. We can use a few different “special” comments in our code a">
@@ -246,7 +246,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
+                <time title="Modified: 2019-11-03 21:30:01" itemprop="dateModified" datetime="2019-11-03T21:30:01+07:00">2019-11-03</time>
               </span>
             
           
@@ -267,7 +267,7 @@
 <a id="more"></a>
 <p>The extra <strong>dash</strong> character in the name of our <strong>MARK</strong> gets us those <em>sweet</em> separators in the source navigator dropdown.</p>
 <p><strong>Xcode</strong> also supports a similar bit of functionality for <strong>TODO</strong> and <strong>FIXME</strong> comments. They’ll show up in <strong>bold</strong> in the same dropdown.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">launch</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> launch here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">land</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// <span class="doctag">FIXME:</span> shouldn't crash</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">launch</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> launch here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">land</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// <span class="doctag">FIXME:</span> shouldn't crash</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>As a bonus, we can use a little regex magic to get Xcode to generate build warnings for <strong>TODO</strong> and <strong>FIXMEs</strong>. We’ll just add a new <strong>Run Script</strong> build phase to our project that contains:</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KEYWORDS="TODO|FIXME|<span class="tag">\<span class="name">?</span></span><span class="tag">\<span class="name">?</span></span><span class="tag">\<span class="name">?</span></span>:|<span class="tag">\<span class="name">!</span></span><span class="tag">\<span class="name">!</span></span><span class="tag">\<span class="name">!</span></span>:"</span><br><span class="line">find "<span class="formula">$&#123;SRCROOT&#125;" <span class="tag">\<span class="name">(</span></span> -name "*.swift" <span class="tag">\<span class="name">)</span></span> -print0 | <span class="tag">\</span></span></span><br><span class="line"><span class="formula">xargs -0 egrep --with-filename --line-number --only-matching "($</span>KEYWORDS).*<span class="tag">\<span class="name">$</span></span>" | <span class="tag">\</span></span><br><span class="line">perl -p -e "s/(<span class="formula">$KEYWORDS)/ warning: <span class="tag">\<span class="name">$</span></span>1/"</span></span><br></pre></td></tr></table></figure>
@@ -375,7 +375,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
