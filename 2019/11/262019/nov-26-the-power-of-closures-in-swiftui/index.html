@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="One of my favorite design patterns in UIKit development was a Delegate pattern. Delegate pattern is very straightforward, and everybody knows how to use it. In the Functional Programming world, we usu">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Power of Closures in SwiftUI">
+<meta property="og:url" content="https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/index.html">
+<meta property="og:site_name" content="Duc Ninja">
+<meta property="og:description" content="One of my favorite design patterns in UIKit development was a Delegate pattern. Delegate pattern is very straightforward, and everybody knows how to use it. In the Functional Programming world, we usu">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-26T09:54:15.142Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Power of Closures in SwiftUI">
+<meta name="twitter:description" content="One of my favorite design patterns in UIKit development was a Delegate pattern. Delegate pattern is very straightforward, and everybody knows how to use it. In the Functional Programming world, we usu">
+  <link rel="canonical" href="https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>The Power of Closures in SwiftUI | Duc Ninja</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duc Ninja</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-blog">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-my-info">
+      
+    
+
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i>My info</a>
+
+  </li>
+      
+    
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            The Power of Closures in SwiftUI
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-26 16:30:00 / Modified: 16:54:15" itemprop="dateCreated datePublished" datetime="2019-11-26T16:30:00+07:00">2019-11-26</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>One of my favorite design patterns in <em>UIKit</em> development was a Delegate pattern. <em>Delegate pattern</em> is very straightforward, and everybody knows how to use it. In the <em>Functional Programming</em> world, we usually replace delegates with closures. This week we will learn how to use closures to make <em>SwiftUI</em> views composable and decoupled.</p>
+<a id="more"></a>
+
+<h4 id="Passing-closures-to-child-views"><a href="#Passing-closures-to-child-views" class="headerlink" title="Passing closures to child views"></a>Passing closures to child views</h4><p>I usually build my app screen by implementing one container view which handles all the data-flow related to the screen and a couple of rendering views, which simply represent passed data and propagate user actions to the container view. Let’s take a look at an example.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PostContainerView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">EnvironmentObject</span> <span class="keyword">var</span> store: <span class="type">Store</span>&lt;<span class="type">State</span>, <span class="type">Action</span>&gt;</span><br><span class="line">    @<span class="type">State</span> <span class="keyword">private</span> <span class="keyword">var</span> content: <span class="type">String</span> = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">PostContentView</span>(</span><br><span class="line">            content: $content,</span><br><span class="line">            postContent: postContent</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">postContent</span><span class="params">()</span></span> &#123;</span><br><span class="line">        store.send(.post(content))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PostContentView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">Binding</span> <span class="keyword">var</span> content: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> postContent: () -&gt; <span class="type">Void</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">VStack</span> &#123;</span><br><span class="line">            <span class="type">TextField</span>(<span class="string">"type something..."</span>, text: $content)</span><br><span class="line">            <span class="type">Button</span>(<span class="string">"post"</span>, action: postContent)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Here we have a container view that handles user actions by providing a closure to the child view. <em>PostContentView</em> renders the state provided by a container view and passes user action to the container view. This technique allows us to reuse <em>PostContentView</em> across the codebase. We can use it whenever we need to post a comment or some post.</p>
+<h4 id="Extracting-navigation-into-closures"><a href="#Extracting-navigation-into-closures" class="headerlink" title="Extracting navigation into closures"></a>Extracting navigation into closures</h4><p><em>SwiftUI</em> has a pretty declarative way of building navigation between the screens. All you need to do is embedding your view into a <em>NavigationLink</em> with a provided destination view. Here is a quick example of using <em>NavigationLink</em> in <em>SwiftUI</em> apps.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ItemsView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> items: [<span class="type">Item</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">NavigationView</span> &#123;</span><br><span class="line">            <span class="type">List</span>(items) &#123; item <span class="keyword">in</span></span><br><span class="line">                <span class="type">NavigationLink</span>(destination: <span class="type">DetailsView</span>(item: item)) &#123;</span><br><span class="line">                    <span class="type">Text</span>(item.id.uuidString)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>As you can see in the example above, we simply wrap our list item into a <em>NavigationLink</em>, which navigates to the <em>DetailsView</em> after a click on any list item. The logic here is very straightforward, but it has at least one downside. <em>ItemsView</em> knows about <em>DetailsView</em> and depends on it, and because of that, we can’t reuse it somewhere in our app, or we can’t use it with a different destination in other parts of the app. Let’s see how we can solve the problem by using closures.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ItemsView</span>&lt;<span class="title">Destination</span>: <span class="title">View</span>&gt;: <span class="title">View</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> items: [<span class="type">Item</span>]</span><br><span class="line">    <span class="keyword">let</span> buildDestination: (<span class="type">Item</span>) -&gt; <span class="type">Destination</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">NavigationView</span> &#123;</span><br><span class="line">            <span class="type">List</span>(items) &#123; item <span class="keyword">in</span></span><br><span class="line">                <span class="type">NavigationLink</span>(destination: <span class="keyword">self</span>.buildDestination(item)) &#123;</span><br><span class="line">                    <span class="type">Text</span>(item.id.uuidString)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>I refactored our <em>ItemsView</em> to accept a closure which maps an item to a destination view. It allows us to leave the responsibility of creating a destination view to a parent view. Now we can reuse <em>ItemsView</em> with different destinations depending on our use case. Here is a code sample demonstrating the usage of the <em>ItemsView</em>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ItemsContainerView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">State</span> <span class="keyword">private</span> <span class="keyword">var</span> items: [<span class="type">Item</span>] = [.<span class="keyword">init</span>(), .<span class="keyword">init</span>(), .<span class="keyword">init</span>()]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">ItemsView</span>(items: items) &#123; item <span class="keyword">in</span></span><br><span class="line">            <span class="comment">// build your destination view here</span></span><br><span class="line">            <span class="type">Text</span>(item.id.uuidString)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Here we have <em>ItemsContainerView</em>, which handles data-flow for the screen and builds the destination view. It feels very natural by using trailing closure syntax.</p>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>This week we learned how to use <em>closures</em> to extract navigation and user input handling from <em>SwiftUI</em> views. <em>Closures</em> allow us to make our views decoupled and respecting the single responsibility principle. We can benefit it to build simple and composable view hierarchies in <em>SwiftUI</em>. I hope you enjoy the post. See you!</p>
+<p>source: Majid Jabrayilov</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/" rel="next" title="You Have to Change Mindset to Use SwiftUI">
+                  <i class="fa fa-chevron-left"></i> You Have to Change Mindset to Use SwiftUI
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Passing-closures-to-child-views"><span class="nav-number">1.</span> <span class="nav-text">Passing closures to child views</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Extracting-navigation-into-closures"><span class="nav-number">2.</span> <span class="nav-text">Extracting navigation into closures</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/assets/images/logo/icon-310x310.png"
+      alt="Duc Ninja">
+  <p class="site-author-name" itemprop="name">Duc Ninja</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duc Ninja</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
