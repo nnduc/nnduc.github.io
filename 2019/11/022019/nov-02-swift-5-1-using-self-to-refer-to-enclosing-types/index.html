@@ -56,21 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !">
-<meta name="keywords" content="tips,xcode,ios,lldb">
+  <meta name="description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LLDB: Po vs E">
-<meta property="og:url" content="https://duc.ninja/2018/01/252018/po-vs-e/index.html">
+<meta property="og:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta property="og:url" content="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !">
+<meta property="og:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://duc.ninja/assets/images/po-vs-e.jpg">
-<meta property="og:updated_time" content="2019-05-28T09:09:44.000Z">
+<meta property="og:updated_time" content="2019-11-07T01:23:00.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LLDB: Po vs E">
-<meta name="twitter:description" content="For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !">
-<meta name="twitter:image" content="https://duc.ninja/assets/images/po-vs-e.jpg">
-  <link rel="canonical" href="https://duc.ninja/2018/01/252018/po-vs-e/">
+<meta name="twitter:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta name="twitter:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
+  <link rel="canonical" href="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/">
 
 
 <script id="page-configurations">
@@ -84,7 +82,7 @@
   };
 </script>
 
-  <title>LLDB: Po vs E | Duc Ninja</title>
+  <title>Swift 5.1 Using Self to Refer to Enclosing Types | Duc Ninja</title>
   
 
 
@@ -204,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/01/252018/po-vs-e/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duc Ninja">
@@ -218,7 +216,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            LLDB: Po vs E
+            Swift 5.1 Using Self to Refer to Enclosing Types
             
 
           
@@ -235,7 +233,7 @@
                 
               
 
-              <time title="Created: 2018-01-25 21:43:00" itemprop="dateCreated datePublished" datetime="2018-01-25T21:43:00+07:00">2018-01-25</time>
+              <time title="Created: 2019-11-02 13:15:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:15:00+07:00">2019-11-02</time>
             </span>
           
             
@@ -246,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-28 16:09:44" itemprop="dateModified" datetime="2019-05-28T16:09:44+07:00">2019-05-28</time>
+                <time title="Modified: 2019-11-07 08:23:00" itemprop="dateModified" datetime="2019-11-07T08:23:00+07:00">2019-11-07</time>
               </span>
             
           
@@ -262,10 +260,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br></p>
+        <p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
 <a id="more"></a>
-<p><img src="/assets/images/po-vs-e.jpg" alt></p>
-<p>Source: @caro</p>
+
+<p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Numeric</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">incremented</span><span class="params">(by value: <span class="keyword">Self</span> = <span class="number">1</span>)</span></span> -&gt; <span class="type">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span> + value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>While that’s still possible, the scope of <code>Self</code> has now been extended to also include concrete types — like enums, structs and classes — enabling us to use <code>Self</code> as a sort of alias referring to a method or property’s <em>enclosing</em> type, like this:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    static <span class="selector-tag">var</span> capitalize: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.capitalized</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static <span class="selector-tag">var</span> removeLetters: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.filter</span> &#123; !$<span class="number">0</span><span class="selector-class">.isLetter</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The fact that we can now use <code>Self</code> above, rather than the full <code>TextTransform</code> type name, is of course purely <em>syntactic sugar</em> — but it can help make our code a bit more compact, especially when dealing with long type names. We can even use <code>Self</code> inline within a method or property as well, further making the above code even more compact:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> capitalize: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>capitalized &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> removeLetters: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>filter &#123; !$<span class="number">0.</span>isLetter &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Besides referring to an enclosing type itself, we can now also use <code>Self</code> to access static members within an instance method or property — which is quite useful in situations when we want to reuse the same value across all instances of a type, such as the <code>cellReuseIdentifier</code> in this example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListViewController</span>: <span class="title">UITableViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> cellReuseIdentifier = <span class="string">"list-cell"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        tableView.register(</span><br><span class="line">            <span class="type">ListTableViewCell</span>.<span class="keyword">self</span>,</span><br><span class="line">            forCellReuseIdentifier: <span class="type">Self</span>.cellReuseIdentifier</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Again, we could’ve simply typed out <code>ListViewController</code> above when accessing our static property, but using <code>Self</code> does arguably improve the readability of our code — and will also enable us to rename our view controller without having to update the way we access its static members. <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md" target="_blank" rel="noopener">https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md</a>)</p>
+<p>Happy coding!</p>
 
     </div>
 
@@ -276,29 +287,14 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/tips/" rel="tag"># tips</a>
-            
-              <a href="/tags/xcode/" rel="tag"># xcode</a>
-            
-              <a href="/tags/ios/" rel="tag"># ios</a>
-            
-              <a href="/tags/lldb/" rel="tag"># lldb</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/01/252018/run-test-case/" rel="next" title="Shortcut to Run a Test Case or Run Whole Test Case">
-                  <i class="fa fa-chevron-left"></i> Shortcut to Run a Test Case or Run Whole Test Case
+                <a href="/2019/10/122019/oct-12-swift-5-1-implicit-return/" rel="next" title="Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer">
+                  <i class="fa fa-chevron-left"></i> Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer
                 </a>
               
             </div>
@@ -306,10 +302,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2018/02/042018/open-terminal-from-xcode/" rel="prev" title="Open Terminal From Xcode">
-                  Open Terminal From Xcode <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>

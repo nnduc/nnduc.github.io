@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
-<meta name="keywords" content="xcode,tips">
+<meta name="keywords" content="tips,xcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Easy XIB and Storyboard Localization">
 <meta property="og:url" content="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/index.html">
@@ -71,7 +71,7 @@
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*lTVg9pCO35OzgY1oObi8Wg.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*ZDtR1ogbCU3zmUBmCZQ3YA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*YlzFrh9t24GWIFWcDgvQPQ.png">
-<meta property="og:updated_time" content="2019-11-02T05:56:37.689Z">
+<meta property="og:updated_time" content="2019-05-28T09:09:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Easy XIB and Storyboard Localization">
 <meta name="twitter:description" content="Photo by freestocks.org on Unsplash Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.">
@@ -252,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
+                <time title="Modified: 2019-05-28 16:09:44" itemprop="dateModified" datetime="2019-05-28T16:09:44+07:00">2019-05-28</time>
               </span>
             
           
@@ -296,7 +296,7 @@
 <p><code>Localizable</code>, that we will use to get a localized string from another string used as the key:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Localizable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> localized: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">String</span>: <span class="title">Localizable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> localized: <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">NSLocalizedString</span>(<span class="keyword">self</span>, comment: <span class="string">""</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="built_in">String</span>: Localizable &#123;</span><br><span class="line">    <span class="built_in">var</span> localized: <span class="built_in">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> NSLocalizedString(<span class="built_in">self</span>, comment: <span class="string">""</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>And <code>XIBLocalizable</code>, that we will use to localize controls from an IB file:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">XIBLocalizable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xibLocKey: <span class="type">String?</span> &#123; <span class="keyword">get</span> <span class="keyword">set</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -351,9 +351,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/xcode/" rel="tag"># xcode</a>
-            
               <a href="/tags/tips/" rel="tag"># tips</a>
+            
+              <a href="/tags/xcode/" rel="tag"># xcode</a>
             
           </div>
         
@@ -440,7 +440,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
