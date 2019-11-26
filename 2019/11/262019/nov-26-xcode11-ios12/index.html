@@ -66,8 +66,8 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/spookyError.png">
 <meta property="og:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/iOSPercentage.png">
-<meta property="og:image" content="https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/xcode11-ios12.assets/deploymentTarget.png">
-<meta property="og:updated_time" content="2019-11-26T09:59:15.866Z">
+<meta property="og:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/deploymentTarget.png">
+<meta property="og:updated_time" content="2019-11-26T10:09:39.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Allow App Created in Xcode 11 to Run on iOS 12 and Lower">
 <meta name="twitter:description" content="If you create a new app in Xcode 11 and try to run it on an iOS 12 device or lower, you will get a bunch of errors :">
@@ -237,7 +237,7 @@
                 
               
 
-              <time title="Created: 2019-11-26 16:35:00 / Modified: 16:59:15" itemprop="dateCreated datePublished" datetime="2019-11-26T16:35:00+07:00">2019-11-26</time>
+              <time title="Created: 2019-11-26 16:35:00 / Modified: 17:09:39" itemprop="dateCreated datePublished" datetime="2019-11-26T16:35:00+07:00">2019-11-26</time>
             </span>
           
             
@@ -266,7 +266,7 @@
 <p><img src="/assets/images/xcode11-ios12.assets/iOSPercentage.png" alt="iOS Percentage"></p>
 <p>If you are dropping support for iOS 12 and below, you are denying half of the iOS users to use your app! 😱</p>
 <h2 id="Update-deployment-target"><a href="#Update-deployment-target" class="headerlink" title="Update deployment target"></a>Update deployment target</h2><p>If you haven’t already, change the deployment target to the lowest iOS version you want to support, select the project name then select your app target, choose <strong>General</strong> and change the version in Deployment Info.</p>
-<p><img src="xcode11-ios12.assets/deploymentTarget.png" alt="change deployment target"></p>
+<p><img src="/assets/images/xcode11-ios12.assets/deploymentTarget.png" alt="change deployment target"></p>
 <h2 id="available-out-the-SceneDelegate-swift"><a href="#available-out-the-SceneDelegate-swift" class="headerlink" title="@available out the SceneDelegate.swift"></a>@available out the SceneDelegate.swift</h2><p>As the SceneDelegate class is only available on iOS 13 and above, we have to tell the compiler to only include the class for iOS 13 and above. To do this, we will add this line “<strong>@available(iOS 13.0, *)</strong>“ right above the  SceneDelegate class declaration like this :</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SceneDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIWindowSceneDelegate</span> </span>&#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
