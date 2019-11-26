@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="By default didSet of a property  don’t called during init, so we can use defer to fix that issue.">
-<meta name="keywords" content="tips,swift">
+  <meta name="description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Use didSet During Initialling an Object in Swift 4">
-<meta property="og:url" content="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/index.html">
+<meta property="og:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta property="og:url" content="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="By default didSet of a property  don’t called during init, so we can use defer to fix that issue.">
+<meta property="og:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-26T09:14:50.868Z">
+<meta property="og:updated_time" content="2019-11-26T09:14:50.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Use didSet During Initialling an Object in Swift 4">
-<meta name="twitter:description" content="By default didSet of a property  don’t called during init, so we can use defer to fix that issue.">
-  <link rel="canonical" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/">
+<meta name="twitter:title" content="Swift 5.1 Using Self to Refer to Enclosing Types">
+<meta name="twitter:description" content="Swift’s Self keyword (or type, really) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implem">
+  <link rel="canonical" href="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>Use didSet During Initialling an Object in Swift 4 | Duc Ninja</title>
+  <title>Swift 5.1 Using Self to Refer to Enclosing Types | Duc Ninja</title>
   
 
 
@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duc Ninja">
@@ -216,7 +216,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            Use didSet During Initialling an Object in Swift 4
+            Swift 5.1 Using Self to Refer to Enclosing Types
             
 
           
@@ -233,7 +233,7 @@
                 
               
 
-              <time title="Created: 2017-11-04 14:00:00" itemprop="dateCreated datePublished" datetime="2017-11-04T14:00:00+07:00">2017-11-04</time>
+              <time title="Created: 2019-11-02 13:15:00" itemprop="dateCreated datePublished" datetime="2019-11-02T13:15:00+07:00">2019-11-02</time>
             </span>
           
             
@@ -260,10 +260,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>By default <code>didSet</code> of a property  don’t called during init, so we can use <code>defer</code> to fix that issue.</p>
+        <p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
 <a id="more"></a>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VideoPlayerController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">State</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> idle</span><br><span class="line">        <span class="keyword">case</span> loading(<span class="type">URL</span>, <span class="type">Data</span>)</span><br><span class="line">        <span class="keyword">case</span> playing(<span class="type">Video</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> state = <span class="type">State</span>.idle &#123;</span><br><span class="line">        <span class="keyword">didSet</span> &#123; updateVideoView() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(state initialState: <span class="type">State</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(nibName: <span class="literal">nil</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">        <span class="comment">// By deferring the state assignment, our property observer is</span></span><br><span class="line">        <span class="comment">// invoked, so we don't need to call updateVideoView() manually.</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; state = initialState &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>Swift’s <code>Self</code> keyword (<em>or type, really</em>) has previously enabled us to dynamically refer to a type in contexts where the actual concrete type isn’t known — for example by referring to a protocol’s implementing type within a protocol extension:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Numeric</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">incremented</span><span class="params">(by value: <span class="keyword">Self</span> = <span class="number">1</span>)</span></span> -&gt; <span class="type">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span> + value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>While that’s still possible, the scope of <code>Self</code> has now been extended to also include concrete types — like enums, structs and classes — enabling us to use <code>Self</code> as a sort of alias referring to a method or property’s <em>enclosing</em> type, like this:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    static <span class="selector-tag">var</span> capitalize: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.capitalized</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static <span class="selector-tag">var</span> removeLetters: Self &#123;</span><br><span class="line">        return TextTransform &#123; $<span class="number">0</span><span class="selector-class">.filter</span> &#123; !$<span class="number">0</span><span class="selector-class">.isLetter</span> &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The fact that we can now use <code>Self</code> above, rather than the full <code>TextTransform</code> type name, is of course purely <em>syntactic sugar</em> — but it can help make our code a bit more compact, especially when dealing with long type names. We can even use <code>Self</code> inline within a method or property as well, further making the above code even more compact:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension TextTransform &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> capitalize: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>capitalized &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> removeLetters: <span class="keyword">Self</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">Self</span> &#123; $<span class="number">0.</span>filter &#123; !$<span class="number">0.</span>isLetter &#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Besides referring to an enclosing type itself, we can now also use <code>Self</code> to access static members within an instance method or property — which is quite useful in situations when we want to reuse the same value across all instances of a type, such as the <code>cellReuseIdentifier</code> in this example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListViewController</span>: <span class="title">UITableViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> cellReuseIdentifier = <span class="string">"list-cell"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        tableView.register(</span><br><span class="line">            <span class="type">ListTableViewCell</span>.<span class="keyword">self</span>,</span><br><span class="line">            forCellReuseIdentifier: <span class="type">Self</span>.cellReuseIdentifier</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Again, we could’ve simply typed out <code>ListViewController</code> above when accessing our static property, but using <code>Self</code> does arguably improve the readability of our code — and will also enable us to rename our view controller without having to update the way we access its static members. <a href="https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md" target="_blank" rel="noopener">https://github.com/apple/swift-evolution/blob/master/proposals/0242-default-values-memberwise.md</a>)</p>
+<p>Happy coding!</p>
 
     </div>
 
@@ -274,25 +287,14 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/tips/" rel="tag"># tips</a>
-            
-              <a href="/tags/swift/" rel="tag"># swift</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2017/10/222017/convert-utc-local-swift4/" rel="next" title="Convert Between UTC and Device Timezone in Swift 4">
-                  <i class="fa fa-chevron-left"></i> Convert Between UTC and Device Timezone in Swift 4
+                <a href="/2019/10/122019/oct-12-swift-5-1-implicit-return/" rel="next" title="Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer">
+                  <i class="fa fa-chevron-left"></i> Swift 5.1 Implicit Returns and Default Values for Memberwise Initializer
                 </a>
               
             </div>
@@ -300,10 +302,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2017/11/042017/chained-foreach/" rel="prev" title="Injecting forEach Into Chained Method Calls">
-                  Injecting forEach Into Chained Method Calls <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
