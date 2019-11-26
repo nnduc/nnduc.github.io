@@ -56,21 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
-<meta name="keywords" content="xcode,tips">
+  <meta name="description" content="DiffingUIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, et">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Customizing the File Header Comment and Text Macros">
-<meta property="og:url" content="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/index.html">
+<meta property="og:title" content="You Have to Change Mindset to Use SwiftUI">
+<meta property="og:url" content="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
+<meta property="og:description" content="DiffingUIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, et">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0">
-<meta property="og:updated_time" content="2019-11-26T09:14:50.868Z">
+<meta property="og:updated_time" content="2019-11-26T09:45:39.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Customizing the File Header Comment and Text Macros">
-<meta name="twitter:description" content="Text macrosText macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You c">
-<meta name="twitter:image" content="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0">
-  <link rel="canonical" href="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/">
+<meta name="twitter:title" content="You Have to Change Mindset to Use SwiftUI">
+<meta name="twitter:description" content="DiffingUIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, et">
+  <link rel="canonical" href="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/">
 
 
 <script id="page-configurations">
@@ -84,7 +82,7 @@
   };
 </script>
 
-  <title>Customizing the File Header Comment and Text Macros | Duc Ninja</title>
+  <title>You Have to Change Mindset to Use SwiftUI | Duc Ninja</title>
   
 
 
@@ -204,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Duc Ninja">
@@ -218,7 +216,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            Customizing the File Header Comment and Text Macros
+            You Have to Change Mindset to Use SwiftUI
             
 
           
@@ -235,19 +233,11 @@
                 
               
 
-              <time title="Created: 2017-11-04 23:15:00" itemprop="dateCreated datePublished" datetime="2017-11-04T23:15:00+07:00">2017-11-04</time>
+              <time title="Created: 2019-11-26 16:00:00 / Modified: 16:45:39" itemprop="dateCreated datePublished" datetime="2019-11-26T16:00:00+07:00">2019-11-26</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-26 16:14:50" itemprop="dateModified" datetime="2019-11-26T16:14:50+07:00">2019-11-26</time>
-              </span>
             
           
 
@@ -262,26 +252,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Text-macros"><a href="#Text-macros" class="headerlink" title="Text macros"></a>Text macros</h2><p>Text macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You can customize existing macros and add your own macros in a project, for all users of a project, or for all of Xcode. Customizing a macro requires two things:</p>
+        <h4 id="Diffing"><a href="#Diffing" class="headerlink" title="Diffing"></a>Diffing</h4><p><em>UIKit</em> is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The big downside of this approach is the complexity of keeping in sync User Interface with its state. As soon as state changes, you need to manually add/remove/show/hide the views and keep it in sync with the current state.</p>
 <a id="more"></a>
-<ul>
-<li><em>A plist named IDETemplateMacros.plist at an appropriate location.</em></li>
-<li><em>An entry in IDETemplateMacros.plist for the text macro.</em></li>
-<li> Xcode looks for the value of a text macro in the following locations and uses the first matching macro:<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Project<span class="built_in"> user </span>data -&gt; Project shared data -&gt; Workspace<span class="built_in"> user </span>data -&gt; Workspace shared data -&gt;<span class="built_in"> User </span>Xcode data</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<!-- ![](/assets/images/xcode-file-header-comment.png) -->
+<p><em>SwiftUI</em> is a declarative framework for building User Interfaces on Apple platforms. The keyword here is declarative. Declarative means that you need to declare what you want to achieve, and the framework takes care of it. Framework knows the best way to render the User Interface.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UI</span> = f(state)</span><br></pre></td></tr></table></figure>
 
-<h3 id="For-a-single-project-and-user"><a href="#For-a-single-project-and-user" class="headerlink" title="For a single project and user:"></a>For a single project and user:</h3><p>  <code>&lt;ProjectName&gt;.xcodeproj/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</code></p>
-<h3 id="For-all-team-members-in-a-single-project"><a href="#For-all-team-members-in-a-single-project" class="headerlink" title="For all team members in a single project:"></a>For all team members in a single project:</h3><p>  <code>&lt;ProjectName&gt;.xcodeproj/xcshareddata/IDETemplateMacros.plist</code></p>
-<h3 id="For-all-projects-in-a-workspace-for-a-single-user"><a href="#For-all-projects-in-a-workspace-for-a-single-user" class="headerlink" title="For all projects in a workspace for a single user:"></a>For all projects in a workspace for a single user:</h3><p>  <code>&lt;WorkspaceName&gt;.xcworkspace/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</code></p>
-<h3 id="For-all-projects-in-a-workspace-for-all-team-members"><a href="#For-all-projects-in-a-workspace-for-all-team-members" class="headerlink" title="For all projects in a workspace for all team members:"></a>For all projects in a workspace for all team members:</h3><p>  <code>&lt;WorkspaceName&gt;.xcworkspace/xcshareddata/IDETemplateMacros.plist</code></p>
-<h3 id="For-everything-you-work-on-regardless-of-project"><a href="#For-everything-you-work-on-regardless-of-project" class="headerlink" title="For everything you work on, regardless of project:"></a>For everything you work on, regardless of project:</h3><p>  <code>~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist</code></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  ___FILENAME___</span></span><br><span class="line"><span class="comment">//  ___PACKAGENAME___</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by ___FULLUSERNAME___ on ___DATE___.</span></span><br><span class="line"><span class="comment">//  ___COPYRIGHT___</span></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<p>The User Interface in <em>SwiftUI</em> is a function of its state. It means whenever the view’s state changes, it recomputes its <strong>body property</strong> and generates a new view. Let’s take a look at a quick sample.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ContentView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">ObservedObject</span> <span class="keyword">var</span> store: <span class="type">Store</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">Group</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> store.isLoading &#123;</span><br><span class="line">                <span class="type">Text</span>(<span class="string">"Loading..."</span>)</span><br><span class="line">                    .font(.subheadline)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="type">Image</span>(<span class="string">"photo"</span>)</span><br><span class="line">                    .font(.largeTitle)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0" alt="Text macros reference"></p>
-<p>Source: Ole Begemann</p>
+<p>As you can see in the example above, we have a view that shows loading text and image when the loading finishes. <em>ObserverObject</em> here is a state of this view, and as soon as it changes, <em>SwiftUI</em> recomputes the body property and assigns a new view. In typical <em>UIKit</em> development, we need manually to hide/show the elements of the view hierarchy, but in <em>SwiftUI</em>, we don’t need to add/remove the loading indicator. We have a few ways of describing a state of the view in SwiftUI.</p>
+<p>Let’s take a more in-depth look at what happens when the view’s state changes. <em>SwiftUI</em> has a snapshot of the current view hierarchy, and as soon as state changes, it computes a new view. Finally, <em>SwiftUI</em> applies diffing algorithms to understand differences and automatically add/remove/update needed views. By default, <em>SwiftUI</em> uses standard fade in/out transition to show/hide views, but you can manually change the transition to any animation you want.</p>
+<h4 id="View-hierarchy"><a href="#View-hierarchy" class="headerlink" title="View hierarchy"></a>View hierarchy</h4><p>Let’s talk about view hierarchy now, and how actually <em>SwiftUI</em> renders your view struct. The very first thing which I want to mention that <em>SwiftUI</em> doesn’t render your view struct by doing the one-to-one mapping. You can use as many view containers as you want, but in the end, <em>SwiftUI</em> renders only views that make sense. It means that you can extract you view logic into small views and then compose and reuse them across the app. Don’t worry, performance, in this case, won’t be affected.</p>
+<p>The best way to understand the complex view hierarchies in <em>SwiftUI</em> is by printing its type. <em>SwiftUI</em> uses the static type system of <em>Swift</em> to make diffing so fast. First of all, it checks the type of the view, and then checks its values of the view components. I’m not a fan of using reflections in production code, but it is very helpful during the learning process.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="type">Mirror</span>(reflecting: <span class="type">ContentView</span>(store: .<span class="keyword">init</span>()).body))</span><br><span class="line"><span class="comment">// Group&lt;_ConditionalContent&lt;Text, ModifiedContent&lt;Image, _EnvironmentKeyWritingModifier&lt;Optional&lt;Font&gt;&gt;&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>By using <em>Mirror</em> struct, we can print the real type of the <em>ContentView*’s body and learn how *SwiftUI</em> works under the hood.</p>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>This week we learned the main difference between <em>UIKit</em> and <em>SwiftUI</em> and took an in-depth look at the diffing algorithm in <em>SwiftUI</em>. Thanks for reading, and see you next week!</p>
+<p>source: swiftwithmajid</p>
 
     </div>
 
@@ -292,25 +280,14 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/xcode/" rel="tag"># xcode</a>
-            
-              <a href="/tags/tips/" rel="tag"># tips</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2017/11/042017/what-the-hell-is-swift-4-access-control/" rel="next" title="What the Hell Is Swift 4 Access Control?">
-                  <i class="fa fa-chevron-left"></i> What the Hell Is Swift 4 Access Control?
+                <a href="/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/" rel="next" title="Swift 5.1 Using Self to Refer to Enclosing Types">
+                  <i class="fa fa-chevron-left"></i> Swift 5.1 Using Self to Refer to Enclosing Types
                 </a>
               
             </div>
@@ -318,10 +295,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2017/11/052017/remove-old-simulators/" rel="prev" title="Remove Old Simulators">
-                  Remove Old Simulators <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -367,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-macros"><span class="nav-number">1.</span> <span class="nav-text">Text macros</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#For-a-single-project-and-user"><span class="nav-number">1.1.</span> <span class="nav-text">For a single project and user:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-all-team-members-in-a-single-project"><span class="nav-number">1.2.</span> <span class="nav-text">For all team members in a single project:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-all-projects-in-a-workspace-for-a-single-user"><span class="nav-number">1.3.</span> <span class="nav-text">For all projects in a workspace for a single user:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-all-projects-in-a-workspace-for-all-team-members"><span class="nav-number">1.4.</span> <span class="nav-text">For all projects in a workspace for all team members:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-everything-you-work-on-regardless-of-project"><span class="nav-number">1.5.</span> <span class="nav-text">For everything you work on, regardless of project:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.</span> <span class="nav-text">Example</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Diffing"><span class="nav-number">1.</span> <span class="nav-text">Diffing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-hierarchy"><span class="nav-number">2.</span> <span class="nav-text">View hierarchy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
