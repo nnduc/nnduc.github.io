@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Duc Ninja" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="If you create a new app in Xcode 11 and try to run it on an iOS 12 device or lower, you will get a bunch of errors :">
+<meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Allow App Created in Xcode 11 to Run on iOS 12 and Lower">
+<meta property="og:url" content="https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/index.html">
+<meta property="og:site_name" content="Duc Ninja">
+<meta property="og:description" content="If you create a new app in Xcode 11 and try to run it on an iOS 12 device or lower, you will get a bunch of errors :">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/spookyError.png">
+<meta property="og:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/iOSPercentage.png">
+<meta property="og:image" content="https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/xcode11-ios12.assets/deploymentTarget.png">
+<meta property="og:updated_time" content="2019-11-26T09:59:15.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Allow App Created in Xcode 11 to Run on iOS 12 and Lower">
+<meta name="twitter:description" content="If you create a new app in Xcode 11 and try to run it on an iOS 12 device or lower, you will get a bunch of errors :">
+<meta name="twitter:image" content="https://duc.ninja/assets/images/xcode11-ios12.assets/spookyError.png">
+  <link rel="canonical" href="https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Allow App Created in Xcode 11 to Run on iOS 12 and Lower | Duc Ninja</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Duc Ninja</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-blog">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-my-info">
+      
+    
+
+    <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i>My info</a>
+
+  </li>
+      
+    
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            Allow App Created in Xcode 11 to Run on iOS 12 and Lower
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-26 16:35:00 / Modified: 16:59:15" itemprop="dateCreated datePublished" datetime="2019-11-26T16:35:00+07:00">2019-11-26</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>If you create a new app in Xcode 11 and try to run it on an iOS 12 device or lower, you will get a bunch of errors :</p>
+<p><img src="/assets/images/xcode11-ios12.assets/spookyError.png" alt="errors"></p>
+<a id="more"></a>
+
+<p>Notice that most of these errors are related to the <strong>UIScene</strong> class and the <strong>SceneDelegate.swift</strong> file, these are related to the <strong>multi-window feature</strong> introduced in iOS 13, which allows multiple windows of an app to be opened in iPad. As iOS 12 and earlier don’t have these feature, we will get these error messages when trying to compile.</p>
+<p>We will try to resolve these errors step by step in this article.</p>
+<p>You can save the hassle by setting deployment target to iOS 13 and above, and ditch support for iOS 12 and below 😈. But keep in mind that <strong>half of the iOS devices</strong> in circulation <strong>are not</strong> using iOS 13 as of mid October 2019, according to <a href="https://developer.apple.com/support/app-store/" target="_blank" rel="noopener">Apple’s report</a> :</p>
+<p><img src="/assets/images/xcode11-ios12.assets/iOSPercentage.png" alt="iOS Percentage"></p>
+<p>If you are dropping support for iOS 12 and below, you are denying half of the iOS users to use your app! 😱</p>
+<h2 id="Update-deployment-target"><a href="#Update-deployment-target" class="headerlink" title="Update deployment target"></a>Update deployment target</h2><p>If you haven’t already, change the deployment target to the lowest iOS version you want to support, select the project name then select your app target, choose <strong>General</strong> and change the version in Deployment Info.</p>
+<p><img src="xcode11-ios12.assets/deploymentTarget.png" alt="change deployment target"></p>
+<h2 id="available-out-the-SceneDelegate-swift"><a href="#available-out-the-SceneDelegate-swift" class="headerlink" title="@available out the SceneDelegate.swift"></a>@available out the SceneDelegate.swift</h2><p>As the SceneDelegate class is only available on iOS 13 and above, we have to tell the compiler to only include the class for iOS 13 and above. To do this, we will add this line “<strong>@available(iOS 13.0, *)</strong>“ right above the  SceneDelegate class declaration like this :</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SceneDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIWindowSceneDelegate</span> </span>&#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="available-out-some-methods-in-AppDelegate-swift"><a href="#available-out-some-methods-in-AppDelegate-swift" class="headerlink" title="@available out some methods in AppDelegate.swift"></a>@available out some methods in AppDelegate.swift</h2><p>Next, there are two new methods added in AppDelegate.swift, which only supports iOS 13 and above. We will add the same @available(iOS 13.0, *) on top of them as well :</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AppDelegate.swift</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions)</span></span> -&gt; <span class="type">UISceneConfiguration</span> &#123;</span><br><span class="line">    <span class="comment">// Called when a new scene session is being created.</span></span><br><span class="line">    <span class="comment">// Use this method to select a configuration to create the new scene with.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="type">UISceneConfiguration</span>(name: <span class="string">"Default Configuration"</span>, sessionRole: connectingSceneSession.role)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@available</span>(iOS <span class="number">13.0</span>, *)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;)</span></span> &#123;</span><br><span class="line">    <span class="comment">// Called when the user discards a scene session.</span></span><br><span class="line">    <span class="comment">// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.</span></span><br><span class="line">    <span class="comment">// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Add-back-the-window-to-AppDelegate"><a href="#Add-back-the-window-to-AppDelegate" class="headerlink" title="Add back the window to AppDelegate"></a>Add back the window to AppDelegate</h2><p>If you build and run your app now, you will get a dark black screen 😱, because there’s no UIWindow initialized.</p>
+<p>In iOS 12 and older, there’s always a <strong>var window: UIWindow?</strong> variable located at the top of AppDelegate.swft. iOS 13 has moved this variable to SceneDelegate.swift, and now we are going to add back this variable to AppDelegate.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="meta">@UIApplicationMain</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIApplicationDelegate</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> window: <span class="type">UIWindow?</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now Build and run your app on an iOS 12 devices, and it works! 🥳</p>
+<p>I guess Apple really wants iOS developers to adopt and focus on iOS 13, to the extent that they don’t mind breaking support for iOS 12 and older with default settings in Xcode.</p>
+<p>If you are lazy to do these step manually every time, you can also download <a href="https://developer.apple.com/download/more/" target="_blank" rel="noopener">Xcode 10.3 in the Apple’s developer download portal</a> (require sign in with your Apple ID), create a new Xcode project using it, and then edit it using Xcode 11.</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/" rel="next" title="The Power of Closures in SwiftUI">
+                  <i class="fa fa-chevron-left"></i> The Power of Closures in SwiftUI
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-deployment-target"><span class="nav-number">1.</span> <span class="nav-text">Update deployment target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#available-out-the-SceneDelegate-swift"><span class="nav-number">2.</span> <span class="nav-text">@available out the SceneDelegate.swift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#available-out-some-methods-in-AppDelegate-swift"><span class="nav-number">3.</span> <span class="nav-text">@available out some methods in AppDelegate.swift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-back-the-window-to-AppDelegate"><span class="nav-number">4.</span> <span class="nav-text">Add back the window to AppDelegate</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/assets/images/logo/icon-310x310.png"
+      alt="Duc Ninja">
+  <p class="site-author-name" itemprop="name">Duc Ninja</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Duc Ninja</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
