@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/</loc>
+    <loc>https://duc.ninja/2019/12/012019/dec-1-lightweight-api-design-in-swift/</loc>
+    
+    <lastmod>2019-12-01T04:26:30.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
     
     <lastmod>2019-11-26T14:43:06.015Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
+    <loc>https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/</loc>
     
     <lastmod>2019-11-26T14:43:06.015Z</lastmod>
     
@@ -58,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
+    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
     
     <lastmod>2019-11-02T05:56:37.693Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
+    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
     
     <lastmod>2019-11-02T05:56:37.693Z</lastmod>
     
@@ -75,6 +82,13 @@
     <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
     
     <lastmod>2019-11-02T05:56:37.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.692Z</lastmod>
     
   </url>
   
@@ -93,21 +107,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.692Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
     
@@ -121,9 +121,30 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.691Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
   </url>
   
@@ -135,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
@@ -156,20 +177,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
@@ -177,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
+    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
