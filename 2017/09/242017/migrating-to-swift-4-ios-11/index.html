@@ -20,7 +20,6 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -30,11 +29,11 @@
     scheme: 'Mist',
     version: '7.4.1',
     exturl: false,
-    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":true,"style":"flat"},
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
+    fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -71,7 +70,7 @@
 <meta property="og:image" content="https://duc.ninja/assets/images/safearea.png">
 <meta property="og:image" content="https://duc.ninja/assets/images/largetitles.png">
 <meta property="og:image" content="https://duc.ninja/assets/images/largetitlesnever.png">
-<meta property="og:updated_time" content="2019-11-02T05:56:37.690Z">
+<meta property="og:updated_time" content="2019-11-26T10:09:39.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Migrating to Swift 4">
 <meta name="twitter:description" content="In the past, migrating your code was a big deal when a new version of Swift was introduced – when Swift 3 came around, it seemed like every line of code had a syntax change. This time around, however,">
@@ -197,7 +196,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -253,7 +251,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
+                <time title="Modified: 2019-11-26 17:09:39" itemprop="dateModified" datetime="2019-11-26T17:09:39+07:00">2019-11-26</time>
               </span>
             
           
@@ -371,9 +369,9 @@ Now, let's have a glance at the basic styles: [link](http://github.com/syaning/v
           
           <div class="post-tags">
             
-              <a href="/tags/tips/" rel="tag"><i class="fa fa-tag"></i> tips</a>
+              <a href="/tags/tips/" rel="tag"># tips</a>
             
-              <a href="/tags/swift/" rel="tag"><i class="fa fa-tag"></i> swift</a>
+              <a href="/tags/swift/" rel="tag"># swift</a>
             
           </div>
         
@@ -570,72 +568,12 @@ Now, let's have a glance at the basic styles: [link](http://github.com/syaning/v
 
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
 <script src="/js/schemes/muse.js?v=7.4.1"></script>
 
 <script src="/js/next-boot.js?v=7.4.1"></script>
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    if (element.type !== 'text/javascript') {
-      return;
-    }
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
@@ -660,7 +598,6 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
 
   
 
@@ -668,6 +605,5 @@ window.addEventListener('pjax:success', () => {
 
   
 
-    </div>
 </body>
 </html>
