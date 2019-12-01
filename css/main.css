@@ -212,8 +212,8 @@ span.exturl {
 }
 a:hover,
 span.exturl:hover {
-  border-bottom-color: #222;
-  color: #222;
+  border-bottom-color: #fc6423;
+  color: #fc6423;
 }
 iframe,
 img,
@@ -296,7 +296,7 @@ td {
 }
 .btn {
   background: transparent;
-  border: 2px solid #222;
+  border: 2px solid #fc6423;
   border-radius: 0;
   color: #555;
   display: inline-block;
@@ -311,8 +311,8 @@ td {
 }
 .btn:hover {
   background: #fff;
-  border-color: #222;
-  color: #222;
+  border-color: #fc6423;
+  color: #fc6423;
 }
 .btn + .btn {
   margin: 0 0 8px 8px;
@@ -822,7 +822,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #222;
+  border-top-color: #fc6423;
 }
 .pagination .space {
   margin: 0;
@@ -854,7 +854,7 @@ pre .javascript .function {
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #222;
+    border-bottom-color: #fc6423;
   }
 }
 .comments {
@@ -872,8 +872,8 @@ pre .javascript .function {
 }
 .comment-button-group .comment-button.active {
   background: #fff;
-  border-color: #222;
-  color: #222;
+  border-color: #fc6423;
+  color: #fc6423;
 }
 .comment-position {
   display: none;
@@ -902,12 +902,12 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 800px;
+    width: 1000px;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 900px;
+    width: 1100px;
   }
 }
 .header {
@@ -921,16 +921,16 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 800px;
+    width: 1000px;
   }
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 900px;
+    width: 1100px;
   }
 }
 .headband {
-  background: #222;
+  background: #fc6423;
   height: 3px;
 }
 .site-meta {
@@ -943,16 +943,16 @@ pre .javascript .function {
   }
 }
 .brand {
-  background: #222;
+  background: #fc6423;
   border-bottom: none;
-  color: #222;
+  color: #fc6423;
   display: inline-block;
   line-height: 1.375em;
   padding: 0 40px;
   position: relative;
 }
 .brand:hover {
-  color: #222;
+  color: #fc6423;
 }
 .logo {
   display: inline-block;
@@ -1073,7 +1073,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .sidebar {
-  background: #222;
+  background: #fc6423;
   bottom: 0;
   box-shadow: inset 0 2px 6px #000;
   position: fixed;
@@ -1161,7 +1161,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #feffff;
+  background: #ff78e3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1275,7 +1275,7 @@ pre .javascript .function {
   display: block;
 }
 .sidebar-toggle {
-  background: #222;
+  background: #fc6423;
   bottom: 45px;
   cursor: pointer;
   height: 14px;
@@ -1402,12 +1402,12 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 800px;
+    width: 1000px;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 900px;
+    width: 1100px;
   }
 }
 .with-love {
@@ -1552,7 +1552,7 @@ pre .javascript .function {
   }
 }
 .back-to-top {
-  background: #222;
+  background: #fc6423;
   bottom: -100px;
   box-sizing: border-box;
   color: #fff;
@@ -1583,7 +1583,7 @@ pre .javascript .function {
   }
 }
 .reading-progress-bar {
-  background: #37c6c0;
+  background: #fc6423;
   display: block;
   height: 2px;
   left: 0;
@@ -1652,7 +1652,7 @@ pre .javascript .function {
   position: relative;
 }
 .posts-collapse .collection-title::before {
-  background: #9b59b6;
+  background: #fdc1a7;
   border: 1px solid #fff;
   border-radius: 50%;
   content: ' ';
@@ -1669,7 +1669,7 @@ pre .javascript .function {
   position: relative;
 }
 .posts-collapse .collection-year::before {
-  background: #9b59b6;
+  background: #fdc1a7;
   border-radius: 50%;
   content: ' ';
   height: 8px;
@@ -1683,7 +1683,7 @@ pre .javascript .function {
 .posts-collapse .collection-header {
   display: inline-block;
   margin: 0 0 0 20px;
-  color: #8e44ad;
+  color: #fc6423;
 }
 .posts-collapse .collection-header small {
   color: #bbb;
@@ -1719,13 +1719,13 @@ pre .javascript .function {
   border-bottom-color: #666;
 }
 .posts-collapse .post-header:hover::before {
-  background: #222;
+  background: #fc6423;
 }
 .posts-collapse .post-meta {
   display: inline;
   font-size: 0.75em;
   margin-right: 10px;
-  color: #8e44ad;
+  color: #fc6423;
 }
 .posts-collapse .post-title {
   display: inline;
@@ -1970,7 +1970,7 @@ pre .javascript .function {
 }
 .post-nav-item a:hover {
   border-bottom: none;
-  color: #222;
+  color: #fc6423;
 }
 .post-nav-item a:active {
   top: 2px;
@@ -2077,11 +2077,11 @@ pre .javascript .function {
   padding: 0;
 }
 .event-list hr {
-  background: #222;
+  background: #fc6423;
   margin: 20px 0 45px 0;
 }
 .event-list hr::after {
-  background: #222;
+  background: #fc6423;
   color: #fff;
   content: 'NOW';
   display: inline-block;
@@ -2090,7 +2090,7 @@ pre .javascript .function {
   text-align: right;
 }
 .event-list .event {
-  background: #222;
+  background: #fc6423;
   margin: 20px 0;
   min-height: 40px;
   padding: 15px 0 15px 10px;
@@ -2220,7 +2220,7 @@ ul.breadcrumb li + li:last-child {
   margin: 10px;
 }
 .tag-cloud a:hover {
-  color: #222 !important;
+  color: #fc6423 !important;
 }
 body {
   overscroll-behavior: none;
@@ -2373,7 +2373,7 @@ hr {
 }
 .logo-line-before i,
 .logo-line-after i {
-  background: #222;
+  background: #fc6423;
   display: block;
   height: 2px;
   position: relative;
@@ -2481,7 +2481,7 @@ hr {
   text-align: center;
 }
 .posts-expand .post-title-link::before {
-  background: #222;
+  background: #fc6423;
 }
 .posts-expand .post-body img {
   margin-left: 0;
@@ -2513,7 +2513,7 @@ hr {
   transition-property: border;
 }
 .post-button .btn:hover {
-  border-bottom-color: #222;
+  border-bottom-color: #fc6423;
 }
 .sidebar {
   right: -320px;

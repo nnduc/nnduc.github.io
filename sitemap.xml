@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
+    <loc>https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/</loc>
     
     <lastmod>2019-11-26T14:43:06.015Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/</loc>
+    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
     
     <lastmod>2019-11-26T14:43:06.015Z</lastmod>
     
@@ -107,6 +107,13 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.691Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
@@ -115,13 +122,6 @@
   
   <url>
     <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
@@ -156,14 +149,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
+    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
@@ -177,7 +163,21 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
@@ -205,6 +205,13 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.688Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
     
     <lastmod>2019-11-02T05:56:37.688Z</lastmod>
@@ -213,13 +220,6 @@
   
   <url>
     <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
     
     <lastmod>2019-11-02T05:56:37.688Z</lastmod>
     

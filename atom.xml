@@ -3,7 +3,7 @@
   <title>Duc Ninja</title>
   
   <subtitle>I&#39;m an iOS engineer and a ninja as well.</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://duc.ninja/"/>
   <updated>2019-12-01T04:26:30.353Z</updated>
@@ -240,9 +240,9 @@
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
-      <category term="til" scheme="https://duc.ninja/tags/til/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
   </entry>
   
@@ -262,11 +262,11 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
       <category term="lldb" scheme="https://duc.ninja/tags/lldb/"/>
     
@@ -292,11 +292,11 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
       <category term="testing" scheme="https://duc.ninja/tags/testing/"/>
     
@@ -319,11 +319,11 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
   </entry>
   
@@ -343,11 +343,11 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
   </entry>
   
@@ -390,11 +390,11 @@
     </summary>
     
     
-      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
-    
       <category term="swift" scheme="https://duc.ninja/tags/swift/"/>
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
+    
+      <category term="ios" scheme="https://duc.ninja/tags/ios/"/>
     
       <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
@@ -419,9 +419,9 @@
     
       <category term="tips" scheme="https://duc.ninja/tags/tips/"/>
     
-      <category term="til" scheme="https://duc.ninja/tags/til/"/>
-    
       <category term="xcode" scheme="https://duc.ninja/tags/xcode/"/>
+    
+      <category term="til" scheme="https://duc.ninja/tags/til/"/>
     
   </entry>
   
