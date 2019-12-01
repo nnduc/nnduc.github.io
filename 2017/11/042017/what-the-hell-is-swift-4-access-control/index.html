@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
-  <link rel="alternate" href="/blog/atom.xml" title="Duc Ninja" type="application/atom+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    hostname: new URL('https://duc.ninja').hostname,
+    root: '/',
     scheme: 'Mist',
-    version: '7.4.1',
+    version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":true,"style":"flat"},
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
+    fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -47,13 +41,7 @@
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -69,7 +57,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="What the Hell Is Swift 4 Access Control?">
 <meta name="twitter:description" content="In object-oriented programming languages, access control is a part of the apparatus of achieving encapsulation, one of four fundamentals of object-oriented programming. The goal is to establish a clea">
-  <link rel="canonical" href="https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/">
+
+<link rel="canonical" href="https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/">
 
 
 <script id="page-configurations">
@@ -86,18 +75,14 @@
   <title>What the Hell Is Swift 4 Access Control? | Duc Ninja</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69523955-1"></script>
-    <script pjax>
-      var host = window.location.hostname;
-      if (host !== "localhost" || !true) {
+    <script>
+      if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-69523955-1');
       }
     </script>
-  
-
-
 
 
 
@@ -116,7 +101,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -139,14 +123,13 @@
   <div class="site-meta">
 
     <div>
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Duc Ninja</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
         <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
-      
   </div>
 
   <div class="site-nav-toggle">
@@ -162,35 +145,17 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-        
-        
         <li class="menu-item menu-item-blog">
-      
-    
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-my-info">
-      
-    
 
     <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i>My info</a>
 
   </li>
-      
-    
   </ul>
-
-    
 
 </nav>
 </div>
@@ -207,6 +172,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+
           <div class="content">
             
 
@@ -215,12 +182,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/042017/what-the-hell-is-swift-4-access-control/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -228,11 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            What the Hell Is Swift 4 Access Control?
-            
-
-          
+          What the Hell Is Swift 4 Access Control?
         </h1>
 
         <div class="post-meta">
@@ -242,16 +205,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-04 21:45:00" itemprop="dateCreated datePublished" datetime="2017-11-04T21:45:00+07:00">2017-11-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -259,8 +214,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -290,50 +243,32 @@
     
     
     
-        
-      
 
       <footer class="post-footer">
-          
-            
-          
           <div class="post-tags">
-            
-              <a href="/blog/tags/swift/" rel="tag"><i class="fa fa-tag"></i> swift</a>
-            
-              <a href="/blog/tags/ios/" rel="tag"><i class="fa fa-tag"></i> ios</a>
-            
+              <a href="/tags/swift/" rel="tag"># swift</a>
+              <a href="/tags/ios/" rel="tag"># ios</a>
           </div>
-        
 
         
   <div class="post-widgets">
     <div class="wp_rating">
       <div id="wpac-rating"></div>
     </div>
-  
   </div>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/blog/2017/11/042017/objc-warnings-upgrading-to-swift-4/" rel="next" title="@Objc Warnings Upgrading to Swift 4">
-                  <i class="fa fa-chevron-left"></i> @Objc Warnings Upgrading to Swift 4
-                </a>
-              
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/blog/2017/11/042017/where-is-idetemplatemacros.plist-file/" rel="prev" title="Customizing the File Header Comment and Text Macros">
-                  Customizing the File Header Comment and Text Macros <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/11/042017/objc-warnings-upgrading-to-swift-4/" rel="prev" title="@Objc Warnings Upgrading to Swift 4">
+      <i class="fa fa-chevron-left"></i> @Objc Warnings Upgrading to Swift 4
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/11/042017/where-is-idetemplatemacros.plist-file/" rel="next" title="Customizing the File Header Comment and Text Macros">
+      Customizing the File Header Comment and Text Macros <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -358,11 +293,6 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -376,91 +306,46 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TL-DR"><span class="nav-number">1.</span> <span class="nav-text">TL;DR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Open"><span class="nav-number">2.</span> <span class="nav-text">Open</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Public"><span class="nav-number">3.</span> <span class="nav-text">Public</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internal"><span class="nav-number">4.</span> <span class="nav-text">Internal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fileprivate"><span class="nav-number">5.</span> <span class="nav-text">Fileprivate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#private"><span class="nav-number">6.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">7.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/blog/assets/images/logo/icon-310x310.png"
-      alt="Duc Ninja">
+    <img class="site-author-image" itemprop="image" alt="Duc Ninja"
+      src="/assets/images/logo/icon-310x310.png">
   <p class="site-author-name" itemprop="name">Duc Ninja</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
-          <a href="/blog/archives">
-        
+          <a href="/archives">
           <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
-        
       </div>
-    
   </nav>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/blog/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <a href="https://github.com/ducito" title="GitHub → https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="mailto:nnduc@icloud.com" title="E-Mail → mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="https://twitter.com/duc_ninja" title="Twitter → https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+        <a href="https://www.facebook.com/duc.ninja" title="FB Page → https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
+        <a href="skype:ducnn01?call|chat" title="Skype → skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
       </span>
-    
   </div>
 
 
@@ -480,6 +365,7 @@
         
 
 <div class="copyright">
+  
   &copy; 2016 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
@@ -497,83 +383,18 @@
 
 
 
-
-
-
-
         
       </div>
     </footer>
   </div>
 
   
-  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/blog/lib/pjax/pjax.min.js?v=0.2.8"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/blog/js/utils.js?v=7.4.1"></script><script src="/blog/js/motion.js?v=7.4.1"></script>
-<script src="/blog/js/schemes/muse.js?v=7.4.1"></script>
-
-<script src="/blog/js/next-boot.js?v=7.4.1"></script>
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    if (element.type !== 'text/javascript') {
-      return;
-    }
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -581,9 +402,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-
-
-  <script pjax>
+  <script>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -616,16 +435,9 @@ window.addEventListener('pjax:success', () => {
 
 
 
-
-
-    <div id="pjax">
-
   
 
   
 
-  
-
-    </div>
 </body>
 </html>

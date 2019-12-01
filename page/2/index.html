@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.4.1" color="#222">
-  <link rel="alternate" href="/blog/atom.xml" title="Duc Ninja" type="application/atom+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    hostname: new URL('https://duc.ninja').hostname,
+    root: '/',
     scheme: 'Mist',
-    version: '7.4.1',
+    version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":true,"style":"flat"},
+    sidebar: {"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
+    fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -47,13 +41,7 @@
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    },
-    sidebarPadding: 40
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -65,7 +53,8 @@
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Duc Ninja">
-  <link rel="canonical" href="https://duc.ninja/page/2/">
+
+<link rel="canonical" href="https://duc.ninja/page/2/">
 
 
 <script id="page-configurations">
@@ -82,18 +71,14 @@
   <title>Duc Ninja</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69523955-1"></script>
-    <script pjax>
-      var host = window.location.hostname;
-      if (host !== "localhost" || !true) {
+    <script>
+      if (CONFIG.hostname === location.hostname) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-69523955-1');
       }
     </script>
-  
-
-
 
 
 
@@ -112,7 +97,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -135,14 +119,13 @@
   <div class="site-meta">
 
     <div>
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Duc Ninja</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
         <p class="site-subtitle">I'm an iOS engineer and a ninja as well.</p>
-      
   </div>
 
   <div class="site-nav-toggle">
@@ -158,35 +141,17 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-        
-        
         <li class="menu-item menu-item-blog">
-      
-    
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-home"></i>Blog</a>
 
   </li>
-      
-    
-      
-      
-        
-        
         <li class="menu-item menu-item-my-info">
-      
-    
 
     <a href="https://linkedin.com/in/nnduc" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i>My info</a>
 
   </li>
-      
-    
   </ul>
-
-    
 
 </nav>
 </div>
@@ -203,6 +168,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+
           <div class="content">
             
 
@@ -211,12 +178,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2018/03/042018/interface-builder-tips-and-tricks/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -225,9 +192,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2018/03/042018/interface-builder-tips-and-tricks/" class="post-title-link" itemprop="url">More Interface Builder Tips and Tricks</a>
-          
+            <a href="/2018/03/042018/interface-builder-tips-and-tricks/" class="post-title-link" itemprop="url">More Interface Builder Tips and Tricks</a>
         </h1>
 
         <div class="post-meta">
@@ -237,16 +202,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-03-04 22:56:00" itemprop="dateCreated datePublished" datetime="2018-03-04T22:56:00+07:00">2018-03-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -254,8 +211,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -270,13 +225,11 @@
       
           <p>My top ten tips, tricks, dos and don’ts to make you feel like an Interface Builder expert.</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2018/03/042018/interface-builder-tips-and-tricks/#more" rel="contents">
+              <a class="btn" href="/2018/03/042018/interface-builder-tips-and-tricks/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -286,25 +239,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2018/02/042018/open-terminal-from-xcode/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/02/042018/open-terminal-from-xcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -313,9 +264,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2018/02/042018/open-terminal-from-xcode/" class="post-title-link" itemprop="url">Open Terminal From Xcode</a>
-          
+            <a href="/2018/02/042018/open-terminal-from-xcode/" class="post-title-link" itemprop="url">Open Terminal From Xcode</a>
         </h1>
 
         <div class="post-meta">
@@ -325,16 +274,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-02-04 13:20:00" itemprop="dateCreated datePublished" datetime="2018-02-04T13:20:00+07:00">2018-02-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -342,8 +283,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -358,13 +297,11 @@
       
           <p>You are using third-party tools like CocoaPods, Cathage, SPM or just having some useful script files for your project. It’s fine!</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2018/02/042018/open-terminal-from-xcode/#more" rel="contents">
+              <a class="btn" href="/2018/02/042018/open-terminal-from-xcode/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -374,25 +311,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2018/01/252018/po-vs-e/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/01/252018/po-vs-e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -401,9 +336,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2018/01/252018/po-vs-e/" class="post-title-link" itemprop="url">LLDB: Po vs E</a>
-          
+            <a href="/2018/01/252018/po-vs-e/" class="post-title-link" itemprop="url">LLDB: Po vs E</a>
         </h1>
 
         <div class="post-meta">
@@ -413,16 +346,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-01-25 21:43:00" itemprop="dateCreated datePublished" datetime="2018-01-25T21:43:00+07:00">2018-01-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -430,8 +355,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -446,13 +369,11 @@
       
           <p>For the longest time I just used “po” in lldb to examine objects but “e” just adds a whole new level to debugging !<br><br></p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2018/01/252018/po-vs-e/#more" rel="contents">
+              <a class="btn" href="/2018/01/252018/po-vs-e/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -462,25 +383,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2018/01/252018/run-test-case/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/01/252018/run-test-case/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -489,9 +408,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2018/01/252018/run-test-case/" class="post-title-link" itemprop="url">Shortcut to Run a Test Case or Run Whole Test Case</a>
-          
+            <a href="/2018/01/252018/run-test-case/" class="post-title-link" itemprop="url">Shortcut to Run a Test Case or Run Whole Test Case</a>
         </h1>
 
         <div class="post-meta">
@@ -501,16 +418,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2018-01-25 21:43:00" itemprop="dateCreated datePublished" datetime="2018-01-25T21:43:00+07:00">2018-01-25</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -518,8 +427,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -538,13 +445,11 @@
 <li>inside an <code>XCTestCase</code> subclass but outside of any method: runs all tests in the class</li>
 <li>Run last test case before: <code>⌃⌥⌘G</code>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2018/01/252018/run-test-case/#more" rel="contents">
+              <a class="btn" href="/2018/01/252018/run-test-case/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -554,25 +459,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -581,9 +484,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/" class="post-title-link" itemprop="url">Passing Data Using NotificationCenter in Swift 4</a>
-          
+            <a href="/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/" class="post-title-link" itemprop="url">Passing Data Using NotificationCenter in Swift 4</a>
         </h1>
 
         <div class="post-meta">
@@ -593,16 +494,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-12 22:15:00" itemprop="dateCreated datePublished" datetime="2017-11-12T22:15:00+07:00">2017-11-12</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -610,8 +503,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -627,13 +518,11 @@
           <p>Passing data from one view controller to another view controller using Notification Center is an easy way when compared to <code>delegate protocols</code>.</p>
 <p>Here we need add <code>observer</code> or <code>listeners</code> for getting new data to load. First we need to send data using post notification method.</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/#more" rel="contents">
+              <a class="btn" href="/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -643,25 +532,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/072017/save-custom-object-into-userdefaults/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -670,9 +557,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/072017/save-custom-object-into-userdefaults/" class="post-title-link" itemprop="url">Save Custom Objects Into UserDefaults(Swift 4)</a>
-          
+            <a href="/2017/11/072017/save-custom-object-into-userdefaults/" class="post-title-link" itemprop="url">Save Custom Objects Into UserDefaults(Swift 4)</a>
         </h1>
 
         <div class="post-meta">
@@ -682,16 +567,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-07 21:47:00" itemprop="dateCreated datePublished" datetime="2017-11-07T21:47:00+07:00">2017-11-07</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -699,8 +576,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -715,13 +590,11 @@
       
           <p>We have many ways to store and retrieve persistent data in iOS but let try to store a custom object into <code>UserDefaults</code> with <code>Codable</code> in Swift 4.</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/072017/save-custom-object-into-userdefaults/#more" rel="contents">
+              <a class="btn" href="/2017/11/072017/save-custom-object-into-userdefaults/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -731,25 +604,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/052017/easy-xib-and-storyboard-localization/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -758,9 +629,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/052017/easy-xib-and-storyboard-localization/" class="post-title-link" itemprop="url">Easy XIB and Storyboard Localization</a>
-          
+            <a href="/2017/11/052017/easy-xib-and-storyboard-localization/" class="post-title-link" itemprop="url">Easy XIB and Storyboard Localization</a>
         </h1>
 
         <div class="post-meta">
@@ -770,16 +639,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-05 22:30:00" itemprop="dateCreated datePublished" datetime="2017-11-05T22:30:00+07:00">2017-11-05</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -787,8 +648,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -804,13 +663,11 @@
           <p><img src="https://cdn-images-1.medium.com/max/1600/1*oFXeXtJ2LM8uB7prmtAZmw.jpeg" alt="img">Photo by <a href="https://unsplash.com/photos/jUSu0686zDM" target="_blank" rel="noopener">freestocks.org</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
 <p>Localization is a key part of an application. In order to make it easy, maintainable and extensible it deserves a bit of effort and care.</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/052017/easy-xib-and-storyboard-localization/#more" rel="contents">
+              <a class="btn" href="/2017/11/052017/easy-xib-and-storyboard-localization/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -820,25 +677,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/052017/dependency-injection-swift-4/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/dependency-injection-swift-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -847,9 +702,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/052017/dependency-injection-swift-4/" class="post-title-link" itemprop="url">Dependency Injection Examples With Swift 4</a>
-          
+            <a href="/2017/11/052017/dependency-injection-swift-4/" class="post-title-link" itemprop="url">Dependency Injection Examples With Swift 4</a>
         </h1>
 
         <div class="post-meta">
@@ -859,16 +712,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-05 21:16:00" itemprop="dateCreated datePublished" datetime="2017-11-05T21:16:00+07:00">2017-11-05</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -876,8 +721,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -892,13 +735,11 @@
       
           <p>In <a href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank" rel="noopener">software engineering</a>, <strong>dependency injection</strong> is a technique whereby one object supplies the dependencies of another object. A dependency is an object that can be used (a <a href="https://en.wikipedia.org/wiki/Service_(systems_architecture)" target="_blank" rel="noopener">service</a>). An injection is the passing of a dependency to a dependent object (a <a href="https://en.wikipedia.org/wiki/Client_(computing)" target="_blank" rel="noopener">client</a>) that would use it.</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/052017/dependency-injection-swift-4/#more" rel="contents">
+              <a class="btn" href="/2017/11/052017/dependency-injection-swift-4/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -908,25 +749,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/052017/remove-old-simulators/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/052017/remove-old-simulators/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -935,9 +774,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/052017/remove-old-simulators/" class="post-title-link" itemprop="url">Remove Old Simulators</a>
-          
+            <a href="/2017/11/052017/remove-old-simulators/" class="post-title-link" itemprop="url">Remove Old Simulators</a>
         </h1>
 
         <div class="post-meta">
@@ -947,16 +784,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-05 11:10:00" itemprop="dateCreated datePublished" datetime="2017-11-05T11:10:00+07:00">2017-11-05</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -964,8 +793,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -981,13 +808,11 @@
           <p>If you are an iOS developer, execute this:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ xcrun simctl delete unavailable</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/052017/remove-old-simulators/#more" rel="contents">
+              <a class="btn" href="/2017/11/052017/remove-old-simulators/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -997,25 +822,23 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/blog/2017/11/042017/where-is-idetemplatemacros.plist-file/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
       <meta itemprop="name" content="Duc Ninja">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/assets/images/logo/icon-310x310.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1024,9 +847,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
-            <a href="/blog/2017/11/042017/where-is-idetemplatemacros.plist-file/" class="post-title-link" itemprop="url">Customizing the File Header Comment and Text Macros</a>
-          
+            <a href="/2017/11/042017/where-is-idetemplatemacros.plist-file/" class="post-title-link" itemprop="url">Customizing the File Header Comment and Text Macros</a>
         </h1>
 
         <div class="post-meta">
@@ -1036,16 +857,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2017-11-04 23:15:00" itemprop="dateCreated datePublished" datetime="2017-11-04T23:15:00+07:00">2017-11-04</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -1053,8 +866,6 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
               </span>
-            
-          
 
           
 
@@ -1069,13 +880,11 @@
       
           <h2 id="Text-macros"><a href="#Text-macros" class="headerlink" title="Text macros"></a>Text macros</h2><p>Text macros are symbols that are expanded in-place to the specified text. They are used in files and other places in Xcode, such as the header text for a new file or the project name. You can customize existing macros and add your own macros in a project, for all users of a project, or for all of Xcode. Customizing a macro requires two things:</p>
           <!--noindex-->
-          
             <div class="post-button">
-              <a class="btn" href="/blog/2017/11/042017/where-is-idetemplatemacros.plist-file/#more" rel="contents">
+              <a class="btn" href="/2017/11/042017/where-is-idetemplatemacros.plist-file/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
@@ -1085,20 +894,18 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1134,85 +941,41 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/blog/assets/images/logo/icon-310x310.png"
-      alt="Duc Ninja">
+    <img class="site-author-image" itemprop="image" alt="Duc Ninja"
+      src="/assets/images/logo/icon-310x310.png">
   <p class="site-author-name" itemprop="name">Duc Ninja</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
-          <a href="/blog/archives">
-        
+          <a href="/archives">
           <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
         <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
-        
       </div>
-    
   </nav>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/blog/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://github.com/ducito" title="GitHub &rarr; https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <a href="https://github.com/ducito" title="GitHub → https://github.com/ducito" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="mailto:nnduc@icloud.com" title="E-Mail &rarr; mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="mailto:nnduc@icloud.com" title="E-Mail → mailto:nnduc@icloud.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://twitter.com/duc_ninja" title="Twitter &rarr; https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="https://twitter.com/duc_ninja" title="Twitter → https://twitter.com/duc_ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://www.facebook.com/duc.ninja" title="FB Page &rarr; https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+        <a href="https://www.facebook.com/duc.ninja" title="FB Page → https://www.facebook.com/duc.ninja" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="skype:ducnn01?call|chat" title="Skype &rarr; skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
+        <a href="skype:ducnn01?call|chat" title="Skype → skype:ducnn01?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i></a>
       </span>
-    
   </div>
 
 
@@ -1232,6 +995,7 @@
         
 
 <div class="copyright">
+  
   &copy; 2016 – 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
@@ -1249,83 +1013,18 @@
 
 
 
-
-
-
-
         
       </div>
     </footer>
   </div>
 
   
-  <script src="/blog/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/blog/lib/pjax/pjax.min.js?v=0.2.8"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/blog/js/utils.js?v=7.4.1"></script><script src="/blog/js/motion.js?v=7.4.1"></script>
-<script src="/blog/js/schemes/muse.js?v=7.4.1"></script>
-
-<script src="/blog/js/next-boot.js?v=7.4.1"></script>
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
-    if (element.type !== 'text/javascript') {
-      return;
-    }
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1333,9 +1032,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-
-
-  <script pjax>
+  <script>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -1368,16 +1065,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
-
-
-    <div id="pjax">
-
   
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://duc.ninja/page/2/',]
+      });
+      });
+  </script>
 
-  
-
-    </div>
 </body>
 </html>
