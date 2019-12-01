@@ -363,36 +363,6 @@ td {
   top: -5px;
   transform: rotate(45deg);
 }
-.highlight-wrap {
-  position: relative;
-}
-.highlight-wrap:hover .copy-btn,
-.highlight-wrap .copy-btn:focus {
-  opacity: 1;
-}
-.copy-btn {
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 700;
-  line-height: 1.6;
-  opacity: 0;
-  outline: 0;
-  padding: 2px 6px;
-  position: absolute;
-  transition: opacity 0.3s ease-in-out;
-  vertical-align: middle;
-  white-space: nowrap;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  background: #fff;
-  border: 0;
-  font-size: 0.8125em;
-  right: 0;
-  top: 0;
-}
 pre,
 .highlight {
   background: #f7f7f7;
@@ -1191,7 +1161,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b6dd95;
+  background: #eb7cff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2314,6 +2284,23 @@ body {
   100% {
     background-position: 0 80%;
   }
+}
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0,0,0,0.4);
 }
 a {
   border-bottom-color: #ccc;
