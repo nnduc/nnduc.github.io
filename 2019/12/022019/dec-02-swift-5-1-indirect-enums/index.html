@@ -45,20 +45,20 @@
   };
 </script>
 
-  <meta name="description" content="UIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The">
+  <meta name="description" content="Indirect enums are enums that need to reference themselves somehow, and are called “indirect” because they modify the way Swift stores them so they can grow to any size. Without the indirection, any e">
 <meta name="keywords" content="duc, duc.ninja, ios developer, ducito, nnduc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="You Have to Change Mindset to Use SwiftUI">
-<meta property="og:url" content="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/index.html">
+<meta property="og:title" content="Swift 5.1 Indirect Enums">
+<meta property="og:url" content="https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/index.html">
 <meta property="og:site_name" content="Duc Ninja">
-<meta property="og:description" content="UIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The">
+<meta property="og:description" content="Indirect enums are enums that need to reference themselves somehow, and are called “indirect” because they modify the way Swift stores them so they can grow to any size. Without the indirection, any e">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-26T14:43:06.015Z">
+<meta property="og:updated_time" content="2019-12-15T03:27:27.207Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="You Have to Change Mindset to Use SwiftUI">
-<meta name="twitter:description" content="UIKit is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The">
+<meta name="twitter:title" content="Swift 5.1 Indirect Enums">
+<meta name="twitter:description" content="Indirect enums are enums that need to reference themselves somehow, and are called “indirect” because they modify the way Swift stores them so they can grow to any size. Without the indirection, any e">
 
-<link rel="canonical" href="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/">
+<link rel="canonical" href="https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>You Have to Change Mindset to Use SwiftUI | Duc Ninja</title>
+  <title>Swift 5.1 Indirect Enums | Duc Ninja</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69523955-1"></script>
     <script>
@@ -182,7 +182,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
@@ -195,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          You Have to Change Mindset to Use SwiftUI
+          Swift 5.1 Indirect Enums
         </h1>
 
         <div class="post-meta">
@@ -204,10 +204,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-26 16:00:00 / Modified: 21:43:06" itemprop="dateCreated datePublished" datetime="2019-11-26T16:00:00+07:00">2019-11-26</time>
+              <time title="Created: 2019-12-02 08:30:00" itemprop="dateCreated datePublished" datetime="2019-12-02T08:30:00+07:00">2019-12-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-15 10:27:27" itemprop="dateModified" datetime="2019-12-15T10:27:27+07:00">2019-12-15</time>
+              </span>
 
           
 
@@ -220,24 +226,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><em>UIKit</em> is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The big downside of this approach is the complexity of keeping in sync User Interface with its state. As soon as state changes, you need to manually add/remove/show/hide the views and keep it in sync with the current state.</p>
+        <p>Indirect enums are enums that need to reference themselves somehow, and are called “indirect” because they modify the way Swift stores them so they can grow to any size. Without the indirection, any enum that referenced itself could potentially become infinitely sized: it could contain itself again and again, which wouldn’t be possible.</p>
 <a id="more"></a>
 
-<p><em>SwiftUI</em> is a declarative framework for building User Interfaces on Apple platforms. The keyword here is declarative. Declarative means that you need to declare what you want to achieve, and the framework takes care of it. Framework knows the best way to render the User Interface.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UI</span> = f(state)</span><br></pre></td></tr></table></figure>
+<p>As an example, here’s an indirect enum that defines a node in a linked list:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">indirect</span> <span class="class"><span class="keyword">enum</span> <span class="title">LinkedListItem</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> endPoint(value: <span class="type">T</span>)</span><br><span class="line">    <span class="keyword">case</span> linkNode(value: <span class="type">T</span>, next: <span class="type">LinkedListItem</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>The User Interface in <em>SwiftUI</em> is a function of its state. It means whenever the view’s state changes, it recomputes its <strong>body property</strong> and generates a new view. Let’s take a look at a quick sample.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ContentView</span>: <span class="title">View</span> </span>&#123;</span><br><span class="line">    @<span class="type">ObservedObject</span> <span class="keyword">var</span> store: <span class="type">Store</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> body: some <span class="type">View</span> &#123;</span><br><span class="line">        <span class="type">Group</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> store.isLoading &#123;</span><br><span class="line">                <span class="type">Text</span>(<span class="string">"Loading..."</span>)</span><br><span class="line">                    .font(.subheadline)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="type">Image</span>(<span class="string">"photo"</span>)</span><br><span class="line">                    .font(.largeTitle)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Because that references itself – because one of the associated values is itself a linked list item – we need to mark the enum as being indirect.</p>
+<p>Apart from the special way they store their values internally, indirect enums work identically to regular enums. So, we could make a linked list using that enum and loop over it, like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> third = <span class="type">LinkedListItem</span>.endPoint(value: <span class="string">"Third"</span>)</span><br><span class="line"><span class="keyword">let</span> second = <span class="type">LinkedListItem</span>.linkNode(value: <span class="string">"Second"</span>, next: third)</span><br><span class="line"><span class="keyword">let</span> first = <span class="type">LinkedListItem</span>.linkNode(value: <span class="string">"First"</span>, next: second)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> currentNode = first</span><br><span class="line"></span><br><span class="line">listLoop: <span class="keyword">while</span> <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> currentNode &#123;</span><br><span class="line">    <span class="keyword">case</span> .endPoint(<span class="keyword">let</span> value):</span><br><span class="line">        <span class="built_in">print</span>(value)</span><br><span class="line">        <span class="keyword">break</span> listLoop</span><br><span class="line">    <span class="keyword">case</span> .linkNode(<span class="keyword">let</span> value, <span class="keyword">let</span> next):</span><br><span class="line">        <span class="built_in">print</span>(value)</span><br><span class="line">        currentNode = next</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>As you can see in the example above, we have a view that shows loading text and image when the loading finishes. <em>ObserverObject</em> here is a state of this view, and as soon as it changes, <em>SwiftUI</em> recomputes the body property and assigns a new view. In typical <em>UIKit</em> development, we need manually to hide/show the elements of the view hierarchy, but in <em>SwiftUI</em>, we don’t need to add/remove the loading indicator. We have a few ways of describing a state of the view in SwiftUI.</p>
-<p>Let’s take a more in-depth look at what happens when the view’s state changes. <em>SwiftUI</em> has a snapshot of the current view hierarchy, and as soon as state changes, it computes a new view. Finally, <em>SwiftUI</em> applies diffing algorithms to understand differences and automatically add/remove/update needed views. By default, <em>SwiftUI</em> uses standard fade in/out transition to show/hide views, but you can manually change the transition to any animation you want.</p>
-<h4 id="View-hierarchy"><a href="#View-hierarchy" class="headerlink" title="View hierarchy"></a>View hierarchy</h4><p>Let’s talk about view hierarchy now, and how actually <em>SwiftUI</em> renders your view struct. The very first thing which I want to mention that <em>SwiftUI</em> doesn’t render your view struct by doing the one-to-one mapping. You can use as many view containers as you want, but in the end, <em>SwiftUI</em> renders only views that make sense. It means that you can extract you view logic into small views and then compose and reuse them across the app. Don’t worry, performance, in this case, won’t be affected.</p>
-<p>The best way to understand the complex view hierarchies in <em>SwiftUI</em> is by printing its type. <em>SwiftUI</em> uses the static type system of <em>Swift</em> to make diffing so fast. First of all, it checks the type of the view, and then checks its values of the view components. I’m not a fan of using reflections in production code, but it is very helpful during the learning process.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="type">Mirror</span>(reflecting: <span class="type">ContentView</span>(store: .<span class="keyword">init</span>()).body))</span><br><span class="line"><span class="comment">// Group&lt;_ConditionalContent&lt;Text, ModifiedContent&lt;Image, _EnvironmentKeyWritingModifier&lt;Optional&lt;Font&gt;&gt;&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>By using <em>Mirror</em> struct, we can print the real type of the <em>ContentView*’s body and learn how *SwiftUI</em> works under the hood.</p>
-<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>This week we learned the main difference between <em>UIKit</em> and <em>SwiftUI</em> and took an in-depth look at the diffing algorithm in <em>SwiftUI</em>. Thanks for reading, and see you next week!</p>
-<p>source: swiftwithmajid</p>
+<p>Happy coding!</p>
+<p>[Source: hackingwithswift]</p>
 
     </div>
 
@@ -258,13 +258,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/" rel="prev" title="Swift 5.1 Using Self to Refer to Enclosing Types">
-      <i class="fa fa-chevron-left"></i> Swift 5.1 Using Self to Refer to Enclosing Types
+    <a href="/2019/12/012019/dec-01-lightweight-api-design-in-swift/" rel="prev" title="Lightweight API Design in Swift">
+      <i class="fa fa-chevron-left"></i> Lightweight API Design in Swift
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/" rel="next" title="The Power of Closures in SwiftUI">
-      The Power of Closures in SwiftUI <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -302,7 +299,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#View-hierarchy"><span class="nav-number">1.</span> <span class="nav-text">View hierarchy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Conclusion"><span class="nav-number">2.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

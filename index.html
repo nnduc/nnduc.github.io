@@ -178,7 +178,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/12/012019/dec-1-lightweight-api-design-in-swift/">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
@@ -192,7 +192,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/012019/dec-1-lightweight-api-design-in-swift/" class="post-title-link" itemprop="url">Lightweight API Design in Swift</a>
+            <a href="/2019/12/022019/dec-02-swift-5-1-indirect-enums/" class="post-title-link" itemprop="url">Swift 5.1 Indirect Enums</a>
         </h1>
 
         <div class="post-meta">
@@ -201,10 +201,88 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-12-01 10:30:00 / Modified: 11:26:30" itemprop="dateCreated datePublished" datetime="2019-12-01T10:30:00+07:00">2019-12-01</time>
+              <time title="Created: 2019-12-02 08:30:00" itemprop="dateCreated datePublished" datetime="2019-12-02T08:30:00+07:00">2019-12-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-15 10:27:27" itemprop="dateModified" datetime="2019-12-15T10:27:27+07:00">2019-12-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Indirect enums are enums that need to reference themselves somehow, and are called “indirect” because they modify the way Swift stores them so they can grow to any size. Without the indirection, any enum that referenced itself could potentially become infinitely sized: it could contain itself again and again, which wouldn’t be possible.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/022019/dec-02-swift-5-1-indirect-enums/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
+      <meta itemprop="name" content="Duc Ninja">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Duc Ninja">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/012019/dec-01-lightweight-api-design-in-swift/" class="post-title-link" itemprop="url">Lightweight API Design in Swift</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-01 10:30:00" itemprop="dateCreated datePublished" datetime="2019-12-01T10:30:00+07:00">2019-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-15 10:27:27" itemprop="dateModified" datetime="2019-12-15T10:27:27+07:00">2019-12-15</time>
+              </span>
 
           
 
@@ -221,7 +299,7 @@
 <p>Let’s take a look at some of the core language features that enable those kind of lightweight APIs to be created, and how we can use them to make a feature or system much more capable through the power of composition.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/12/012019/dec-1-lightweight-api-design-in-swift/#more" rel="contents">
+              <a class="btn" href="/2019/12/012019/dec-01-lightweight-api-design-in-swift/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -804,80 +882,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://duc.ninja/2018/08/172018/class-only-protocol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/assets/images/logo/icon-310x310.png">
-      <meta itemprop="name" content="Duc Ninja">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Duc Ninja">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/172018/class-only-protocol/" class="post-title-link" itemprop="url">Swift 4 - Class Only Protocol</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-08-17 08:13:00" itemprop="dateCreated datePublished" datetime="2018-08-17T08:13:00+07:00">2018-08-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 12:56:37" itemprop="dateModified" datetime="2019-11-02T12:56:37+07:00">2019-11-02</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/assets/images/swift4.png" alt></p>
-<p>We usually use the <code>class</code> keyword to define a <code>class only protocol</code> in the normal way.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">DetailViewControllerDelegate</span>: <span class="title">class</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">didFinishTask</span><span class="params">(sender: DetailViewController)</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/172018/class-only-protocol/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -927,7 +931,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

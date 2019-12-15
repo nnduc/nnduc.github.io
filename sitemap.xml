@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://duc.ninja/2019/12/012019/dec-1-lightweight-api-design-in-swift/</loc>
+    <loc>https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/</loc>
     
-    <lastmod>2019-12-01T04:26:30.353Z</lastmod>
+    <lastmod>2019-12-15T03:27:27.207Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/</loc>
+    
+    <lastmod>2019-12-15T03:27:27.206Z</lastmod>
     
   </url>
   
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
+    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
     
     <lastmod>2019-11-02T05:56:37.694Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
+    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
     
     <lastmod>2019-11-02T05:56:37.694Z</lastmod>
     
@@ -72,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.693Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
     
     <lastmod>2019-11-02T05:56:37.693Z</lastmod>
@@ -86,9 +86,9 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/08/172018/class-only-protocol/</loc>
+    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
     
-    <lastmod>2019-11-02T05:56:37.692Z</lastmod>
+    <lastmod>2019-11-02T05:56:37.693Z</lastmod>
     
   </url>
   
@@ -107,14 +107,21 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
+    <loc>https://duc.ninja/2018/08/172018/class-only-protocol/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.692Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
+    <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
     
     <lastmod>2019-11-02T05:56:37.691Z</lastmod>
     
@@ -135,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
@@ -149,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
-    
-    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
+    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
@@ -171,6 +171,13 @@
   
   <url>
     <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    
+    <lastmod>2019-11-02T05:56:37.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
     
     <lastmod>2019-11-02T05:56:37.690Z</lastmod>
     
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
+    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
     
     <lastmod>2019-11-02T05:56:37.689Z</lastmod>
     
