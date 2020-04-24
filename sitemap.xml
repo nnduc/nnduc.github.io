@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.942Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
     
     <lastmod>2019-12-02T04:24:15.942Z</lastmod>
@@ -23,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.942Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/</loc>
     
     <lastmod>2019-12-02T04:24:15.942Z</lastmod>
@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
+    <loc>https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/</loc>
     
     <lastmod>2019-12-02T04:24:15.942Z</lastmod>
     
@@ -51,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.942Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/</loc>
     
     <lastmod>2019-12-02T04:24:15.942Z</lastmod>
@@ -65,9 +58,9 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
+    <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
     
-    <lastmod>2019-12-02T04:24:15.941Z</lastmod>
+    <lastmod>2019-12-02T04:24:15.942Z</lastmod>
     
   </url>
   
@@ -86,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
+    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
     
     <lastmod>2019-12-02T04:24:15.941Z</lastmod>
     
@@ -100,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.941Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
     
     <lastmod>2019-12-02T04:24:15.941Z</lastmod>
@@ -114,7 +100,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/</loc>
+    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.941Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
     
     <lastmod>2019-12-02T04:24:15.941Z</lastmod>
     
@@ -128,7 +121,14 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    <loc>https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.941Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
     
     <lastmod>2019-12-02T04:24:15.940Z</lastmod>
     
@@ -142,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.940Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.940Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
     
     <lastmod>2019-12-02T04:24:15.940Z</lastmod>
@@ -163,7 +149,21 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.940Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
     
     <lastmod>2019-12-02T04:24:15.940Z</lastmod>
     
@@ -177,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
     
     <lastmod>2019-12-02T04:24:15.940Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
     
     <lastmod>2019-12-02T04:24:15.939Z</lastmod>
     
@@ -212,14 +212,7 @@
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
-    
-    <lastmod>2019-12-02T04:24:15.939Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
+    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
     
     <lastmod>2019-12-02T04:24:15.939Z</lastmod>
     
@@ -234,6 +227,13 @@
   
   <url>
     <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
+    
+    <lastmod>2019-12-02T04:24:15.939Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
     
     <lastmod>2019-12-02T04:24:15.939Z</lastmod>
     
