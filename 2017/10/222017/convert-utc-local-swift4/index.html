@@ -28,7 +28,7 @@
 <meta property="og:description" content="In this article we are going to convert UTC Date format to Current device date format. UTC is the time standard commonly used across the world. The world’s timing centers have agreed to keep their tim">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-10-22T13:16:34.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.818Z">
+<meta property="article:modified_time" content="2020-06-28T12:40:12.873Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="tips">
 <meta property="article:tag" content="swift">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:40:12" itemprop="dateModified" datetime="2020-06-28T19:40:12+07:00">2020-06-28</time>
               </span>
 
           
@@ -247,19 +247,15 @@
 <a id="more"></a>
 <h2 id="UTC-to-Local"><a href="#UTC-to-Local" class="headerlink" title="UTC to Local:"></a>UTC to Local:</h2><p>Use the following method for converting:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UTCToLocal</span><span class="params">(UTCDateString: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dateFormatter = <span class="type">DateFormatter</span>()</span><br><span class="line">    dateFormatter.dateFormat = <span class="string">"yyyy-MM-dd HH:mm:ss"</span> <span class="comment">//Input Format</span></span><br><span class="line">    dateFormatter.timeZone = <span class="type">NSTimeZone</span>(name: <span class="string">"UTC"</span>) <span class="keyword">as</span> <span class="type">TimeZone!</span></span><br><span class="line">    <span class="keyword">let</span> <span class="type">UTCDate</span> = dateFormatter.date(from: <span class="type">UTCDateString</span>)</span><br><span class="line">    dateFormatter.dateFormat = <span class="string">"yyyy-MMM-dd hh:mm:ss"</span> <span class="comment">// Output Format</span></span><br><span class="line">    dateFormatter.timeZone = <span class="type">TimeZone</span>.current</span><br><span class="line">    <span class="keyword">let</span> <span class="type">UTCToCurrentFormat</span> = dateFormatter.string(from: <span class="type">UTCDate!</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="type">UTCToCurrentFormat</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Usage:</p>
 <p>Call above method as follow:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dateString = <span class="string">"2017-10-10 9:56:25"</span></span><br><span class="line"><span class="keyword">let</span> date = <span class="keyword">self</span>.<span class="type">UTCToLocal</span>(<span class="type">UTCDateString</span>: dateString)</span><br></pre></td></tr></table></figure>
-
 <p>//output date should be <code>&#39;2017-10-10 15:26:25&#39;</code><br>In above method we can customize date formats as per our usage. But the input date format must be same format as input date string.</p>
 <h2 id="Local-to-UTC"><a href="#Local-to-UTC" class="headerlink" title="Local to UTC:"></a>Local to UTC:</h2><p>Use the following method for converting:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">localToUTC</span><span class="params">(date:String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dateFormatter = <span class="type">DateFormatter</span>()</span><br><span class="line">    dateFormatter.dateFormat = <span class="string">"yyyy-MM-dd HH:mm:ss"</span></span><br><span class="line">    dateFormatter.calendar = <span class="type">NSCalendar</span>.current</span><br><span class="line">    dateFormatter.timeZone = <span class="type">TimeZone</span>.current</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> dt = dateFormatter.date(from: date)</span><br><span class="line">    dateFormatter.timeZone = <span class="type">TimeZone</span>(abbreviation: <span class="string">"UTC"</span>)</span><br><span class="line">    dateFormatter.dateFormat = <span class="string">"yyyy-MMM-dd hh:mm:ss"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dateFormatter.string(from: dt!)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Usage:</p>
 <p>Call above method as follow:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dateString = <span class="string">"2017-10-10 15:56:25"</span></span><br><span class="line"><span class="keyword">let</span> date = <span class="keyword">self</span>.localToUTC(date: dateString)</span><br></pre></td></tr></table></figure>
-
 <p>//output date should be <code>&#39;2017-10-10 09:26:25&#39;</code></p>
 <p>Source: <a href="https://iosrevisited.blogspot.in/2017/10/convert-utc-local-swift4.html" target="_blank" rel="noopener">iosrevisited</a></p>
 

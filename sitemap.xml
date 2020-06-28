@@ -2,240 +2,240 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/05/242019/may-24-swift-5-empty-string/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://duc.ninja/2019/11/262019/nov-26-you-have-to-change-mindset-to-use-swiftui/</loc>
     
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.877Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2019/10/122019/oct-12-swift-5-1-implicit-return/</loc>
     
-    <lastmod>2020-06-28T11:13:15.821Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2018/08/172018/class-only-protocol/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.877Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2018/01/252018/run-test-case/</loc>
     
-    <lastmod>2020-06-28T11:13:15.820Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
+    <loc>https://duc.ninja/2019/12/012019/dec-01-lightweight-api-design-in-swift/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    <loc>https://duc.ninja/2019/12/022019/dec-02-swift-5-1-indirect-enums/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    <loc>https://duc.ninja/2019/05/242019/may-24-swift-5-empty-string/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    <loc>https://duc.ninja/2019/05/252019/may-25-optionset/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    <loc>https://duc.ninja/2019/05/262019/may-26-codable-enums-with-associated/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2019/11/022019/nov-02-swift-5-1-using-self-to-refer-to-enclosing-types/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2019/11/262019/nov-26-the-power-of-closures-in-swiftui/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2019/11/262019/nov-26-xcode11-ios12/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.876Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2017/11/072017/save-custom-object-into-userdefaults/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2017/09/242017/swift-encoding-and-decoding/</loc>
     
-    <lastmod>2020-06-28T11:13:15.819Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</loc>
+    <loc>https://duc.ninja/2017/09/252017/tips-to-be-more-productive-with-xcode/</loc>
     
-    <lastmod>2020-06-28T11:13:15.818Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
-    
-    <lastmod>2020-06-28T11:13:15.818Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
+    <loc>https://duc.ninja/2017/11/042017/use-didset-when-initialling-an-object-in-swift/</loc>
     
-    <lastmod>2020-06-28T11:13:15.818Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
+    <loc>https://duc.ninja/2017/11/042017/what-the-hell-is-swift-4-access-control/</loc>
     
-    <lastmod>2020-06-28T11:13:15.818Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/where-is-idetemplatemacros.plist-file/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/08/172018/class-only-protocol/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/02/042018/open-terminal-from-xcode/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/03/042018/interface-builder-tips-and-tricks/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2018/01/252018/po-vs-e/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.875Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://duc.ninja/2017/11/052017/easy-xib-and-storyboard-localization/</loc>
     
-    <lastmod>2020-06-28T11:13:15.818Z</lastmod>
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/272017/generics-in-swift-4/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/262017/macos-high-sierra-final-version-for-your-mac/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/10/012017/measuring-swift-compile-times-in-xcode-9/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/242017/migrating-to-swift-4-ios-11/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/252017/multiple-accounts-and-ssh-keys/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/objc-warnings-upgrading-to-swift-4/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/122017/passing-data-using-notificationcenter-in-swift-4/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/052017/remove-old-simulators/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.874Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/09/252017/annotating-swift-with-marks-todos-and-fixmes/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/042017/chained-foreach/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/11/052017/dependency-injection-swift-4/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://duc.ninja/2017/10/222017/convert-utc-local-swift4/</loc>
+    
+    <lastmod>2020-06-28T12:40:12.873Z</lastmod>
     
   </url>
   

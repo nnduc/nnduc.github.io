@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://duc.ninja/assets/images/largetitles.png">
 <meta property="og:image" content="https://duc.ninja/assets/images/largetitlesnever.png">
 <meta property="article:published_time" content="2017-09-23T17:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.819Z">
+<meta property="article:modified_time" content="2020-06-28T12:40:12.874Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="tips">
 <meta property="article:tag" content="swift">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:40:12" itemprop="dateModified" datetime="2020-06-28T19:40:12+07:00">2020-06-28</time>
               </span>
 
           
@@ -250,7 +250,7 @@
 
       
         <p>In the past, migrating your code was a big deal when a new version of Swift was introduced – when Swift 3 came around, it seemed like every line of code had a syntax change. This time around, however, life should be a lot easier on us – in fact maybe you’ll even see this nice message during your migration:</p>
-<p><img src="/assets/images/screenshot-2017-09-12-12-26-38.png" alt></p>
+<p><img src="/assets/images/screenshot-2017-09-12-12-26-38.png" alt=""></p>
 <a id="more"></a>
 <p>Here’s what Chris Lattner said about it on the Accidental Tech Podcast:</p>
 <blockquote>
@@ -258,20 +258,20 @@
 </blockquote>
 <p>That said, as you update to Xcode 9, Swift 4 and iOS 11 you might find you need to make a few little tweaks – and not just related to Swift changes. I’ve been updating all of the code base for my book, and finding there are some repetitive tasks worth mentioning:</p>
 <h3 id="Swift-3-objc-inference"><a href="#Swift-3-objc-inference" class="headerlink" title="Swift 3 @objc inference."></a>Swift 3 <code>@objc</code> inference.</h3><p>During migration, you’ll be asked if you want to minimize @objc inference (the new Swift 4 way of doing things) or handle @objc inference the Swift 3 way:</p>
-<p><img src="/assets/images/screenshot-2017-09-12-15-30-46.png" alt></p>
+<p><img src="/assets/images/screenshot-2017-09-12-15-30-46.png" alt=""></p>
 <p>What’s all this about?</p>
 <p>You can tag a Swift declaration with @objc to indicate that it should be available to Objective-C. In Swift 3 many declarations were automatically inferred to be made available to Objective-C (for example methods in a subclass of NSObject were inferred to be available to Objective-C). In Swift 4, many of these are no longer going to be inferred and the migrater will help you out by adding the @objc tag in some common places it might be needed. (A common place for example, is a method that is referenced by a #selector)</p>
 <p>For some reason, however, despite migrating your code to manage this new state of affairs, the migrater doubles down on ensuring that there are no migration problems, and sets a new ‘Swift 3 @objc inference’ setting in your targets’ Build Settings to ‘On’, ensuring that everything works just as it did in Swift 3.</p>
 <p>This isn’t a big problem, other than increasing your app’s binary size (about 6-8% according to the swift-evolution proposal) and load time. But – if you want your app to work just like a new Swift 4 app would, change the ‘Swift 3 @objc inference’ setting in each target’s Build Settings to ‘Default’ (or ‘Off’).</p>
-<p><img src="/assets/images/screenshot-2017-09-12-15-38-47.png" alt></p>
+<p><img src="/assets/images/screenshot-2017-09-12-15-38-47.png" alt=""></p>
 <p>If you check out the Xcode migration guide, @objc inference is basically all it talks about. Most other Swift changes have been add-ons and non-breaking. There are however a couple of interface issues worth mentioning.</p>
 <h3 id="Safe-area-guides"><a href="#Safe-area-guides" class="headerlink" title="Safe area guides"></a>Safe area guides</h3><p>Xcode 9 and iOS 11 introduced safe area guides, with the idea of replacing top and bottom layout guides. This change isn’t enforced by the migrator, but if you want your app to work as a new project would, you’ll want to turn on safe area guides for your storyboards.</p>
 <p>Open a storyboard, select a view controller, and open up the file inspector. You’ll find a new check box: “Use Safe Area Layout Guides”. Check this and immediately you’ll notice a change in the document outline of your storyboard. All of your view controllers will lose their top and bottom layout guides and be replaced by safe area guides.</p>
-<p><img src="/assets/images/safearea.png" alt></p>
+<p><img src="/assets/images/safearea.png" alt=""></p>
 <h3 id="Large-titles"><a href="#Large-titles" class="headerlink" title="Large titles"></a>Large titles</h3><p>This is another optional update, but a good idea anyway. Apple is moving towards large titles for navigation bars and has made this available to developers. To give a view controller a large title, select the first navigation bar in the navigation stack, and select ‘Prefers Large Titles’ in the attributes inspector.</p>
-<p><img src="/assets/images/largetitles.png" alt></p>
+<p><img src="/assets/images/largetitles.png" alt=""></p>
 <p>This automatically sets up large titles for the whole navigation stack, though Apple suggests in many cases the large titles are more appropriate for just the initial view controller. Turn off large titles in a view controller down the line in the navigation stack, by selecting its navigation item and instead of ‘Automatic’, select ‘Never’.</p>
-<p><img src="/assets/images/largetitlesnever.png" alt></p>
+<p><img src="/assets/images/largetitlesnever.png" alt=""></p>
 <h3 id="Marketing-App-icon"><a href="#Marketing-App-icon" class="headerlink" title="Marketing App icon"></a>Marketing App icon</h3><p>Previously we would add the huge 1024×1024 app icons for marketing purposes in iTunesConnect. Finally, Apple has united all of the app icons, and now these app icons can also be added to your app’s assets catalog.</p>
 <p>Source:<br>&emsp;<a href="https://craiggrummitt.com/2017/09/12/migrating-to-swift-4-ios-11/" target="_blank" rel="noopener">craiggrummitt</a></p>
 <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi laboriosam suscipit doloremque perspiciatis dolorem. Deleniti, iusto quos, laborum ullam animi maiores alias necessitatibus saepe vero tenetur aliquid accusantium ipsa totam!
@@ -336,7 +336,7 @@ Now, let's have a glance at the basic styles: [link](http://github.com/syaning/v
 
 <p>MathJax support:</p>
 <p>$$ a^2 + b^2 = c^2 $$ –&gt;</p>
--->
+
     </div>
 
     
