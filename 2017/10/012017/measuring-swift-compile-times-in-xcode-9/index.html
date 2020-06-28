@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://duc.ninja/assets/images/xcode-front-end-flags.png">
 <meta property="article:published_time" content="2017-10-01T07:36:34.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.819Z">
+<meta property="article:modified_time" content="2020-06-28T12:16:25.210Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="xcode">
 <meta property="article:tag" content="tips">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:16:25" itemprop="dateModified" datetime="2020-06-28T19:16:25+07:00">2020-06-28</time>
               </span>
 
           
@@ -257,7 +257,7 @@
 <p>This time, you can thank <a href="https://github.com/apple/swift/pull/10214" target="_blank" rel="noopener">Mark Lacey</a> for the flag. (<a href="https://github.com/apple/swift/pull/10215" target="_blank" rel="noopener">pull request for Swift 4</a>)</p>
 <h3 id="Using-these-flags-to-improve-compile-times"><a href="#Using-these-flags-to-improve-compile-times" class="headerlink" title="Using these flags to improve compile times"></a>Using these flags to improve compile times</h3><p>As mentioned, after you add these flags you will start getting warnings. Keep in mind that if the threshold is too low, for example 10ms, then you will get <strong>a ton</strong> of warnings that cannot be fixed. Experiment with these threshold values and adjust as needed. I suggest starting at <code>200</code> and tuning from there. If your code base is large, it might make more sense to use a higher value for your project (say <code>500</code>) and try to decrease it over time. Otherwise, you’ll be spending <strong>a lot</strong> of time trying to get all functions and expressions to compile in under 200ms. Also, I recommend setting these flags only for <code>DEBUG</code> build configurations.</p>
 <p>There are two common scenarios where Xcode will start emitting warnings with these flags: (1) very complex expressions or functions, and (2) expressions that omit explicit types and rely on <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Types.html" target="_blank" rel="noopener">type inference</a>. To silence the warnings — and thus improve compile times — try breaking up expressions into smaller steps with intermediate variables, and adding explicit types to variable declarations and closure parameters. The code may not look as elegant after these changes, but what’s more important to you and your team?</p>
-<p><img src="/assets/images/xcode-front-end-flags.png" alt></p>
+<p><img src="/assets/images/xcode-front-end-flags.png" alt=""></p>
 <h3 id="A-temporary-solution"><a href="#A-temporary-solution" class="headerlink" title="A temporary solution"></a>A temporary solution</h3><p>Using these flags is obviously a temporary (and kind of hacky) solution to improving compile times. It only treats the symptoms rather than the cause, but it is better than nothing. As I said before, the Swift team is well aware of the problems and they are working hard to address them. Every single Swift release is getting better and I’m sure Swift 5 will bring even more improvements.</p>
 <p>I’m hoping using these flags — and having to change your code to improve compilation times — will soon be a hack of the past. Eventually it will be, we just don’t know when.</p>
 <p>Source: [jessesquires.com][theswiftpost.co]</p>

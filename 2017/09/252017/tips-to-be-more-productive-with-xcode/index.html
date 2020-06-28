@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://duc.ninja/assets/images/xcode-open-file.gif">
 <meta property="og:image" content="https://duc.ninja/assets/images/figure-jump-to-method.jpg">
 <meta property="article:published_time" content="2017-09-25T00:02:34.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.820Z">
+<meta property="article:modified_time" content="2020-06-28T12:16:25.211Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="xcode">
 <meta property="article:tag" content="tips">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:16:25" itemprop="dateModified" datetime="2020-06-28T19:16:25+07:00">2020-06-28</time>
               </span>
 
           
@@ -249,7 +249,7 @@
 <h3 id="1-Decide-Where-to-Open-a-File"><a href="#1-Decide-Where-to-Open-a-File" class="headerlink" title="1. Decide Where to Open a File"></a>1. Decide Where to Open a File</h3><p>In Xcode, you can open a file in various ways: in the standard editor, in a new or existing assistant editor, in a new or existing tab, or in a new window. Here’s how you can decide about this:</p>
 <a id="more"></a>
 <p>When clicking on a file in the Navigator, hold down <strong><code>⇧</code></strong> + <strong><code>⌥</code></strong><br><br>When clicking on a symbol in an editor pane, hold down <strong><code>⇧</code></strong> + <strong><code>⌥</code></strong> + <strong><code>⌘</code></strong><br><br>A pop-over will appear and let you choose where exactly you want this file to be displayed:</p>
-<p><img src="/assets/images/xcode-open-file.gif" alt></p>
+<p><img src="/assets/images/xcode-open-file.gif" alt=""></p>
 <h3 id="2-Moving-a-full-line-or-many-lines-of-code-up-or-down"><a href="#2-Moving-a-full-line-or-many-lines-of-code-up-or-down" class="headerlink" title="2. Moving a full line or many lines of code up or down"></a>2. Moving a full line or many lines of code up or down</h3><p><strong><code>⌘</code></strong> + <strong><code>⌥</code></strong> + <strong><code>{</code></strong> : move up</p>
 <p><strong><code>⌘</code></strong> + <strong><code>⌥</code></strong> + <strong><code>}</code></strong> : move down</p>
 <blockquote>
@@ -257,13 +257,13 @@
 </blockquote>
 <h3 id="3-Quickly-find-app’s-container-folder"><a href="#3-Quickly-find-app’s-container-folder" class="headerlink" title="3. Quickly find app’s container folder"></a>3. Quickly find app’s container folder</h3><p>You can get app’s container on the file system with a single command. You just need to know app’s bundle identifier and execute the command below:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun simctl get_app_container booted &lt;APP<span class="string">'S BUNDLE ID&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>Or you can make it even faster by opening destination folder in Finder with the open command:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open `xcrun simctl get_app_container booted &lt;APP<span class="string">'S BUNDLE ID&gt;` -a Finder</span></span><br></pre></td></tr></table></figure>
 
+
 <h3 id="4-Reveal-in-Project-Navigator"><a href="#4-Reveal-in-Project-Navigator" class="headerlink" title="4.  Reveal in Project Navigator"></a>4.  Reveal in Project Navigator</h3><p>The <strong>Reveal in Project Navigator</strong> command is a true timesaver for large, complex projects with lots of files and folders. The command shows or reveals the current file in the <strong>Project Navigator</strong> on the left. The default key binding is <strong>⌘ + ⇧ + J</strong>.</p>
 <h3 id="5-Jump-to-Method"><a href="#5-Jump-to-Method" class="headerlink" title="5. Jump to Method"></a>5. Jump to Method</h3><p>When I am working in a class or structure, I often have the need to quickly jump to a particular method in the class. This is very easy by pressing <strong>⌃</strong> + <strong>6</strong> and typing the first few letters of the method’s name.</p>
-<p><img src="/assets/images/figure-jump-to-method.jpg" alt></p>
+<p><img src="/assets/images/figure-jump-to-method.jpg" alt=""></p>
 <p><br><br><br>Source:</p>
 <ul>
 <li><a href="https://www.git-tower.com/blog/6-tips-for-xcode/" target="_blank" rel="noopener">git-tower</a></li>

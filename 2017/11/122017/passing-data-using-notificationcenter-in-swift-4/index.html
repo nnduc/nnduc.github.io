@@ -28,7 +28,7 @@
 <meta property="og:description" content="Passing data from one view controller to another view controller using Notification Center is an easy way when compared to delegate protocols. Here we need add observer or listeners for getting new da">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-11-12T15:15:00.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.819Z">
+<meta property="article:modified_time" content="2020-06-28T12:16:25.210Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="tips">
 <meta property="article:tag" content="swift">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:16:25" itemprop="dateModified" datetime="2020-06-28T19:16:25+07:00">2020-06-28</time>
               </span>
 
           
@@ -252,15 +252,17 @@
 
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter<span class="selector-class">.default</span><span class="selector-class">.post</span>(name: NSNotification.Name(rawValue: <span class="string">"newDataToLoad"</span>), <span class="selector-tag">object</span>: dataToSend)</span><br></pre></td></tr></table></figure>
 
+
+
 <p>Before sending data we need to listen for the above notification using  <code>NSNotification.Name</code></p>
 <h2 id="Data-Receiving-Add-observer"><a href="#Data-Receiving-Add-observer" class="headerlink" title="Data Receiving - Add observer:"></a>Data Receiving - Add observer:</h2><p>Add the following code for <code>listening</code> to new data:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">NotificationCenter</span><span class="selector-class">.default</span><span class="selector-class">.addObserver</span>(self, <span class="attribute">selector</span>: #selector(notificationRecevied(<span class="attribute">notification</span>:)), <span class="attribute">name</span>: NSNotification.Name(<span class="attribute">rawValue</span>: <span class="string">"newDataToLoad"</span>), <span class="attribute">object</span>: nil)</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">NotificationCenter</span>.</span></span>default.add<span class="constructor">Observer(<span class="params">self</span>, <span class="params">selector</span>: #<span class="params">selector</span>(<span class="params">notificationRecevied</span>(<span class="params">notification</span>:)</span>), name: NSNotification.<span class="constructor">Name(<span class="params">rawValue</span>: <span class="string">"newDataToLoad"</span>)</span>, object: nil)</span><br></pre></td></tr></table></figure>
 
 <p>Add the following method to retrieve data:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">notificationRecevied</span><span class="params">(notification: Notification)</span></span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data = notification.object</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Remove-Observer"><a href="#Remove-Observer" class="headerlink" title="Remove Observer:"></a>Remove Observer:</h2><p>Don’t forgot to remove observer on<code>viewWillDisappear()</code>as follow:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationCenter<span class="selector-class">.default</span><span class="selector-class">.removeObserver</span>(self, name: NSNotification.Name(rawValue: <span class="string">"newDataToLoad"</span>), <span class="selector-tag">object</span>: nil)</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="module-access"><span class="module"><span class="identifier">NotificationCenter</span>.</span></span>default.remove<span class="constructor">Observer(<span class="params">self</span>, <span class="params">name</span>: NSNotification.Name(<span class="params">rawValue</span>: <span class="string">"newDataToLoad"</span>)</span>, object: nil)</span><br></pre></td></tr></table></figure>
 
 <p>Source: iosrevisited</p>
 

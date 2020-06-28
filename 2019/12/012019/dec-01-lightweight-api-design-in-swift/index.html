@@ -28,7 +28,7 @@
 <meta property="og:description" content="One of the most powerful aspects of Swift is just how much flexibility it gives us when it comes to how APIs can be designed. Not only does that flexibility enable us to define functions and types tha">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-01T03:30:00.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:13:15.821Z">
+<meta property="article:modified_time" content="2020-06-28T12:16:25.212Z">
 <meta property="article:author" content="Duc Ninja">
 <meta property="article:tag" content="duc">
 <meta property="article:tag" content=" duc.ninja">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:13:15" itemprop="dateModified" datetime="2020-06-28T18:13:15+07:00">2020-06-28</time>
+                <time title="Modified: 2020-06-28 19:16:25" itemprop="dateModified" datetime="2020-06-28T19:16:25+07:00">2020-06-28</time>
               </span>
 
           
@@ -313,7 +313,7 @@
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extension </span><span class="keyword">Shape </span>&#123;</span><br><span class="line">    static func group(_ <span class="keyword">shapes: </span>[<span class="keyword">Shape]) </span>-&gt; Self &#123;</span><br><span class="line">        <span class="keyword">Shape </span>&#123; <span class="built_in">context</span> in</span><br><span class="line">            <span class="keyword">shapes.forEach </span>&#123; <span class="keyword">shape </span>in</span><br><span class="line">                <span class="built_in">context</span>.<span class="keyword">move(to: </span>.zero)</span><br><span class="line">                <span class="keyword">shape.drawing(&amp;context)</span></span><br><span class="line"><span class="keyword"> </span>           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>With the above in place, we can now once again easily pass a group of pre-computed <code>Shape</code> values to our <code>draw</code> function, like this:</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> shapes: [Shape] = loadShapes()</span><br><span class="line"><span class="built_in">let</span> <span class="built_in">image</span> = <span class="built_in">draw</span>(.group(shapes))</span><br></pre></td></tr></table></figure>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">let</span> <span class="variable">shapes</span>: [<span class="variable">Shape</span>] = <span class="function"><span class="title">loadShapes</span>()</span></span><br><span class="line"><span class="variable">let</span> <span class="variable">image</span> = <span class="function"><span class="title">draw</span>(.group(<span class="variable">shapes</span>))</span></span><br></pre></td></tr></table></figure>
 
 <p>What’s really cool though, is that not only does the above <code>group</code> API enable us to construct arrays of shapes — it also enables us to much more easily compose multiple shapes into more higher-level components. For example, here’s how we could express an entire drawing (such as a logo), using a group of composed shapes:</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension Shape &#123;</span><br><span class="line">    <span class="keyword">static</span> func logo(withSize <span class="keyword">size</span>: <span class="keyword">Size</span>) -&gt; Self &#123;</span><br><span class="line">        .<span class="keyword">group</span>([</span><br><span class="line">            .rectangle(at: <span class="keyword">size</span>.centerPoint, <span class="keyword">size</span>: <span class="keyword">size</span>),</span><br><span class="line">            .text(<span class="string">"The Drawing Company"</span>, fittingInto: <span class="keyword">size</span>),</span><br><span class="line">            ...</span><br><span class="line">        ])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
